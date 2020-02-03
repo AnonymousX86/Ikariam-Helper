@@ -1,11 +1,11 @@
 """
 Invite: https://discordapp.com/api/oauth2/authorize?client_id=672448271792472095&permissions=19520&scope=bot
 """
-from logging import basicConfig, INFO
+# from logging import basicConfig, INFO
 from discord.ext.commands import Bot
 from discord import Game, Status
 
-basicConfig(level=INFO)
+# basicConfig(level=INFO)
 bot = Bot(
     max_messages=None,
     command_prefix='.',
