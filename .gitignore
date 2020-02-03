@@ -129,3 +129,5 @@ src/img
 
 # PyCharm folder
 /.idea/
+.idea/Ikariam Helper.iml
+.idea/vcs.xml
