@@ -128,4 +128,4 @@ dmypy.json
 src/img
 
 # PyCharm folder
-./.idea
+/.idea/
