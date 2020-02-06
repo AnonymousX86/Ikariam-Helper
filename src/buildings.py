@@ -1119,3 +1119,33 @@ infos = {
         ]
     }
 }
+
+
+def change_icon(name):
+    if name == 'ratusz':
+        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/townhall_l.png'
+    elif name == 'akademia':
+        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/academy_l.png'
+    elif name == 'magazyn':
+        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/warehouse_l.png'
+    elif name == 'tawerna':
+        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/taverne_l.png'
+    elif name == 'pałac':
+        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/palace_l.png'
+    elif name == 'rezydencja gubernatora':
+        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/palaceColony_l.png'
+    elif name == 'muzeum':
+        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/museum_l.png'
+    elif name == 'port handlowy':
+        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/port_r.png'
+    else:
+        return ''
+
+
+def try_alias(name):
+    if name in ('rezydencja', 'gubernator'):
+        return 'rezydencja gubernatora'
+    elif name in ('port', 'handlowy'):
+        return 'port handlowy'
+    else:
+        return name
