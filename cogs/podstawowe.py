@@ -203,6 +203,44 @@ class Podstawowe(cmd.Cog):
         ))
         return
 
+    @cmd.command(
+        name='changelog',
+        description='Ostatnie zmiany bota',
+        aliases=['cl'],
+        usage='[wersja]'
+    )
+    async def changelog_command(self, ctx, arg_version='all'):
+        changelog_data = {
+            '0.1': 'Podstawowa wersja bota.\n'
+                   'Dodane zostały wszystkie komendy z kategorii *"podstawowe"*.',
+            '0.2': 'Dodano komendę *"budynki"* zawierającą wszystkie informacje o budynkach.\n'
+                   'Dodano komendę *"changelog"*.'
+        }
+        changelog_embed = Embed(
+            title=':gear: Changelog',
+            color=0x9900ff
+        )
+
+        def add_field(x):
+            changelog_embed.add_field(
+                name=f'v{x}',
+                value=changelog_data[x]
+            )
+
+        if arg_version == 'all':
+            for ver in changelog_data.keys():
+                add_field(ver)
+        elif arg_version in changelog_data.keys():
+            add_field(arg_version)
+        else:
+            changelog_embed.add_field(
+                name='\u200b',
+                value=':no_entry: Błędna wersja!'
+            )
+
+        await ctx.send(embed=changelog_embed)
+        return
+
 
 def setup(bot):
     bot.add_cog(Podstawowe(bot))
