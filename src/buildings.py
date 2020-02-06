@@ -65,56 +65,6 @@ costs = {
         {"wood": 56185, "marble": 24455},  # level 31
         {"wood": 65251, "marble": 28141}  # level 32
     ],
-    "koszary": [
-        {"wood": 114},  # level 2
-        {"wood": 195},  # level 3
-        {"wood": 296},  # level 4
-        {"wood": 420},  # level 5
-        {"wood": 574},  # level 6
-        {"wood": 766},  # level 7
-        {"wood": 1003},  # level 8
-        {"wood": 1297, "marble": 178},  # level 9
-        {"wood": 1662, "marble": 431},  # level 10
-        {"wood": 2115, "marble": 745},  # level 11
-        {"wood": 2676, "marble": 1134},  # level 12
-        {"wood": 3371, "marble": 1616},  # level 13
-        {"wood": 4234, "marble": 2214},  # level 14
-        {"wood": 5304, "marble": 2956},  # level 15
-        {"wood": 6630, "marble": 3875},  # level 16
-        {"wood": 8275, "marble": 5015},  # level 17
-        {"wood": 10314, "marble": 6429},  # level 18
-        {"wood": 12843, "marble": 8183},  # level 19
-        {"wood": 15979, "marble": 10357},  # level 20
-        {"wood": 19868, "marble": 13052},  # level 21
-        {"wood": 24690, "marble": 16395},  # level 22
-        {"wood": 30669, "marble": 20540},  # level 23
-        {"wood": 38083, "marble": 25680},  # level 24
-        {"wood": 47277, "marble": 32054},  # level 25
-        {"wood": 58676, "marble": 39957},  # level 26
-        {"wood": 72812, "marble": 49757},  # level 27
-        {"wood": 90341, "marble": 61909},  # level 28
-        {"wood": 112076, "marble": 76977},  # level 29
-        {"wood": 139028, "marble": 95661},  # level 30
-        {"wood": 172448, "marble": 118830},  # level 31
-        {"wood": 213889, "marble": 147560},  # level 32
-        {"wood": 265276, "marble": 183185},  # level 33
-        {"wood": 328996, "marble": 227359},  # level 34
-        {"wood": 408008, "marble": 282136},  # level 35
-        {"wood": 505984, "marble": 350059},  # level 36
-        {"wood": 627473, "marble": 434283},  # level 37
-        {"wood": 778120, "marble": 538721},  # level 38
-        {"wood": 964923, "marble": 668224},  # level 39
-        {"wood": 1196558, "marble": 828808},  # level 40
-        {"wood": 1483785, "marble": 1027932},  # level 41
-        {"wood": 1839947, "marble": 1274847},  # level 42
-        {"wood": 2281588, "marble": 1581020},  # level 43
-        {"wood": 2829223, "marble": 1960675},  # level 44
-        {"wood": 3508290, "marble": 2431447},  # level 45
-        {"wood": 4350333, "marble": 3015205},  # level 46
-        {"wood": 5394466, "marble": 3739064},  # level 47
-        {"wood": 6689191, "marble": 4636650},  # level 48
-        {"wood": 8294651, "marble": 5749656}  # level 49 max
-    ],
     "czarny rynek": [
         {"wood": 887, "marble": 525},  # level 2
         {"wood": 1360, "marble": 807},  # level 3
@@ -247,39 +197,6 @@ costs = {
         {"wood": 2175519, "marble": 1101767, "crystal": 871676, "sulfur": 1957774},  # level 38
         {"wood": 2611007, "marble": 1300431, "crystal": 1020187, "sulfur": 2349714},  # level 39
         {"wood": 3133592, "marble": 1534855, "crystal": 1193945, "sulfur": 2820041}  # level 40
-    ],
-    "ambasada": [
-        {"wood": 415, "marble": 342},  # level 2
-        {"wood": 623, "marble": 571},  # level 3
-        {"wood": 873, "marble": 850},  # level 4
-        {"wood": 1173, "marble": 1190},  # level 5
-        {"wood": 1532, "marble": 1606},  # level 6
-        {"wood": 1964, "marble": 2112},  # level 7
-        {"wood": 2482, "marble": 2730},  # level 8
-        {"wood": 3103, "marble": 3484},  # level 9
-        {"wood": 3849, "marble": 4404},  # level 10
-        {"wood": 4743, "marble": 5527},  # level 11
-        {"wood": 5817, "marble": 6896},  # level 12
-        {"wood": 7105, "marble": 8566},  # level 13
-        {"wood": 8651, "marble": 10604},  # level 14
-        {"wood": 10507, "marble": 13090},  # level 15
-        {"wood": 12733, "marble": 16123},  # level 16
-        {"wood": 15404, "marble": 19824},  # level 17
-        {"wood": 18610, "marble": 24339},  # level 18
-        {"wood": 22457, "marble": 29846},  # level 19
-        {"wood": 27074, "marble": 36566},  # level 20
-        {"wood": 32614, "marble": 44764},  # level 21
-        {"wood": 39261, "marble": 54765},  # level 22
-        {"wood": 47239, "marble": 66967},  # level 23
-        {"wood": 56811, "marble": 81853},  # level 24
-        {"wood": 68299, "marble": 100014},  # level 25
-        {"wood": 82084, "marble": 122170},  # level 26
-        {"wood": 98625, "marble": 149201},  # level 27
-        {"wood": 118475, "marble": 182178},  # level 28
-        {"wood": 142295, "marble": 222411},  # level 29
-        {"wood": 170879, "marble": 271495},  # level 30
-        {"wood": 205180, "marble": 331377},  # level 31
-        {"wood": 246341, "marble": 404433}  # level 32
     ],
     "zakład pirotechnika": [
         {"wood": 353, "marble": 212},  # level 2
@@ -489,39 +406,6 @@ costs = {
         {"wood": 48365, "marble": 22917},  # level 31
         {"wood": 55255, "marble": 26631}  # level 32
     ],
-    "stocznia": [
-        {"wood": 202},  # level 2
-        {"wood": 324},  # level 3
-        {"wood": 477},  # level 4
-        {"wood": 671},  # level 5
-        {"wood": 914, "marble": 778},  # level 6
-        {"wood": 1222, "marble": 1052},  # level 7
-        {"wood": 1609, "marble": 1397},  # level 8
-        {"wood": 2096, "marble": 1832},  # level 9
-        {"wood": 2711, "marble": 2381},  # level 10
-        {"wood": 3485, "marble": 3071},  # level 11
-        {"wood": 4460, "marble": 3942},  # level 12
-        {"wood": 5689, "marble": 5038},  # level 13
-        {"wood": 7238, "marble": 6420},  # level 14
-        {"wood": 9190, "marble": 8161},  # level 15
-        {"wood": 11648, "marble": 10354},  # level 16
-        {"wood": 14746, "marble": 13118},  # level 17
-        {"wood": 18649, "marble": 16601},  # level 18
-        {"wood": 23568, "marble": 20989},  # level 19
-        {"wood": 29765, "marble": 26517},  # level 20
-        {"wood": 37573, "marble": 33484},  # level 21
-        {"wood": 47412, "marble": 42261},  # level 22
-        {"wood": 59808, "marble": 53321},  # level 23
-        {"wood": 75428, "marble": 67256},  # level 24
-        {"wood": 95108, "marble": 84814},  # level 25
-        {"wood": 119906, "marble": 106938},  # level 26
-        {"wood": 151151, "marble": 134814},  # level 27
-        {"wood": 190520, "marble": 169937},  # level 28
-        {"wood": 240124, "marble": 214192},  # level 29
-        {"wood": 302626, "marble": 269954},  # level 30
-        {"wood": 381378, "marble": 340214},  # level 31
-        {"wood": 480605, "marble": 428741}  # level 32
-    ],
     "kamieniarz": [
         {"wood": 467, "marble": 116},  # level 2
         {"wood": 718, "marble": 255},  # level 3
@@ -620,55 +504,6 @@ costs = {
         {"wood": 32021, "marble": 34437},  # level 30
         {"wood": 36857, "marble": 40002},  # level 31
         {"wood": 42419, "marble": 46457}  # level 32
-    ],
-    "mur miejski": [
-        {"wood": 361, "marble": 203},  # level 2
-        {"wood": 657, "marble": 516},  # level 3
-        {"wood": 1012, "marble": 892},  # level 4
-        {"wood": 1439, "marble": 1344},  # level 5
-        {"wood": 1951, "marble": 1885},  # level 6
-        {"wood": 2565, "marble": 2535},  # level 7
-        {"wood": 3302, "marble": 3315},  # level 8
-        {"wood": 4186, "marble": 4251},  # level 9
-        {"wood": 5247, "marble": 5374},  # level 10
-        {"wood": 6521, "marble": 6721},  # level 11
-        {"wood": 8049, "marble": 8338},  # level 12
-        {"wood": 9882, "marble": 10279},  # level 13
-        {"wood": 12083, "marble": 12608},  # level 14
-        {"wood": 14724, "marble": 15402},  # level 15
-        {"wood": 17892, "marble": 18755},  # level 16
-        {"wood": 21695, "marble": 22779},  # level 17
-        {"wood": 26258, "marble": 27607},  # level 18
-        {"wood": 31733, "marble": 33402},  # level 19
-        {"wood": 38304, "marble": 40355},  # level 20
-        {"wood": 46189, "marble": 48699},  # level 21
-        {"wood": 55650, "marble": 58711},  # level 22
-        {"wood": 67004, "marble": 70726},  # level 23
-        {"wood": 80629, "marble": 85144},  # level 24
-        {"wood": 96979, "marble": 102446},  # level 25
-        {"wood": 116599, "marble": 123208},  # level 26
-        {"wood": 140143, "marble": 148122},  # level 27
-        {"wood": 168395, "marble": 178019},  # level 28
-        {"wood": 202298, "marble": 213896},  # level 29
-        {"wood": 242982, "marble": 256948},  # level 30
-        {"wood": 291802, "marble": 308610},  # level 31
-        {"wood": 350387, "marble": 370605},  # level 32
-        {"wood": 420688, "marble": 444998},  # level 33
-        {"wood": 505049, "marble": 534270},  # level 34
-        {"wood": 606284, "marble": 641397},  # level 35
-        {"wood": 727765, "marble": 769949},  # level 36
-        {"wood": 873541, "marble": 924213},  # level 37
-        {"wood": 1048473, "marble": 1109328},  # level 38
-        {"wood": 1258393, "marble": 1331467},  # level 39
-        {"wood": 1510294, "marble": 1598031},  # level 40
-        {"wood": 1812577, "marble": 1917913},  # level 41
-        {"wood": 2175317, "marble": 2301767},  # level 42
-        {"wood": 2610603, "marble": 2762392},  # level 43
-        {"wood": 3132948, "marble": 3315144},  # level 44
-        {"wood": 3759764, "marble": 3978446},  # level 45
-        {"wood": 4511941, "marble": 4774409},  # level 46
-        {"wood": 5414554, "marble": 5729565},  # level 47
-        {"wood": 6497687, "marble": 6875750}  # level 48
     ],
     "winnica": [
         {"wood": 467, "marble": 116},  # level 2
@@ -1117,6 +952,208 @@ infos = {
             {"wood": 4291524, "marble": 7478201},  # level 46
             {"wood": 5199343, "marble": 9383420}  # level 47 max
         ]
+    },
+    'stocznia': {
+        'description': 'Co to za wyspa bez floty? W Stoczni budowane są potężne okręty wojenne i przygotowywane do'
+                       ' dalekich wypraw przez oceany. Piraci na siedmiu morzach trzęsą się na ich widok! Większa'
+                       ' Stocznia pozwala szybciej budować okręty.',
+        'require': 'Suchy Dok (Wojsko)',
+        'max_level': 38,
+        'needed_materials': ['wood', 'marble'],
+        'materials': [
+            {"wood": 105, "marble": 0},  # level 1
+            {"wood": 202, "marble": 0},  # level 2
+            {"wood": 324, "marble": 0},  # level 3
+            {"wood": 477, "marble": 0},  # level 4
+            {"wood": 671, "marble": 0},  # level 5
+            {"wood": 914, "marble": 778},  # level 6
+            {"wood": 1222, "marble": 1052},  # level 7
+            {"wood": 1609, "marble": 1397},  # level 8
+            {"wood": 2096, "marble": 1832},  # level 9
+            {"wood": 2711, "marble": 2381},  # level 10
+            {"wood": 3485, "marble": 3071},  # level 11
+            {"wood": 4460, "marble": 3942},  # level 12
+            {"wood": 5689, "marble": 5038},  # level 13
+            {"wood": 7238, "marble": 6420},  # level 14
+            {"wood": 9190, "marble": 8161},  # level 15
+            {"wood": 11648, "marble": 10354},  # level 16
+            {"wood": 14746, "marble": 13118},  # level 17
+            {"wood": 18649, "marble": 16601},  # level 18
+            {"wood": 23568, "marble": 20989},  # level 19
+            {"wood": 29765, "marble": 26517},  # level 20
+            {"wood": 37573, "marble": 33484},  # level 21
+            {"wood": 47412, "marble": 42261},  # level 22
+            {"wood": 59808, "marble": 53321},  # level 23
+            {"wood": 75428, "marble": 67256},  # level 24
+            {"wood": 95108, "marble": 84814},  # level 25
+            {"wood": 119906, "marble": 106938},  # level 26
+            {"wood": 151151, "marble": 134814},  # level 27
+            {"wood": 190520, "marble": 169937},  # level 28
+            {"wood": 240124, "marble": 214192},  # level 29
+            {"wood": 302626, "marble": 269954},  # level 30
+            {"wood": 381378, "marble": 340214},  # level 31
+            {"wood": 480605, "marble": 428741}  # level 32
+        ]
+    },
+    'koszary': {
+        'description': 'W koszarach niesforna młodzież jest szkolona, aby stała się gorliwymi wojownikami. Twoi'
+                       ' żołnierze wiedzą jak posługiwać się mieczami, włóczniami i katapultami. Posiadają także'
+                       ' zdolność dowodzenia najpotężniejszymi maszynami wojennymi na polu walki. Żołnierze są'
+                       ' szkoleni szybciej, kiedy rozbudujesz swoje koszary.',
+        'require': 'Nic',
+        'max_level': 49,
+        'needed_materials': ['wood', 'marble'],
+        'materials': [
+            {"wood": 49, "marble": 0},  # level 1
+            {"wood": 114, "marble": 0},  # level 2
+            {"wood": 195, "marble": 0},  # level 3
+            {"wood": 296, "marble": 0},  # level 4
+            {"wood": 420, "marble": 0},  # level 5
+            {"wood": 574, "marble": 0},  # level 6
+            {"wood": 766, "marble": 0},  # level 7
+            {"wood": 1003, "marble": 0},  # level 8
+            {"wood": 1297, "marble": 178},  # level 9
+            {"wood": 1662, "marble": 431},  # level 10
+            {"wood": 2115, "marble": 745},  # level 11
+            {"wood": 2676, "marble": 1134},  # level 12
+            {"wood": 3371, "marble": 1616},  # level 13
+            {"wood": 4234, "marble": 2214},  # level 14
+            {"wood": 5304, "marble": 2956},  # level 15
+            {"wood": 6630, "marble": 3875},  # level 16
+            {"wood": 8275, "marble": 5015},  # level 17
+            {"wood": 10314, "marble": 6429},  # level 18
+            {"wood": 12843, "marble": 8183},  # level 19
+            {"wood": 15979, "marble": 10357},  # level 20
+            {"wood": 19868, "marble": 13052},  # level 21
+            {"wood": 24690, "marble": 16395},  # level 22
+            {"wood": 30669, "marble": 20540},  # level 23
+            {"wood": 38083, "marble": 25680},  # level 24
+            {"wood": 47277, "marble": 32054},  # level 25
+            {"wood": 58676, "marble": 39957},  # level 26
+            {"wood": 72812, "marble": 49757},  # level 27
+            {"wood": 90341, "marble": 61909},  # level 28
+            {"wood": 112076, "marble": 76977},  # level 29
+            {"wood": 139028, "marble": 95661},  # level 30
+            {"wood": 172448, "marble": 118830},  # level 31
+            {"wood": 213889, "marble": 147560},  # level 32
+            {"wood": 265276, "marble": 183185},  # level 33
+            {"wood": 328996, "marble": 227359},  # level 34
+            {"wood": 408008, "marble": 282136},  # level 35
+            {"wood": 505984, "marble": 350059},  # level 36
+            {"wood": 627473, "marble": 434283},  # level 37
+            {"wood": 778120, "marble": 538721},  # level 38
+            {"wood": 964923, "marble": 668224},  # level 39
+            {"wood": 1196558, "marble": 828808},  # level 40
+            {"wood": 1483785, "marble": 1027932},  # level 41
+            {"wood": 1839947, "marble": 1274847},  # level 42
+            {"wood": 2281588, "marble": 1581020},  # level 43
+            {"wood": 2829223, "marble": 1960675},  # level 44
+            {"wood": 3508290, "marble": 2431447},  # level 45
+            {"wood": 4350333, "marble": 3015205},  # level 46
+            {"wood": 5394466, "marble": 3739064},  # level 47
+            {"wood": 6689191, "marble": 4636650},  # level 48
+            {"wood": 8294651, "marble": 5749656}  # level 49 max
+        ]
+    },
+    'mur miejski': {
+        'description': 'Mur Miejski ochrania Twoich obywateli przed wrogami i palącym słońcem. Miej się na baczności!'
+                       ' Wrogowie będą próbowali wydrążyć dziury w Twoim murze albo będą się wspinać na niego. Każdy'
+                       ' poziom Twojego Muru Miejskiego podwyższa wytrzymałość Twojego muru..',
+        'require': 'Nic',
+        'max_level': 48,
+        'needed_materials': ['wood', 'marble'],
+        'materials': [
+            {"wood": 114, "marble": 0},  # level 1
+            {"wood": 361, "marble": 203},  # level 2
+            {"wood": 657, "marble": 516},  # level 3
+            {"wood": 1012, "marble": 892},  # level 4
+            {"wood": 1439, "marble": 1344},  # level 5
+            {"wood": 1951, "marble": 1885},  # level 6
+            {"wood": 2565, "marble": 2535},  # level 7
+            {"wood": 3302, "marble": 3315},  # level 8
+            {"wood": 4186, "marble": 4251},  # level 9
+            {"wood": 5247, "marble": 5374},  # level 10
+            {"wood": 6521, "marble": 6721},  # level 11
+            {"wood": 8049, "marble": 8338},  # level 12
+            {"wood": 9882, "marble": 10279},  # level 13
+            {"wood": 12083, "marble": 12608},  # level 14
+            {"wood": 14724, "marble": 15402},  # level 15
+            {"wood": 17892, "marble": 18755},  # level 16
+            {"wood": 21695, "marble": 22779},  # level 17
+            {"wood": 26258, "marble": 27607},  # level 18
+            {"wood": 31733, "marble": 33402},  # level 19
+            {"wood": 38304, "marble": 40355},  # level 20
+            {"wood": 46189, "marble": 48699},  # level 21
+            {"wood": 55650, "marble": 58711},  # level 22
+            {"wood": 67004, "marble": 70726},  # level 23
+            {"wood": 80629, "marble": 85144},  # level 24
+            {"wood": 96979, "marble": 102446},  # level 25
+            {"wood": 116599, "marble": 123208},  # level 26
+            {"wood": 140143, "marble": 148122},  # level 27
+            {"wood": 168395, "marble": 178019},  # level 28
+            {"wood": 202298, "marble": 213896},  # level 29
+            {"wood": 242982, "marble": 256948},  # level 30
+            {"wood": 291802, "marble": 308610},  # level 31
+            {"wood": 350387, "marble": 370605},  # level 32
+            {"wood": 420688, "marble": 444998},  # level 33
+            {"wood": 505049, "marble": 534270},  # level 34
+            {"wood": 606284, "marble": 641397},  # level 35
+            {"wood": 727765, "marble": 769949},  # level 36
+            {"wood": 873541, "marble": 924213},  # level 37
+            {"wood": 1048473, "marble": 1109328},  # level 38
+            {"wood": 1258393, "marble": 1331467},  # level 39
+            {"wood": 1510294, "marble": 1598031},  # level 40
+            {"wood": 1812577, "marble": 1917913},  # level 41
+            {"wood": 2175317, "marble": 2301767},  # level 42
+            {"wood": 2610603, "marble": 2762392},  # level 43
+            {"wood": 3132948, "marble": 3315144},  # level 44
+            {"wood": 3759764, "marble": 3978446},  # level 45
+            {"wood": 4511941, "marble": 4774409},  # level 46
+            {"wood": 5414554, "marble": 5729565},  # level 47
+            {"wood": 6497687, "marble": 6875750}  # level 48
+        ]
+    },
+    'ambasada': {
+        'description': 'Ambasada jest ruchliwym miejscem: Dyplomaci z całego świata negocjują tutaj kontrakty,'
+                       ' podpisują traktaty i zakładają sojusze. Jeśli chcesz powiększyć sojusz, musisz rozbudować'
+                       ' ambasadę. Każdy następny poziom ambasady zwiększa Twoje punkty dyplomacji.',
+        'require': 'Obce kultury (Żegluga)',
+        'max_level': 32,
+        'needed_materials': ['wood', 'marble'],
+        'materials': [
+            {"wood": 242, "marble": 155},  # level 1
+            {"wood": 415, "marble": 342},  # level 2
+            {"wood": 623, "marble": 571},  # level 3
+            {"wood": 873, "marble": 850},  # level 4
+            {"wood": 1173, "marble": 1190},  # level 5
+            {"wood": 1532, "marble": 1606},  # level 6
+            {"wood": 1964, "marble": 2112},  # level 7
+            {"wood": 2482, "marble": 2730},  # level 8
+            {"wood": 3103, "marble": 3484},  # level 9
+            {"wood": 3849, "marble": 4404},  # level 10
+            {"wood": 4743, "marble": 5527},  # level 11
+            {"wood": 5817, "marble": 6896},  # level 12
+            {"wood": 7105, "marble": 8566},  # level 13
+            {"wood": 8651, "marble": 10604},  # level 14
+            {"wood": 10507, "marble": 13090},  # level 15
+            {"wood": 12733, "marble": 16123},  # level 16
+            {"wood": 15404, "marble": 19824},  # level 17
+            {"wood": 18610, "marble": 24339},  # level 18
+            {"wood": 22457, "marble": 29846},  # level 19
+            {"wood": 27074, "marble": 36566},  # level 20
+            {"wood": 32614, "marble": 44764},  # level 21
+            {"wood": 39261, "marble": 54765},  # level 22
+            {"wood": 47239, "marble": 66967},  # level 23
+            {"wood": 56811, "marble": 81853},  # level 24
+            {"wood": 68299, "marble": 100014},  # level 25
+            {"wood": 82084, "marble": 122170},  # level 26
+            {"wood": 98625, "marble": 149201},  # level 27
+            {"wood": 118475, "marble": 182178},  # level 28
+            {"wood": 142295, "marble": 222411},  # level 29
+            {"wood": 170879, "marble": 271495},  # level 30
+            {"wood": 205180, "marble": 331377},  # level 31
+            {"wood": 246341, "marble": 404433}  # level 32
+        ]
     }
 }
 
@@ -1137,7 +1174,13 @@ def change_icon(name):
     elif name == 'muzeum':
         return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/museum_l.png'
     elif name == 'port handlowy':
-        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/port_r.png'
+        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/port_l.png'
+    elif name == 'stocznia':
+        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/shipyard_l.png'
+    elif name == 'mur miejski':
+        return 'https://s42-pl.ikariam.gameforge.com/skin/buildings/y100/wall.png'
+    elif name == 'ambasada':
+        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/embassy_l.png'
     else:
         return ''
 
@@ -1147,5 +1190,7 @@ def try_alias(name):
         return 'rezydencja gubernatora'
     elif name in ('port', 'handlowy'):
         return 'port handlowy'
+    elif name in ('mur', 'miejski'):
+        return 'mur miejski'
     else:
         return name
