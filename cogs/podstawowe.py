@@ -178,8 +178,7 @@ class Podstawowe(cmd.Cog):
 
     @cmd.command(
         name='info',
-        description='Informacje na temat bota',
-        hidden=True
+        description='Informacje na temat bota'
     )
     async def info_command(self, ctx):
         await ctx.send(embed=Embed(
