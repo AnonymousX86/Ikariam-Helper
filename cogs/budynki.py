@@ -1,6 +1,6 @@
 from discord.ext import commands as cmd
 from discord import Embed
-from src.buildings import infos, change_icon, try_alias
+from src.buildings import infos
 
 
 # Dodawanie separatora
@@ -53,9 +53,6 @@ class Budynki(cmd.Cog):
 
         # Budynek jest przechowywany jako małe litery, aby uniknąć błędów
         building = building.lower()
-
-        # Sprawdzanie aliasów
-        building = try_alias(building)
 
         # Domyślne wartości
         error_color = 0xe60000
@@ -155,7 +152,13 @@ class Budynki(cmd.Cog):
                 )
 
             # Miniatura budynku
-            miniature = change_icon(building)
+            miniature = ''
+            if building == 'ratusz':
+                miniature = 'https://s42-pl.ikariam.gameforge.com/skin/img/city/townhall_l.png'
+            elif building == 'akademia':
+                miniature = 'https://s42-pl.ikariam.gameforge.com/skin/img/city/academy_l.png'
+            elif building == 'magazyn':
+                miniature = 'https://s42-pl.ikariam.gameforge.com/skin/img/city/warehouse_l.png'
             if miniature != '':
                 building_embed.set_thumbnail(
                     url=miniature
