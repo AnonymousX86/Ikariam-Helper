@@ -1,3 +1,4 @@
+# Koszty budynków
 costs = {
     "wieża alchemika": [
         {"wood": 467, "marble": 116},  # level 2
@@ -614,6 +615,7 @@ costs = {
     ]
 }
 
+# Informacje o budynkach
 infos = {
     'ratusz': {
         'description': 'W sercu miasta możesz znaleźć Ratusz, którego poziom oznacza poziom Twojego miasteczka.'
@@ -1158,6 +1160,7 @@ infos = {
 }
 
 
+# Funkcja dodawania ikony budynku
 def change_icon(name):
     if name == 'ratusz':
         return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/townhall_l.png'
@@ -1185,6 +1188,7 @@ def change_icon(name):
         return ''
 
 
+# Sprawdzanie aliasów nazwy budynku
 def try_alias(name):
     if name in ('rezydencja', 'gubernator'):
         return 'rezydencja gubernatora'
