@@ -671,6 +671,7 @@ infos = {
             {"wood": 2276286, "marble": 6058643},  # level 39
             {"wood": 2761291, "marble": 7716366}  # level 40 max
         ]
+        # TODO - ilość mieszkańców na poziom Ratusza
     },
     'akademia': {
         'description': 'Akademia jest wzniosłym miejscem pełnym wiedzy,'
@@ -717,6 +718,7 @@ infos = {
             {"wood": 1257246, "crystal": 2642548},  # level 31
             {"wood": 1736683, "crystal": 3790483}  # level 32
         ]
+        # TODO - ilość naukowców na poziom Akademii
     },
     'magazyn': {
         'description': 'Część Twojego zaopatrzenia jest chroniona w magazynie. Magazyn pozwala zabezpieczyć'
@@ -768,6 +770,7 @@ infos = {
             {"wood": 652752, "marble": 339745},  # level 39
             {"wood": 783398, "marble": 407790}  # level 40
         ]
+        # TODO - pojemność magazynu na poziom i bezpieczna pojemność
     },
     'tawerna': {
         'description': 'Po pracowitym dniu nie ma nic przyjemniejszego niż chłodny dzban wina. Oto dlaczego Twoi'
@@ -826,6 +829,7 @@ infos = {
             {"wood": 2211407, "marble": 5713425},  # level 46
             {"wood": 2653789, "marble": 7427454}  # level 47 max
         ]
+        # TODO - wyszynk i zadowolenie na wyszynk
     },
     'pałac': {
         'description': 'Pałac jest doskonałym miejscem do poprowadzenia Twojego imperium ku przyszłości! Pozwala'
@@ -1000,6 +1004,7 @@ infos = {
             {"wood": 381378, "marble": 340214},  # level 31
             {"wood": 480605, "marble": 428741}  # level 32
         ]
+        # TODO - dostępne jednostki na dany poziom Stoczni
     },
     'koszary': {
         'description': 'W koszarach niesforna młodzież jest szkolona, aby stała się gorliwymi wojownikami. Twoi'
@@ -1060,6 +1065,7 @@ infos = {
             {"wood": 6689191, "marble": 4636650},  # level 48
             {"wood": 8294651, "marble": 5749656}  # level 49 max
         ]
+        # TODO - dostępne jednostki na dany poziom koszar
     },
     'mur miejski': {
         'description': 'Mur Miejski ochrania Twoich obywateli przed wrogami i palącym słońcem. Miej się na baczności!'
@@ -1118,6 +1124,7 @@ infos = {
             {"wood": 5414554, "marble": 5729565},  # level 47
             {"wood": 6497687, "marble": 6875750}  # level 48
         ]
+        # TODO - szczegóły obronności
     },
     'ambasada': {
         'description': 'Ambasada jest ruchliwym miejscem: Dyplomaci z całego świata negocjują tutaj kontrakty,'
