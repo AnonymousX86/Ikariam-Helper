@@ -1,3 +1,7 @@
+"""
+encoding=utf-8
+"""
+
 # Koszty budynków
 costs = {
     "wieża alchemika": [

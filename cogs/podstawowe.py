@@ -1,3 +1,6 @@
+"""
+encoding=utf-8
+"""
 from discord.ext import commands as cmd
 from datetime import datetime as d
 from discord import __version__ as version, Guild, Embed
