@@ -24,7 +24,7 @@ async def on_ready():
     print('Logged on as: {0} ({0.id})'.format(bot.user))
 
     # Changing presence
-    game = Game("Ikariam (Thanathos)")
+    game = Game("Ikariam (Dolina Królów)")
     await bot.change_presence(status=Status.online, activity=game, afk=False)
 
     # Changing default help command
