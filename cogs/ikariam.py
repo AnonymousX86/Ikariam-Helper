@@ -1,3 +1,6 @@
+"""
+encoding=utf-8
+"""
 from discord.ext import commands as cmd
 from discord import Embed
 from src.buildings import infos, change_icon, try_alias
@@ -35,7 +38,7 @@ def upper_name(name):
                 i += 1
 
 
-class Budynki(cmd.Cog):
+class Ikariam(cmd.Cog):
 
     def __init__(self, bot):
         self.bot = bot
@@ -173,4 +176,4 @@ class Budynki(cmd.Cog):
 
 
 def setup(bot):
-    bot.add_cog(Budynki(bot))
+    bot.add_cog(Ikariam(bot))

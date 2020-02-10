@@ -33,7 +33,7 @@ async def on_ready():
     bot.remove_command('help')
 
     # Loading cogs
-    cogs = ['cogs.podstawowe', 'cogs.budynki']
+    cogs = ['cogs.podstawowe', 'cogs.ikariam']
     for cog in cogs:
         bot.load_extension(cog)
 
