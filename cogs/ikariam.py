@@ -160,7 +160,7 @@ class Ikariam(cmd.Cog):
                 building_embed.add_field(
                     name='Poziom',
                     value=level,
-                    inline=False
+                    inline=True
                 ).add_field(
                     name='Wymagane surowce',
                     value=resources,
@@ -181,7 +181,7 @@ class Ikariam(cmd.Cog):
         name='monument',
         description='Pokazuje czas odnowienia się cudów',
         help='Podaj nazwę cudu, aby poznać jego szczegóły lub dodaj argument "t", aby zobaczyć skrócony czas.'
-             '(Dla osób z Teokracją)',
+             ' (Dla osób z Teokracją)',
         aliases=['m', 'monumenty', 'cud', 'cuda'],
         usage='[nazwa monumentu] ["t"]'
     )
