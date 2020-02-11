@@ -22,7 +22,7 @@ bot = Bot(
 @bot.event
 async def on_ready():
     # Bot-level values
-    bot.version = '0.2'
+    bot.version = '0.3'
 
     # Login info
     print('Logged on as: {0} ({0.id})'.format(bot.user))

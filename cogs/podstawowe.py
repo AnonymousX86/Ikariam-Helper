@@ -217,7 +217,11 @@ class Podstawowe(cmd.Cog):
             '0.1': 'Podstawowa wersja bota.\n'
                    'Dodane zostały wszystkie komendy z kategorii *"podstawowe"*.',
             '0.2': 'Dodano komendę *"budynki"* zawierającą wszystkie informacje o budynkach.\n'
-                   'Dodano komendę *"changelog"*.'
+                   'Dodano komendę *"changelog"*.',
+            '0.3': 'Dodano komendę *"monument"* zawierającą informacje na temat czasów trwania i odnowienia się '
+                   'cudów.\n '
+                   'Usunięto błąd związany z komendą *"pomoc"*.\n'
+                   'Alias *"p"* odwołuje się teraz do *"pomoc"*, a nie do *"ping"*.',
         }
         changelog_embed = Embed(
             title=':gear: Changelog',
