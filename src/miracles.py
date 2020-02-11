@@ -34,7 +34,6 @@ def change_icon(name):
     pass
 
 
-# TODO - funkcja sprawdzania aliasu monumentu
 def try_alias(name):
     if name in ('kuźnia', 'kuznia', 'hefajstosa', 'hefajstos'):
         return 'kuźnia hefajstosa'
