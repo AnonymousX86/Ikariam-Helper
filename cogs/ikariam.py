@@ -273,6 +273,102 @@ class Ikariam(cmd.Cog):
 
     # TODO - komenda: wymagania sojuszu
 
+    @cmd.command(
+        name='rada',
+        description='Pokazuje całą Radę Sojuszu',
+        aliases=['sojusz', 'soj']
+    )
+    async def council_cmd(self, ctx):
+
+        # Przywódca
+        leader_role = get(ctx.guild.roles, name='Przywódca')
+        leader_user = '\u200b'
+
+        # Generał
+        general_role = get(ctx.guild.roles, name='Generał')
+        general_user = '\u200b'
+
+        # Dyplomata
+        diplomat_role = get(ctx.guild.roles, name='Dyplomata')
+        diplomat_user = '\u200b'
+
+        # Minster Spraw Wewnętrznych
+        msw_role = get(ctx.guild.roles, name='Minister Spraw Wewnętrznych')
+        msw_user = '\u200b'
+
+        # Rada Sojuszu
+        council_role = get(ctx.guild.roles, name='Rada Sojuszu')
+        council_users = '\u200b'
+
+        for member in ctx.guild.members:
+
+            """
+            Nazwy użytkowników są dodawane, a nie podmieniane, aby uzyskać dodatkowo funkcję debugowania
+            """
+
+            if leader_role in member.roles:
+                leader_user += f'{member.display_name}'
+                if member.nick is None:
+                    leader_user += ' *(brak nicku)*'
+                leader_user += '\n'
+
+            if general_role in member.roles:
+                general_user += f'{member.display_name}'
+                if member.nick is None:
+                    general_user += ' *(brak nicku)*'
+                general_user += '\n'
+
+            if diplomat_role in member.roles:
+                diplomat_user += f'{member.display_name}'
+                if member.nick is None:
+                    diplomat_user += ' *(brak nicku)*'
+                diplomat_user += '\n'
+
+            if msw_role in member.roles:
+                msw_user += f'{member.display_name}'
+                if member.nick is None:
+                    msw_user += ' *(brak nicku)*'
+                msw_user += '\n'
+
+            if council_role in member.roles and \
+                    leader_role not in member.roles and \
+                    general_role not in member.roles and \
+                    diplomat_role not in member.roles and \
+                    msw_role not in member.roles:
+
+                council_users += f'{member.display_name}'
+                if member.nick is None:
+                    council_users += ' *(brak nicku)*'
+                council_users += '\n'
+
+        council_embed = Embed(
+            title=':man_mage: Rada Sojuszu',
+            color=0xe67300
+        ).add_field(
+            name='Przywódca',
+            value=leader_user,
+            inline=False
+        ).add_field(
+            name='Generał',
+            value=general_user,
+            inline=False
+        ).add_field(
+            name='Dyplomata',
+            value=diplomat_user,
+            inline=False
+        ).add_field(
+            name='Minister Spraw Wewnętrznych',
+            value=msw_user,
+            inline=False
+        ).add_field(
+            name='Rada Sojuszu',
+            value=council_users,
+            inline=False
+        )
+
+        await ctx.send(embed=council_embed)
+        return
+
 
 def setup(bot):
     bot.add_cog(Ikariam(bot))
