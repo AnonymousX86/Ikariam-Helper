@@ -68,6 +68,7 @@ class Ikariam(cmd.Cog):
         # Sprawdzanie aliasów
         building = try_building_alias(building)
 
+        # Domyślny tytuł
         default_title = ':card_index: Architektorium'
 
         # Nie podano nazwy budynku
