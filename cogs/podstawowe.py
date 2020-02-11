@@ -14,7 +14,7 @@ class Podstawowe(cmd.Cog):
     @cmd.command(
         name='pomoc',
         description='Wyświetla pomoc na temat komend bota',
-        aliases=['help', 'komendy'],
+        aliases=['p', 'help', 'komendy'],
         help='Wyświetla ten komunikat lub pomoc na temat konkretniej komendy lub kategorii',
         usage='[komenda|kategoria]',
         enabled=True
@@ -141,8 +141,7 @@ class Podstawowe(cmd.Cog):
     @cmd.command(
         name='ping',
         description='Narzędzie ping',
-        help='Sprawdza opóźnienie bota',
-        aliases=['p']
+        help='Sprawdza opóźnienie bota'
     )
     async def ping_cmd(self, ctx):
         start = d.timestamp(d.now())
