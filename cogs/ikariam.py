@@ -172,7 +172,67 @@ class Ikariam(cmd.Cog):
                 )
 
         await ctx.send(embed=building_embed)
+        return
 
+    @cmd.command(
+        name='monument',
+        description='Pokazuje czas odnowienia się cudów',
+        help='Podaj nazwę cudu, aby poznać jego szczegóły lub dodaj argument "t", aby zobaczyć skrócony czas.'
+             '(Dla osób z Teokracją)',
+        aliases=['m', 'monumenty', 'cud', 'cuda'],
+        usage='[nazwa monumentu] ["t"]',
+        enabled=False
+    )
+    async def miracle_cmd(self, ctx, miracle='all', theocracy='n'):
+
+        # Domyślne wartości
+        default_title = ':classical_building: Monumenty'
+        default_color = 0x00cccc
+
+        # Sprawdzanie aliasu
+        miracle = try_miracle_alias(miracle)
+
+        # Cud nie został sprecyzowany
+        if miracle == 'all':
+            miracle_embed = Embed(
+                title=default_title,
+                color=default_color
+            )
+            # TODO - wyświetlane są wszystkie monumenty (czas bez Teokracji)
+
+        # Podano tylko argument "t"
+        elif miracle == 't':
+            miracle_embed = Embed(
+                title=default_title,
+                color=default_color
+            )
+            # TODO - wyświetlane są wszystkie monumenty (czas z Teokracją)
+
+        # Cud nie istnieje
+        elif miracle not in miracle_infos:
+            miracle_embed = Embed(
+                title=default_title,
+                description=f':no_entry: Monument **{upper_name(miracle)}** nie istnieje!',
+                color=error_color
+            )
+
+        # Podano argument "t"
+        elif theocracy == 't':
+            miracle_embed = Embed(
+                title=default_title,
+                color=default_color
+            )
+            # TODO - wysyłany jest konkretny monument (czas z Teokracją)
+
+        # Podano nazwę cudu, ale bez Teokracji
+        else:
+            miracle_embed = Embed(
+                title=default_title,
+                color=default_color
+            )
+            # TODO - wysyłany jest konkretny monument (czas bez teokracji)
+
+        await ctx.send(embed=miracle_embed)
         return
 
 
