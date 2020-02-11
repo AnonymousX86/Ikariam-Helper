@@ -66,16 +66,14 @@ class Ikariam(cmd.Cog):
         building = building.lower()
 
         # Sprawdzanie aliasów
-        building = try_alias(building)
+        building = try_building_alias(building)
 
-        # Domyślne wartości
-        error_color = 0xe60000
         default_title = ':card_index: Architektorium'
 
         # Nie podano nazwy budynku
         if building == '':
             b_list = ''
-            for b in infos:
+            for b in building_infos:
                 b_list += f'- {b}\n'
             building_embed = Embed(
                 title=default_title,
@@ -88,7 +86,7 @@ class Ikariam(cmd.Cog):
             )
 
         # Nie ma takiego budynku
-        elif building not in infos:
+        elif building not in building_infos:
             building_embed = Embed(
                 title=default_title,
                 description=f':no_entry: Budynek **{upper_name(building)}** nie istnieje!',
@@ -96,11 +94,11 @@ class Ikariam(cmd.Cog):
             )
 
         # Dany budynek nie ma takiego poziomu
-        elif level > infos[building]['max_level']:
+        elif level > building_infos[building]['max_level']:
             building_embed = Embed(
                 title=default_title,
                 description=f':no_entry: Budynek **{upper_name(building)}**'
-                            f' ma maksymalny poziom __{infos[building]["max_level"]}__!',
+                            f' ma maksymalny poziom __{building_infos[building]["max_level"]}__!',
                 color=error_color
             )
 
@@ -126,23 +124,23 @@ class Ikariam(cmd.Cog):
             if level == 0:
                 building_embed.add_field(
                     name='Opis',
-                    value=infos[building]['description'],
+                    value=building_infos[building]['description'],
                     inline=False
                 ).add_field(
                     name='Wymagania',
-                    value=infos[building]['require'],
+                    value=building_infos[building]['require'],
                     inline=False
                 ).add_field(
                     name='Maksymalny poziom',
-                    value=infos[building]['max_level'],
+                    value=building_infos[building]['max_level'],
                     inline=False
                 )
 
             # Informacje na konkretny poziom budynku
             else:
                 resources = ''
-                for r in infos[building]['needed_materials']:
-                    if (n := infos[building]['materials'][level - 1][r]) >= 0:
+                for r in building_infos[building]['needed_materials']:
+                    if (n := building_infos[building]['materials'][level - 1][r]) >= 0:
                         if r == 'wood':
                             resources += f'<:drewno:671763268049829918>'
                         elif r == 'marble':
@@ -153,7 +151,7 @@ class Ikariam(cmd.Cog):
                             resources += f'<:siarka:671763267592650762>'
                         else:
                             resources += f'<:wino:671763268053893139>'
-                        resources += f' {separate(n)}{" | " if r != infos[building]["needed_materials"][-1] and len(infos[building]["needed_materials"]) > 1 else ""} '
+                        resources += f' {separate(n)}{" | " if r != building_infos[building]["needed_materials"][-1] and len(building_infos[building]["needed_materials"]) > 1 else ""} '
 
                 building_embed.add_field(
                     name='Poziom',
@@ -166,7 +164,7 @@ class Ikariam(cmd.Cog):
                 )
 
             # Miniatura budynku
-            miniature = change_icon(building)
+            miniature = change_building_icon(building)
             if miniature != '':
                 building_embed.set_thumbnail(
                     url=miniature
