@@ -30,14 +30,7 @@ async def on_ready():
     print('Logged on as: {0} ({0.id})'.format(bot.user))
 
     # Changing presence
-    activity = Activity(
-        name='Ikariam',
-        type='playing',
-        state='Thanathos',
-        details='Dolina Królów'
-    )
-    await bot.change_presence(status=Status.online, activity=activity, afk=False)
-
+    await bot.change_presence(status=Status.online, activity=Game(name='Ikariam'), afk=False)
 
     # Loading cogs
     cogs = ['cogs.podstawowe', 'cogs.ikariam']
