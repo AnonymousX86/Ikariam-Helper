@@ -45,9 +45,6 @@ def upper_name(name):
                 i += 1
 
 
-error_color = 0xe60000
-
-
 class Ikariam(cmd.Cog):
 
     def __init__(self, bot):
@@ -93,7 +90,7 @@ class Ikariam(cmd.Cog):
             building_embed = Embed(
                 title=default_title,
                 description=f':no_entry: Budynek **{upper_name(building)}** nie istnieje!',
-                color=error_color
+                color=self.bot.error_color
             )
 
         # Dany budynek nie ma takiego poziomu
@@ -102,7 +99,7 @@ class Ikariam(cmd.Cog):
                 title=default_title,
                 description=f':no_entry: Budynek **{upper_name(building)}**'
                             f' ma maksymalny poziom __{building_infos[building]["max_level"]}__!',
-                color=error_color
+                color=self.bot.error_color
             )
 
         # Poziom to co najmniej 1
@@ -110,7 +107,7 @@ class Ikariam(cmd.Cog):
             building_embed = Embed(
                 title=default_title,
                 description=':no_entry: Błędny poziom budynku!',
-                color=error_color
+                color=self.bot.error_color
             )
 
         # Brak błędów
@@ -215,7 +212,7 @@ class Ikariam(cmd.Cog):
             miracle_embed = Embed(
                 title=default_title,
                 description=f':no_entry: Monument **{upper_name(miracle)}** nie istnieje!',
-                color=error_color
+                color=self.bot.error_color
             )
 
         # Podano argument "t"
