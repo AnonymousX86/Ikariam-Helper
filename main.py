@@ -23,7 +23,6 @@ bot = Bot(
 async def on_ready():
     # Bot-level values
     bot.version = '0.3'
-    # Domyślny kolor błędu
     bot.error_color = 0xe60000
 
     # Login info
