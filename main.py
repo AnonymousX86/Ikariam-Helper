@@ -14,7 +14,8 @@ bot = Bot(
     command_prefix='.',
     owner_id=309270832683679745,
     description='Pomocnik sojuszu Dolina Królów',
-    case_insensitive=False
+    case_insensitive=False,
+    help_command=None
 )
 
 
@@ -35,8 +36,6 @@ async def on_ready():
     )
     await bot.change_presence(status=Status.online, activity=activity, afk=False)
 
-    # Changing default help command
-    bot.remove_command('help')
 
     # Loading cogs
     cogs = ['cogs.podstawowe', 'cogs.ikariam']
