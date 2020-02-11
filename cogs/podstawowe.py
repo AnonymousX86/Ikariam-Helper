@@ -25,10 +25,10 @@ class Podstawowe(cmd.Cog):
         help_embed = Embed(
             title=':question: Menu pomocy',
             color=0x3498DB
-        )
-        help_embed.set_thumbnail(url=self.bot.user.avatar_url)
-        help_embed.set_footer(
-            text=f'Żądane przez {ctx.message.author.name}',
+        ).set_thumbnail(
+            url=self.bot.user.avatar_url
+        ).set_footer(
+            text='Prywatny bot sojuszu Ikariam, Dolina Królów',
             icon_url=ctx.message.author.avatar_url
         )
 
@@ -43,7 +43,10 @@ class Podstawowe(cmd.Cog):
                 cog_command = self.bot.get_cog(cog).get_commands()
                 command_list = ''
                 for command in cog_command:
-                    command_list += f'**{command.name}** - *{command.description}*\n'
+                    if command.brief:
+                        command_list += f'**{command.name}** - *{command.brief}*\n'
+                    else:
+                        command_list += f'**{command.name}** - *{command.description}*\n'
 
                 # Add field for each cog
                 help_embed.add_field(
@@ -82,13 +85,23 @@ class Podstawowe(cmd.Cog):
 
                 for command in command_list:
 
-                    help_text += f'```{command.name}```' \
-                                 f'{command.description}\n'
+                    help_text += f'```{command.name}```\n'
+
+                    if command.description:
+                        help_text += f'{command.description}\n\n'
+
+                    if command.help:
+                        temp_cmd_help = f'**Użycie:** {command.help}\n\n'
+                    else:
+                        temp_cmd_help = ''
+
+                    if command.help:
+                        help_text += f'{temp_cmd_help}'
 
                     if len(command.aliases) > 0:
-                        help_text += f'**Aliasy :** {", ".join(command.aliases)}\n'
+                        help_text += f'**Aliasy :** {", ".join(command.aliases)}\n\n'
                     else:
-                        help_text += 'Brak aliasów\n'
+                        help_text += 'Brak aliasów\n\n'
 
                     help_text += f'**Format :** `{ctx.prefix}' \
                                  f'{command.name}{" " + command.usage + "`" if command.usage is not None else "`"}\n\n'
@@ -102,9 +115,25 @@ class Podstawowe(cmd.Cog):
                     if arg.lower() == c.name:
                         command = c
 
+                if command.help:
+                    temp_cmd_help = f'**Użycie:** {command.help}\n\n'
+                else:
+                    temp_cmd_help = ''
+
                 cmd_help_text = ''
-                cmd_help_text += f'```{command.name}```' \
-                                 f'{command.description}\n'
+
+                cmd_help_text += f'```{command.name}```\n'
+
+                if command.description:
+                    cmd_help_text += f'{command.description}\n\n'
+
+                if command.help:
+                    temp_cmd_help = f'**Użycie:** {command.help}\n\n'
+                else:
+                    temp_cmd_help = ''
+
+                if command.help:
+                    cmd_help_text += f'{temp_cmd_help}'
 
                 if len(command.aliases) > 0:
                     cmd_help_text += f'**Aliasy :** {", ".join(command.aliases)}\n'
@@ -208,6 +237,7 @@ class Podstawowe(cmd.Cog):
     @cmd.command(
         name='changelog',
         description='Ostatnie zmiany bota',
+        help='Aby zobaczyć konkretną wersję wpisz jej numer, przykładowo: `0.1`',
         aliases=['cl'],
         usage='[wersja]'
     )
@@ -230,7 +260,8 @@ class Podstawowe(cmd.Cog):
         def add_field(x):
             changelog_embed.add_field(
                 name=f'v{x}',
-                value=changelog_data[x]
+                value=changelog_data[x],
+                inline=False
             )
 
         if arg_version == 'all':
