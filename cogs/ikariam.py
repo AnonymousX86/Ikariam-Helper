@@ -235,6 +235,8 @@ class Ikariam(cmd.Cog):
         await ctx.send(embed=miracle_embed)
         return
 
+    # TODO - komenda: wymagania sojuszu
+
 
 def setup(bot):
     bot.add_cog(Ikariam(bot))
