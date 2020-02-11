@@ -43,6 +43,9 @@ def upper_name(name):
                 i += 1
 
 
+error_color = 0xe60000
+
+
 class Ikariam(cmd.Cog):
 
     def __init__(self, bot):
