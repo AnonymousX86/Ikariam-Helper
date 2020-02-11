@@ -252,6 +252,8 @@ class Podstawowe(cmd.Cog):
                    'Dodano komendę *"rada"*.\n'
                    'Usunięto błąd związany z komendą *"pomoc"*.\n'
                    'Alias *"p"* odwołuje się teraz do *"pomoc"*, a nie do *"ping"*.\n'
+                   'Zaktualizowano komendę *"pomoc"*, większy odstęp między polami oraz wyświetlane jest więcej typów'
+                   ' opisów komendy\n'
                    'Poprawki kosmetyczne.',
         }
         changelog_embed = Embed(
