@@ -151,7 +151,11 @@ class Ikariam(cmd.Cog):
                             resources += f'<:siarka:671763267592650762>'
                         else:
                             resources += f'<:wino:671763268053893139>'
-                        resources += f' {separate(n)}{" | " if r != building_infos[building]["needed_materials"][-1] and len(building_infos[building]["needed_materials"]) > 1 else ""} '
+
+                        temp = " | " if r != building_infos[building]["needed_materials"][-1] and \
+                            len(building_infos[building]["needed_materials"]) > 1 else ""
+                        resources += f' {separate(n)}{temp}'
+                        del temp
 
                 building_embed.add_field(
                     name='Poziom',
