@@ -249,8 +249,10 @@ class Podstawowe(cmd.Cog):
                    'Dodano komendę *"changelog"*.',
             '0.3': 'Dodano komendę *"monument"* zawierającą informacje na temat czasów trwania i odnowienia się '
                    'cudów.\n '
+                   'Dodano komendę *"rada"*.\n'
                    'Usunięto błąd związany z komendą *"pomoc"*.\n'
-                   'Alias *"p"* odwołuje się teraz do *"pomoc"*, a nie do *"ping"*.',
+                   'Alias *"p"* odwołuje się teraz do *"pomoc"*, a nie do *"ping"*.\n'
+                   'Poprawki kosmetyczne.',
         }
         changelog_embed = Embed(
             title=':gear: Changelog',
