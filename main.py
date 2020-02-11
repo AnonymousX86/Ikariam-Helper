@@ -3,7 +3,8 @@ encoding=utf-8
 """
 from logging import basicConfig, INFO
 from discord.ext.commands import Bot
-from discord import Activity, Status
+from discord import Game, Status
+from datetime import datetime
 
 # Invite: https://discordapp.com/api/oauth2/authorize?client_id=672448271792472095&permissions=19520&scope=bot
 
