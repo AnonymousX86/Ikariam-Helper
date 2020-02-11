@@ -244,10 +244,6 @@ class Podstawowe(cmd.Cog):
         await ctx.send(embed=changelog_embed)
         return
 
-    # TODO - wymagania sojuszu
-
-    # TODO - czas odnowienia się cudów
-
 
 def setup(bot):
     bot.add_cog(Podstawowe(bot))
