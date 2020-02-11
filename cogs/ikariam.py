@@ -164,12 +164,6 @@ class Ikariam(cmd.Cog):
                     url=miniature
                 )
 
-        # Stopka
-        building_embed.set_footer(
-            text='Ikariam, świat Thanathos',
-            icon_url=ctx.author.avatar_url
-        )
-
         await ctx.send(embed=building_embed)
 
         return
