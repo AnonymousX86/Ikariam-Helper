@@ -29,9 +29,12 @@ infos = {
 }
 
 
-# TODO - funkcja zmiany ikony monumentu
 def change_icon(name):
-    pass
+    if name == 'kuźnia hefajstosa':
+        return 'https://vignette.wikia.nocookie.net/ikariam/images/4/4c/Hephaistos\'_Forge.gif/revision/latest?cb' \
+               '=20090904181708'
+    else:
+        return ''
 
 
 def try_alias(name):
