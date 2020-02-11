@@ -200,7 +200,15 @@ class Ikariam(cmd.Cog):
                 title=default_title,
                 color=default_color
             )
-            # TODO - wyświetlane są wszystkie monumenty (czas bez Teokracji)
+            text = '```md\n'
+            for miracle in miracle_infos:
+                text += f'- {miracle}\n'
+            text += '```'
+            miracle_embed.add_field(
+                name='\u200b',
+                value=text,
+                inline=False
+            )
 
         # Podano tylko argument "t"
         elif miracle == 't':
@@ -218,21 +226,47 @@ class Ikariam(cmd.Cog):
                 color=self.bot.error_color
             )
 
-        # Podano argument "t"
-        elif theocracy == 't':
-            miracle_embed = Embed(
-                title=default_title,
-                color=default_color
-            )
-            # TODO - wysyłany jest konkretny monument (czas z Teokracją)
-
-        # Podano nazwę cudu, ale bez Teokracji
+        # Podano nazwę cudu
         else:
+            miracle_description = ''
+            if theocracy == 't':
+                time_type = 'short'
+            else:
+                time_type = 'normal'
+
+            for index, description in enumerate(miracle_infos[miracle]['effects']):
+                miracle_description += f'**Poziom {index + 1}** - {description}\n\n'
             miracle_embed = Embed(
                 title=default_title,
                 color=default_color
+            ).add_field(
+                name='Nazwa',
+                value=upper_name(miracle),
+                inline=True
+            ).add_field(
+                name='Czas trwania',
+                value=miracle_infos[miracle]['duration'][time_type],
+                inline=True
+            ).add_field(
+                name='Cooldown',
+                value=miracle_infos[miracle]['cooldown'][time_type],
+                inline=True
+            ).add_field(
+                name='Efekty',
+                value=miracle_description,
+                inline=False
             )
-            # TODO - wysyłany jest konkretny monument (czas bez teokracji)
+
+        if theocracy == 't':
+            miracle_embed.set_footer(
+                text=':clock10: Czas przy korzystaniu z teokracji'
+            )
+
+        miniature = change_miracle_icon(miracle)
+        if miniature != '':
+            miracle_embed.set_thumbnail(
+                url=change_miracle_icon(miracle)
+            )
 
         await ctx.send(embed=miracle_embed)
         return
