@@ -3,8 +3,14 @@ encoding=utf-8
 """
 infos = {
     'kuźnia hefajstosa': {
-        'duration': '1D',
-        'cooldown': '7D',
+        'duration': {
+            'normal': '1D',
+            'short': '0.5D'
+        },
+        'cooldown': {
+            'normal': '7D',
+            'short': '3.5D'
+        },
         'effects': [
             'Opancerzenie wszystkich bojowych jednostek zostało zwiększone o 0, a zadawane obrażenia o 10%.',
             'Opancerzenie wszystkich bojowych jednostek zostało zwiększone o 1, a zadawane obrażenia o 10%.',
