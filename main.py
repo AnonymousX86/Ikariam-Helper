@@ -3,7 +3,7 @@ encoding=utf-8
 """
 from logging import basicConfig, INFO
 from discord.ext.commands import Bot
-from discord import Game, Status
+from discord import Activity, Status
 
 # Invite: https://discordapp.com/api/oauth2/authorize?client_id=672448271792472095&permissions=19520&scope=bot
 
@@ -26,8 +26,13 @@ async def on_ready():
     print('Logged on as: {0} ({0.id})'.format(bot.user))
 
     # Changing presence
-    game = Game("Ikariam (Dolina Królów)")
-    await bot.change_presence(status=Status.online, activity=game, afk=False)
+    activity = Activity(
+        name='Ikariam',
+        type='playing',
+        state='Thanathos',
+        details='Dolina Królów'
+    )
+    await bot.change_presence(status=Status.online, activity=activity, afk=False)
 
     # Changing default help command
     bot.remove_command('help')
