@@ -182,7 +182,8 @@ class Ikariam(cmd.Cog):
         help='Podaj nazwę cudu, aby poznać jego szczegóły lub dodaj argument "t", aby zobaczyć skrócony czas.'
              ' (Dla osób z Teokracją)',
         aliases=['m', 'monumenty', 'cud', 'cuda'],
-        usage='[nazwa monumentu] ["t"]'
+        usage='[nazwa monumentu] ["t"]',
+        enbaled=False
     )
     async def miracle_cmd(self, ctx, miracle='all', theocracy='n'):
 
