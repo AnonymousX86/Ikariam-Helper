@@ -16,6 +16,7 @@ class Podstawowe(cmd.Cog):
         description='Wyświetla pomoc na temat komend bota',
         aliases=['p', 'help', 'komendy'],
         help='Wyświetla ten komunikat lub pomoc na temat konkretniej komendy lub kategorii',
+        bief='Główna komenda pomocy',
         usage='[komenda|kategoria]',
         enabled=True
     )

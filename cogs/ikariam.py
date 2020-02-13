@@ -56,7 +56,7 @@ class Ikariam(cmd.Cog):
         description='Pokazuje informacje na temat danego budynku',
         help='Podaj nazwę budynku aby poznać jego szczegóły.'
              'Dodaj jeszcze poziom budynku, żeby sprawdzić koszty',
-        brief='Informacje o budowli',
+        brief='Informacje o budynkach',
         aliases=['b', 'budynki'],
         usage='<budynek> [poziom]'
     )
@@ -179,6 +179,7 @@ class Ikariam(cmd.Cog):
     @cmd.command(
         name='monument',
         description='Pokazuje czas odnowienia się cudów',
+        brief='Informacje o monumentach',
         help='Podaj nazwę cudu, aby poznać jego szczegóły lub dodaj argument "t", aby zobaczyć skrócony czas.'
              ' (Dla osób z Teokracją)',
         aliases=['m', 'monumenty', 'cud', 'cuda'],
@@ -275,6 +276,7 @@ class Ikariam(cmd.Cog):
     @cmd.command(
         name='rada',
         description='Pokazuje całą Radę Sojuszu',
+        help='Komenda działa tylko na Discordzie sojuszu',
         aliases=['sojusz', 'soj']
     )
     async def council_cmd(self, ctx):
@@ -370,7 +372,8 @@ class Ikariam(cmd.Cog):
 
     @cmd.command(
         name='wojsko',
-        description='Pokazuje zalecane minimum wojska dla graczy',
+        description='Pokazuje zalecane i minimalne paczki wojska dla graczy',
+        brief='Paczki wojsk',
         aliases=['w'],
         usage='[minimum|zalecane] [ląd|flota]'
     )
