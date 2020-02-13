@@ -2,491 +2,6 @@
 encoding=utf-8
 """
 
-# Koszty budynków
-costs = {
-    "wieża alchemika": [
-        {"wood": 467, "marble": 116},  # level 2
-        {"wood": 718, "marble": 255},  # level 3
-        {"wood": 1045, "marble": 436},  # level 4
-        {"wood": 1469, "marble": 671},  # level 5
-        {"wood": 2021, "marble": 977},  # level 6
-        {"wood": 2738, "marble": 1375},  # level 7
-        {"wood": 3671, "marble": 1892},  # level 8
-        {"wood": 4883, "marble": 2564},  # level 9
-        {"wood": 6459, "marble": 3437},  # level 10
-        {"wood": 8508, "marble": 4572},  # level 11
-        {"wood": 11172, "marble": 6049},  # level 12
-        {"wood": 14634, "marble": 7968},  # level 13
-        {"wood": 19135, "marble": 10462},  # level 14
-        {"wood": 24987, "marble": 13705},  # level 15
-        {"wood": 32594, "marble": 17921},  # level 16
-        {"wood": 42483, "marble": 23402},  # level 17
-        {"wood": 55339, "marble": 30527},  # level 18
-        {"wood": 72050, "marble": 39790},  # level 19
-        {"wood": 93778, "marble": 51830},  # level 20
-        {"wood": 122021, "marble": 67485},  # level 21
-        {"wood": 158740, "marble": 87835},  # level 22
-        {"wood": 206471, "marble": 114289},  # level 23
-        {"wood": 268524, "marble": 148680},  # level 24
-        {"wood": 349194, "marble": 193389},  # level 25
-        {"wood": 454063, "marble": 251512},  # level 26
-        {"wood": 590393, "marble": 327069},  # level 27
-        {"wood": 767620, "marble": 425294},  # level 28
-        {"wood": 998018, "marble": 552986},  # level 29
-        {"wood": 1297536, "marble": 718988},  # level 30
-        {"wood": 1686906, "marble": 934789},  # level 31
-        {"wood": 2193089, "marble": 1215330}  # level 32
-    ],
-    "biuro architekta": [
-        {"wood": 291, "marble": 160},  # level 2
-        {"wood": 413, "marble": 222},  # level 3
-        {"wood": 555, "marble": 295},  # level 4
-        {"wood": 720, "marble": 379},  # level 5
-        {"wood": 911, "marble": 475},  # level 6
-        {"wood": 1133, "marble": 587},  # level 7
-        {"wood": 1390, "marble": 716},  # level 8
-        {"wood": 1689, "marble": 865},  # level 9
-        {"wood": 2035, "marble": 1036},  # level 10
-        {"wood": 2437, "marble": 1233},  # level 11
-        {"wood": 2902, "marble": 1460},  # level 12
-        {"wood": 3443, "marble": 1722},  # level 13
-        {"wood": 4070, "marble": 2023},  # level 14
-        {"wood": 4797, "marble": 2369},  # level 15
-        {"wood": 5640, "marble": 2767},  # level 16
-        {"wood": 6618, "marble": 3226},  # level 17
-        {"wood": 7754, "marble": 3752},  # level 18
-        {"wood": 9070, "marble": 4358},  # level 19
-        {"wood": 10598, "marble": 5056},  # level 20
-        {"wood": 12369, "marble": 5857},  # level 21
-        {"wood": 14424, "marble": 6778},  # level 22
-        {"wood": 16807, "marble": 7836},  # level 23
-        {"wood": 19573, "marble": 9052},  # level 24
-        {"wood": 22780, "marble": 10448},  # level 25
-        {"wood": 26501, "marble": 12054},  # level 26
-        {"wood": 30817, "marble": 13899},  # level 27
-        {"wood": 35826, "marble": 16289},  # level 28
-        {"wood": 41631, "marble": 18450},  # level 29
-        {"wood": 48371, "marble": 21246},  # level 30
-        {"wood": 56185, "marble": 24455},  # level 31
-        {"wood": 65251, "marble": 28141}  # level 32
-    ],
-    "czarny rynek": [
-        {"wood": 887, "marble": 525},  # level 2
-        {"wood": 1360, "marble": 807},  # level 3
-        {"wood": 1890, "marble": 1126},  # level 4
-        {"wood": 2516, "marble": 1509},  # level 5
-        {"wood": 3288, "marble": 1988},  # level 6
-        {"wood": 4263, "marble": 2601},  # level 7
-        {"wood": 5505, "marble": 3390},  # level 8
-        {"wood": 7086, "marble": 4403},  # level 9
-        {"wood": 9086, "marble": 5693},  # level 10
-        {"wood": 11590, "marble": 7315},  # level 11
-        {"wood": 14691, "marble": 9331},  # level 12
-        {"wood": 18489, "marble": 11807},  # level 13
-        {"wood": 23088, "marble": 14812},  # level 14
-        {"wood": 28600, "marble": 18420},  # level 15
-        {"wood": 35143, "marble": 22708},  # level 16
-        {"wood": 42839, "marble": 27757},  # level 17
-        {"wood": 51820, "marble": 33654},  # level 18
-        {"wood": 62218, "marble": 40486},  # level 19
-        {"wood": 74175, "marble": 48348},  # level 20
-        {"wood": 87838, "marble": 57334},  # level 21
-        {"wood": 103356, "marble": 67546},  # level 22
-        {"wood": 120888, "marble": 79087},  # level 23
-        {"wood": 140596, "marble": 92064},  # level 24
-        {"wood": 162647, "marble": 106587}  # level 25
-    ],
-    "warsztat cieśli": [
-        {"wood": 122},  # level 2
-        {"wood": 191},  # level 3
-        {"wood": 274},  # level 4
-        {"wood": 372},  # level 5
-        {"wood": 486},  # level 6
-        {"wood": 620},  # level 7
-        {"wood": 777, "marble": 359},  # level 8
-        {"wood": 962, "marble": 444},  # level 9
-        {"wood": 1178, "marble": 546},  # level 10
-        {"wood": 1432, "marble": 669},  # level 11
-        {"wood": 1730, "marble": 816},  # level 12
-        {"wood": 2078, "marble": 993},  # level 13
-        {"wood": 2486, "marble": 1205},  # level 14
-        {"wood": 2964, "marble": 1459},  # level 15
-        {"wood": 3524, "marble": 1765},  # level 16
-        {"wood": 4178, "marble": 2131},  # level 17
-        {"wood": 4945, "marble": 2571},  # level 18
-        {"wood": 5841, "marble": 3097},  # level 19
-        {"wood": 6890, "marble": 3731},  # level 20
-        {"wood": 8117, "marble": 4490},  # level 21
-        {"wood": 9550, "marble": 5402},  # level 22
-        {"wood": 11229, "marble": 6496},  # level 23
-        {"wood": 13190, "marble": 7809},  # level 24
-        {"wood": 15484, "marble": 9383},  # level 25
-        {"wood": 18166, "marble": 11274},  # level 26
-        {"wood": 21299, "marble": 13543},  # level 27
-        {"wood": 24963, "marble": 16265},  # level 28
-        {"wood": 29245, "marble": 19531},  # level 29
-        {"wood": 34247, "marble": 23450},  # level 30
-        {"wood": 40096, "marble": 28154},  # level 31
-        {"wood": 46930, "marble": 33798}  # level 32
-    ],
-    "składowisko": [
-        {"wood": 1152, "marble": 932, "crystal": 1146, "sulfur": 845},  # level 2
-        {"wood": 1766, "marble": 1445, "crystal": 1668, "sulfur": 1398},  # level 3
-        {"wood": 2504, "marble": 2050, "crystal": 2278, "sulfur": 2061},  # level 4
-        {"wood": 3388, "marble": 2762, "crystal": 2991, "sulfur": 2857},  # level 5
-        {"wood": 4450, "marble": 3609, "crystal": 3526, "sulfur": 3813},  # level 6
-        {"wood": 5724, "marble": 4604, "crystal": 4803, "sulfur": 4960},  # level 7
-        {"wood": 7253, "marble": 5778, "crystal": 5946, "sulfur": 6336},  # level 8
-        {"wood": 9088, "marble": 7164, "crystal": 7283, "sulfur": 7987},  # level 9
-        {"wood": 11289, "marble": 8799, "crystal": 8847, "sulfur": 9968},  # level 10
-        {"wood": 13931, "marble": 10728, "crystal": 10678, "sulfur": 12346},  # level 11
-        {"wood": 17101, "marble": 13005, "crystal": 12819, "sulfur": 15199},  # level 12
-        {"wood": 20905, "marble": 15691, "crystal": 15325, "sulfur": 18623},  # level 13
-        {"wood": 25470, "marble": 18862, "crystal": 18257, "sulfur": 22731},  # level 14
-        {"wood": 30948, "marble": 22602, "crystal": 21687, "sulfur": 27661},  # level 15
-        {"wood": 37522, "marble": 27016, "crystal": 25700, "sulfur": 33578},  # level 16
-        {"wood": 45410, "marble": 32225, "crystal": 30395, "sulfur": 40677},  # level 17
-        {"wood": 54876, "marble": 38371, "crystal": 35889, "sulfur": 49197},  # level 18
-        {"wood": 66236, "marble": 45623, "crystal": 42316, "sulfur": 59420},  # level 19
-        {"wood": 79867, "marble": 54181, "crystal": 49837, "sulfur": 71688},  # level 20
-        {"wood": 96223, "marble": 64278, "crystal": 58635, "sulfur": 86409},  # level 21
-        {"wood": 115852, "marble": 76194, "crystal": 68929, "sulfur": 104076},  # level 22
-        {"wood": 139407, "marble": 90256, "crystal": 80973, "sulfur": 125274},  # level 23
-        {"wood": 167672, "marble": 106847, "crystal": 95065, "sulfur": 150714},  # level 24
-        {"wood": 201592, "marble": 126424, "crystal": 111553, "sulfur": 181241},  # level 25
-        {"wood": 242293, "marble": 149528, "crystal": 130843, "sulfur": 217872},  # level 26
-        {"wood": 291136, "marble": 176787, "crystal": 153414, "sulfur": 261830},  # level 27
-        {"wood": 349749, "marble": 208956, "crystal": 179821, "sulfur": 314581},  # level 28
-        {"wood": 420081, "marble": 246913, "crystal": 201716, "sulfur": 377881},  # level 29
-        {"wood": 504483, "marble": 291702, "crystal": 246864, "sulfur": 453842},  # level 30
-        {"wood": 605763, "marble": 344555, "crystal": 289157, "sulfur": 544994},  # level 31
-        {"wood": 727300, "marble": 406921, "crystal": 338642, "sulfur": 654378},  # level 32
-        {"wood": 873143, "marble": 480512, "crystal": 396536, "sulfur": 785637},  # level 33
-        {"wood": 1048157, "marble": 567350, "crystal": 464274, "sulfur": 943149},  # level 34
-        {"wood": 1258171, "marble": 669817, "crystal": 543528, "sulfur": 1132163},  # level 35
-        {"wood": 1510191, "marble": 790730, "crystal": 636253, "sulfur": 1358979},  # level 36
-        {"wood": 1812613, "marble": 933408, "crystal": 744742, "sulfur": 1631159},  # level 37
-        {"wood": 2175519, "marble": 1101767, "crystal": 871676, "sulfur": 1957774},  # level 38
-        {"wood": 2611007, "marble": 1300431, "crystal": 1020187, "sulfur": 2349714},  # level 39
-        {"wood": 3133592, "marble": 1534855, "crystal": 1193945, "sulfur": 2820041}  # level 40
-    ],
-    "zakład pirotechnika": [
-        {"wood": 353, "marble": 212},  # level 2
-        {"wood": 445, "marble": 302},  # level 3
-        {"wood": 551, "marble": 405},  # level 4
-        {"wood": 673, "marble": 526},  # level 5
-        {"wood": 813, "marble": 665},  # level 6
-        {"wood": 974, "marble": 827},  # level 7
-        {"wood": 1159, "marble": 1015},  # level 8
-        {"wood": 1373, "marble": 1233},  # level 9
-        {"wood": 1618, "marble": 1486},  # level 10
-        {"wood": 1899, "marble": 1779},  # level 11
-        {"wood": 2223, "marble": 2120},  # level 12
-        {"wood": 2596, "marble": 2514},  # level 13
-        {"wood": 3025, "marble": 2972},  # level 14
-        {"wood": 3517, "marble": 3503},  # level 15
-        {"wood": 4084, "marble": 4119},  # level 16
-        {"wood": 4736, "marble": 4834},  # level 17
-        {"wood": 5485, "marble": 5662},  # level 18
-        {"wood": 6346, "marble": 6623},  # level 19
-        {"wood": 7338, "marble": 7738},  # level 20
-        {"wood": 8478, "marble": 9032},  # level 21
-        {"wood": 9790, "marble": 10534},  # level 22
-        {"wood": 11297, "marble": 12275},  # level 23
-        {"wood": 13030, "marble": 13355},  # level 24
-        {"wood": 14990, "marble": 16636},  # level 25
-        {"wood": 17317, "marble": 19354},  # level 26
-        {"wood": 19954, "marble": 22507},  # level 27
-        {"wood": 22986, "marble": 26163},  # level 28
-        {"wood": 26472, "marble": 30404},  # level 29
-        {"wood": 30484, "marble": 35325},  # level 30
-        {"wood": 35096, "marble": 41033},  # level 31
-        {"wood": 40399, "marble": 47652}  # level 32
-    ],
-    "huta szkła": [
-        {"wood": 467, "marble": 116},  # level 2
-        {"wood": 718, "marble": 255},  # level 3
-        {"wood": 1045, "marble": 436},  # level 4
-        {"wood": 1469, "marble": 671},  # level 5
-        {"wood": 2021, "marble": 977},  # level 6
-        {"wood": 2738, "marble": 1375},  # level 7
-        {"wood": 3671, "marble": 1892},  # level 8
-        {"wood": 4883, "marble": 2564},  # level 9
-        {"wood": 6459, "marble": 3437},  # level 10
-        {"wood": 8508, "marble": 4572},  # level 11
-        {"wood": 11172, "marble": 6049},  # level 12
-        {"wood": 14634, "marble": 7968},  # level 13
-        {"wood": 19135, "marble": 10462},  # level 14
-        {"wood": 24987, "marble": 13705},  # level 15
-        {"wood": 32594, "marble": 17921},  # level 16
-        {"wood": 42483, "marble": 23402},  # level 17
-        {"wood": 55339, "marble": 30527},  # level 18
-        {"wood": 72050, "marble": 39790},  # level 19
-        {"wood": 93778, "marble": 51830},  # level 20
-        {"wood": 122021, "marble": 67485},  # level 21
-        {"wood": 158740, "marble": 87835},  # level 22
-        {"wood": 206471, "marble": 114289},  # level 23
-        {"wood": 268524, "marble": 148680},  # level 24
-        {"wood": 349194, "marble": 193389},  # level 25
-        {"wood": 454063, "marble": 251512},  # level 26
-        {"wood": 590393, "marble": 327069},  # level 27
-        {"wood": 767620, "marble": 425294},  # level 28
-        {"wood": 998018, "marble": 552986},  # level 29
-        {"wood": 1297536, "marble": 718988},  # level 30
-        {"wood": 1686906, "marble": 934789},  # level 31
-        {"wood": 2193089, "marble": 1215330}  # level 32
-    ],
-    "optyk": [
-        {"wood": 188, "marble": 35},  # level 2
-        {"wood": 269, "marble": 96},  # level 3
-        {"wood": 362, "marble": 167},  # level 4
-        {"wood": 471, "marble": 249},  # level 5
-        {"wood": 597, "marble": 345},  # level 6
-        {"wood": 742, "marble": 455},  # level 7
-        {"wood": 912, "marble": 584},  # level 8
-        {"wood": 1108, "marble": 733},  # level 9
-        {"wood": 1335, "marble": 905},  # level 10
-        {"wood": 1600, "marble": 1106},  # level 11
-        {"wood": 1906, "marble": 1338},  # level 12
-        {"wood": 2261, "marble": 1608},  # level 13
-        {"wood": 2673, "marble": 1921},  # level 14
-        {"wood": 3152, "marble": 2283},  # level 15
-        {"wood": 3706, "marble": 2704},  # level 16
-        {"wood": 4348, "marble": 3191},  # level 17
-        {"wood": 5096, "marble": 3759},  # level 18
-        {"wood": 5962, "marble": 4416},  # level 19
-        {"wood": 6966, "marble": 5178},  # level 20
-        {"wood": 8131, "marble": 6062},  # level 21
-        {"wood": 9482, "marble": 7087},  # level 22
-        {"wood": 11050, "marble": 8276},  # level 23
-        {"wood": 12868, "marble": 9656},  # level 24
-        {"wood": 14978, "marble": 11257},  # level 25
-        {"wood": 17424, "marble": 13113},  # level 26
-        {"wood": 20262, "marble": 15267},  # level 27
-        {"wood": 23553, "marble": 17762},  # level 28
-        {"wood": 27373, "marble": 20662},  # level 29
-        {"wood": 31804, "marble": 24024},  # level 30
-        {"wood": 36943, "marble": 27922},  # level 31
-        {"wood": 42904, "marble": 32447}  # level 32
-    ],
-    "rezydencja gubernatora": [
-        {"wood": 5824, "marble": 1434},  # level 2
-        {"wood": 16048, "marble": 4546, "sulfur": 3089},  # level 3
-        {"wood": 36496, "marble": 10770, "sulfur": 10301, "wine": 10898},  # level 4
-        {"wood": 77392, "marble": 23218, "sulfur": 24725, "wine": 22110, "crystal": 21188},  # level 5
-        {"wood": 159184, "marble": 48114, "sulfur": 53573, "wine": 44534, "crystal": 42400},  # level 6
-        {"wood": 322768, "marble": 97906, "sulfur": 111269, "wine": 89382, "crystal": 84824},  # level 7
-        {"wood": 649936, "marble": 197490, "sulfur": 226661, "wine": 179078, "crystal": 169672},  # level 8
-        {"wood": 1304272, "marble": 396658, "sulfur": 457445, "wine": 358470, "crystal": 339368},  # level 9
-        {"wood": 2612944, "marble": 794994, "sulfur": 919013, "wine": 717254, "crystal": 678760},  # level 10
-        {"wood": 4743518, "marble": 1591666, "sulfur": 1842149, "wine": 1434822, "crystal": 1357544}  # level 11 max
-    ],
-    "twierdza piracka": [
-        {"wood": 906, "marble": 505},  # level 2
-        {"wood": 1389, "marble": 783},  # level 3
-        {"wood": 1935, "marble": 1112},  # level 4
-        {"wood": 2593, "marble": 1534},  # level 5
-        {"wood": 3427, "marble": 2103},  # level 6
-        {"wood": 4516, "marble": 2883},  # level 7
-        {"wood": 5950, "marble": 3949},  # level 8
-        {"wood": 7834, "marble": 5388},  # level 9
-        {"wood": 10284, "marble": 7296},  # level 10
-        {"wood": 13430, "marble": 9782},  # level 11
-        {"wood": 17415, "marble": 12964},  # level 12
-        {"wood": 22394, "marble": 16970},  # level 13
-        {"wood": 28534, "marble": 21938},  # level 14
-        {"wood": 36015, "marble": 28019},  # level 15
-        {"wood": 45029, "marble": 35370},  # level 16
-        {"wood": 55779, "marble": 44162},  # level 17
-        {"wood": 68482, "marble": 54573},  # level 18
-        {"wood": 83366, "marble": 66793},  # level 19
-        {"wood": 100671, "marble": 81020},  # level 20
-        {"wood": 120648, "marble": 97463},  # level 21
-        {"wood": 143562, "marble": 116341},  # level 22
-        {"wood": 169686, "marble": 137883},  # level 23
-        {"wood": 199309, "marble": 162325},  # level 24
-        {"wood": 232729, "marble": 189915},  # level 25
-        {"wood": 270255, "marble": 220912},  # level 26
-        {"wood": 312210, "marble": 255580},  # level 27
-        {"wood": 358926, "marble": 294197},  # level 28
-        {"wood": 410748, "marble": 337048},  # level 29
-        {"wood": 468032, "marble": 384429}  # level 30
-    ],
-    "kamieniarz": [
-        {"wood": 467, "marble": 116},  # level 2
-        {"wood": 718, "marble": 255},  # level 3
-        {"wood": 1045, "marble": 436},  # level 4
-        {"wood": 1469, "marble": 671},  # level 5
-        {"wood": 2021, "marble": 977},  # level 6
-        {"wood": 2738, "marble": 1375},  # level 7
-        {"wood": 3671, "marble": 1892},  # level 8
-        {"wood": 4883, "marble": 2564},  # level 9
-        {"wood": 6459, "marble": 3437},  # level 10
-        {"wood": 8508, "marble": 4572},  # level 11
-        {"wood": 11172, "marble": 6049},  # level 12
-        {"wood": 14634, "marble": 7968},  # level 13
-        {"wood": 19135, "marble": 10462},  # level 14
-        {"wood": 24987, "marble": 13705},  # level 15
-        {"wood": 32594, "marble": 17921},  # level 16
-        {"wood": 42483, "marble": 23402},  # level 17
-        {"wood": 55339, "marble": 30527},  # level 18
-        {"wood": 72050, "marble": 39790},  # level 19
-        {"wood": 93778, "marble": 51830},  # level 20
-        {"wood": 122021, "marble": 67485},  # level 21
-        {"wood": 158740, "marble": 87835},  # level 22
-        {"wood": 206471, "marble": 114289},  # level 23
-        {"wood": 268524, "marble": 148680},  # level 24
-        {"wood": 349194, "marble": 193389},  # level 25
-        {"wood": 454063, "marble": 251512},  # level 26
-        {"wood": 590393, "marble": 327069},  # level 27
-        {"wood": 767620, "marble": 425294},  # level 28
-        {"wood": 998018, "marble": 552986},  # level 29
-        {"wood": 1297536, "marble": 718988},  # level 30
-        {"wood": 1686906, "marble": 934789},  # level 31
-        {"wood": 2193089, "marble": 1215330}  # level 32
-    ],
-    "świątynia": [
-        {"wood": 228, "crystal": 190},  # level 2
-        {"wood": 333, "crystal": 290},  # level 3
-        {"wood": 465, "crystal": 423},  # level 4
-        {"wood": 598, "crystal": 567},  # level 5
-        {"wood": 760, "crystal": 752},  # level 6
-        {"wood": 958, "crystal": 989},  # level 7
-        {"wood": 1197, "crystal": 1290},  # level 8
-        {"wood": 1432, "crystal": 1610},  # level 9
-        {"wood": 1773, "crystal": 2080},  # level 10
-        {"wood": 2112, "crystal": 2586},  # level 11
-        {"wood": 2512, "crystal": 3210},  # level 12
-        {"wood": 3082, "crystal": 4109},  # level 13
-        {"wood": 3655, "crystal": 5084},  # level 14
-        {"wood": 4458, "crystal": 6471},  # level 15
-        {"wood": 5126, "crystal": 7765},  # level 16
-        {"wood": 6232, "crystal": 9851},  # level 17
-        {"wood": 7167, "crystal": 11821},  # level 18
-        {"wood": 8688, "crystal": 14952},  # level 19
-        {"wood": 10247, "crystal": 18402},  # level 20
-        {"wood": 11784, "crystal": 22082},  # level 21
-        {"wood": 14229, "crystal": 27824},  # level 22
-        {"wood": 16753, "crystal": 34184},  # level 23
-        {"wood": 19266, "crystal": 41020},  # level 24
-        {"wood": 23156, "crystal": 51514},  # level 25
-        {"wood": 26664, "crystal": 61817},  # level 26
-        {"wood": 32027, "crystal": 77477},  # level 27
-        {"wood": 36831, "crystal": 92972},  # level 28
-        {"wood": 43257, "crystal": 113941},  # level 29
-        {"wood": 50782, "crystal": 139577},  # level 30
-        {"wood": 59591, "crystal": 170911},  # level 31
-        {"wood": 68529, "crystal": 205093}  # level 32
-    ],
-    "tłocznia win": [
-        {"wood": 423, "marble": 198},  # level 2
-        {"wood": 520, "marble": 285},  # level 3
-        {"wood": 631, "marble": 387},  # level 4
-        {"wood": 758, "marble": 504},  # level 5
-        {"wood": 905, "marble": 640},  # level 6
-        {"wood": 1074, "marble": 798},  # level 7
-        {"wood": 1269, "marble": 981},  # level 8
-        {"wood": 1492, "marble": 1194},  # level 9
-        {"wood": 1749, "marble": 1440},  # level 10
-        {"wood": 2045, "marble": 1726},  # level 11
-        {"wood": 2384, "marble": 2058},  # level 12
-        {"wood": 2775, "marble": 2443},  # level 13
-        {"wood": 3225, "marble": 2889},  # level 14
-        {"wood": 3741, "marble": 3407},  # level 15
-        {"wood": 4336, "marble": 4008},  # level 16
-        {"wood": 5019, "marble": 4705},  # level 17
-        {"wood": 5813, "marble": 5513},  # level 18
-        {"wood": 6875, "marble": 6450},  # level 19
-        {"wood": 7941, "marble": 7537},  # level 20
-        {"wood": 8944, "marble": 8800},  # level 21
-        {"wood": 10319, "marble": 10263},  # level 22
-        {"wood": 11900, "marble": 11961},  # level 23
-        {"wood": 13718, "marble": 13930},  # level 24
-        {"wood": 15809, "marble": 16214},  # level 25
-        {"wood": 18215, "marble": 18864},  # level 26
-        {"wood": 20978, "marble": 21938},  # level 27
-        {"wood": 24159, "marble": 25503},  # level 28
-        {"wood": 27816, "marble": 29639},  # level 29
-        {"wood": 32021, "marble": 34437},  # level 30
-        {"wood": 36857, "marble": 40002},  # level 31
-        {"wood": 42419, "marble": 46457}  # level 32
-    ],
-    "winnica": [
-        {"wood": 467, "marble": 116},  # level 2
-        {"wood": 718, "marble": 255},  # level 3
-        {"wood": 1045, "marble": 436},  # level 4
-        {"wood": 1469, "marble": 671},  # level 5
-        {"wood": 2021, "marble": 977},  # level 6
-        {"wood": 2738, "marble": 1375},  # level 7
-        {"wood": 3671, "marble": 1892},  # level 8
-        {"wood": 4883, "marble": 2564},  # level 9
-        {"wood": 6459, "marble": 3437},  # level 10
-        {"wood": 8508, "marble": 4572},  # level 11
-        {"wood": 11172, "marble": 6049},  # level 12
-        {"wood": 14634, "marble": 7968},  # level 13
-        {"wood": 19135, "marble": 10462},  # level 14
-        {"wood": 24987, "marble": 13705},  # level 15
-        {"wood": 32594, "marble": 17921},  # level 16
-        {"wood": 42483, "marble": 23402},  # level 17
-        {"wood": 55339, "marble": 30527},  # level 18
-        {"wood": 72050, "marble": 39790},  # level 19
-        {"wood": 93778, "marble": 51830},  # level 20
-        {"wood": 122021, "marble": 67485},  # level 21
-        {"wood": 158740, "marble": 87835},  # level 22
-        {"wood": 206471, "marble": 114289},  # level 23
-        {"wood": 268524, "marble": 148680},  # level 24
-        {"wood": 349194, "marble": 193389},  # level 25
-        {"wood": 454063, "marble": 251512},  # level 26
-        {"wood": 590393, "marble": 327069},  # level 27
-        {"wood": 767620, "marble": 425294},  # level 28
-        {"wood": 998018, "marble": 552986},  # level 29
-        {"wood": 1297536, "marble": 718988},  # level 30
-        {"wood": 1686906, "marble": 934789},  # level 31
-        {"wood": 2193089, "marble": 1215330}  # level 32
-    ],
-    "archiwum map": [
-        {"wood": 1298, "marble": 1066, "crystal": 611},  # level 2
-        {"wood": 2133, "marble": 1916, "crystal": 1142},
-        {"wood": 3102, "marble": 2918, "crystal": 1769},
-        {"wood": 4226, "marble": 4101, "crystal": 2508},
-        {"wood": 5530, "marble": 5497, "crystal": 3380},
-        {"wood": 7042, "marble": 7144, "crystal": 4410},
-        {"wood": 8796, "marble": 9088, "crystal": 5625},
-        {"wood": 10831, "marble": 11381, "crystal": 7058},
-        {"wood": 13191, "marble": 14088, "crystal": 8750},  # level 10
-        {"wood": 15929, "marble": 17281, "crystal": 10746},
-        {"wood": 19106, "marble": 21050, "crystal": 13101},
-        {"wood": 22790, "marble": 25496, "crystal": 15880},
-        {"wood": 27064, "marble": 30743, "crystal": 19159},
-        {"wood": 32022, "marble": 36935, "crystal": 23029},
-        {"wood": 37773, "marble": 44241, "crystal": 27595},
-        {"wood": 44444, "marble": 52862, "crystal": 32984},
-        {"wood": 52183, "marble": 63035, "crystal": 39342},
-        {"wood": 61159, "marble": 75039, "crystal": 46844},
-        {"wood": 71572, "marble": 89204, "crystal": 55697},  # level 20
-        {"wood": 83651, "marble": 105918, "crystal": 66144},
-        {"wood": 97663, "marble": 125641, "crystal": 78470},
-        {"wood": 113917, "marble": 148914, "crystal": 93016},
-        {"wood": 132771, "marble": 176377, "crystal": 110180},
-        {"wood": 154642, "marble": 208782, "crystal": 130434},
-        {"wood": 180012, "marble": 247021, "crystal": 154333},
-        {"wood": 209442, "marble": 292142, "crystal": 182533},
-        {"wood": 243580, "marble": 345385, "crystal": 215810},
-        {"wood": 283180, "marble": 408212, "crystal": 255077},
-        {"wood": 329116, "marble": 482348, "crystal": 301412},  # level 30
-        {"wood": 382402, "marble": 569829, "crystal": 356088},
-        {"wood": 444214, "marble": 673055, "crystal": 420604},
-        {"wood": 515916, "marble": 794863, "crystal": 496734},
-        {"wood": 599090, "marble": 938596, "crystal": 586567},
-        {"wood": 695572, "marble": 1108201, "crystal": 692571},
-        {"wood": 807491, "marble": 1308335, "crystal": 817654},
-        {"wood": 937317, "marble": 1544493, "crystal": 965253},
-        {"wood": 1087916, "marble": 1823160, "crystal": 1139420},
-        {"wood": 1262610, "marble": 2151986, "crystal": 1344936},
-        {"wood": 1465255, "marble": 2540001, "crystal": 1587446}  # level 40
-    ]
-}
-
 # Informacje o budynkach
 infos = {
     'ratusz': {
@@ -538,7 +53,7 @@ infos = {
             {"wood": 1876201, "marble": 4756439},  # level 38
             {"wood": 2276286, "marble": 6058643},  # level 39
             {"wood": 2761291, "marble": 7716366}  # level 40 max
-        ]
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/townhall_l.png'
         # TODO - ilość mieszkańców na poziom Ratusza
     },
@@ -586,7 +101,7 @@ infos = {
             {"wood": 1027470, "crystal": 2079651},  # level 30
             {"wood": 1257246, "crystal": 2642548},  # level 31
             {"wood": 1736683, "crystal": 3790483}  # level 32
-        ]
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/academy_l.png'
         # TODO - ilość naukowców na poziom Akademii
     },
@@ -639,7 +154,7 @@ infos = {
             {"wood": 543880, "marble": 283041},  # level 38
             {"wood": 652752, "marble": 339745},  # level 39
             {"wood": 783398, "marble": 407790}  # level 40
-        ]
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/warehouse_l.png'
         # TODO - pojemność magazynu na poziom i bezpieczna pojemność
     },
@@ -699,7 +214,7 @@ infos = {
             {"wood": 1842756, "marble": 4394943},  # level 45
             {"wood": 2211407, "marble": 5713425},  # level 46
             {"wood": 2653789, "marble": 7427454}  # level 47 max
-        ]
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/taverne_l.png'
         # TODO - wyszynk i zadowolenie na wyszynk
     },
@@ -722,7 +237,7 @@ infos = {
             {"wood": 1304272, "marble": 396658, "sulfur": 457445, "wine": 358470, "crystal": 339368},  # level 9
             {"wood": 2612944, "marble": 794994, "sulfur": 919013, "wine": 717254, "crystal": 678760},  # level 10
             {"wood": 4743518, "marble": 1591666, "sulfur": 1842149, "wine": 1434822, "crystal": 1357544}  # level 11 max
-        ]
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/palace_l.png'
     },
     'rezydencja gubernatora': {
@@ -745,7 +260,7 @@ infos = {
             {"wood": 1304272, "marble": 396658, "sulfur": 457445, "wine": 358470, "crystal": 339368},  # level 9
             {"wood": 2612944, "marble": 794994, "sulfur": 919013, "wine": 717254, "crystal": 678760},  # level 10
             {"wood": 4743518, "marble": 1591666, "sulfur": 1842149, "wine": 1434822, "crystal": 1357544}  # level 11 max
-        ]
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/palaceColony_l.png'
     },
     'muzeum': {
@@ -777,7 +292,7 @@ infos = {
             {"wood": 2585121, "marble": 3281165},  # level 19
             {"wood": 3878276, "marble": 4988136},  # level 20
             {"wood": 5818009, "marble": 7582731}  # level 21
-        ]
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/museum_l.png'
     },
     'port handlowy': {
@@ -836,8 +351,9 @@ infos = {
             {"wood": 3541580, "marble": 5959027},  # level 45
             {"wood": 4291524, "marble": 7478201},  # level 46
             {"wood": 5199343, "marble": 9383420}  # level 47 max
-        ]
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/port_l.png'
+        # TODO - szybkość załadunku
     },
     'stocznia': {
         'description': 'Co to za wyspa bez floty? W Stoczni budowane są potężne okręty wojenne i przygotowywane do'
@@ -879,7 +395,7 @@ infos = {
             {"wood": 302626, "marble": 269954},  # level 30
             {"wood": 381378, "marble": 340214},  # level 31
             {"wood": 480605, "marble": 428741}  # level 32
-        ]
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/shipyard_l.png'
         # TODO - dostępne jednostki na dany poziom Stoczni
     },
@@ -941,7 +457,7 @@ infos = {
             {"wood": 5394466, "marble": 3739064},  # level 47
             {"wood": 6689191, "marble": 4636650},  # level 48
             {"wood": 8294651, "marble": 5749656}  # level 49 max
-        ]
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/barracks_r.png'
         # TODO - dostępne jednostki na dany poziom koszar
     },
@@ -1001,7 +517,7 @@ infos = {
             {"wood": 4511941, "marble": 4774409},  # level 46
             {"wood": 5414554, "marble": 5729565},  # level 47
             {"wood": 6497687, "marble": 6875750}  # level 48
-        ]
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/buildings/y100/wall.png'
         # TODO - szczegóły obronności
     },
@@ -1045,7 +561,7 @@ infos = {
             {"wood": 170879, "marble": 271495},  # level 30
             {"wood": 205180, "marble": 331377},  # level 31
             {"wood": 246341, "marble": 404433}  # level 32
-        ]
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/embassy_l.png'
     },
     'bazar': {
@@ -1056,7 +572,7 @@ infos = {
         'require': 'Dobrobyt (Gospodarka)',
         'max_level': 39,
         'needed_materials': ['wood', 'marble'],
-        'materials': {
+        'materials': [
             {"wood": 48, "marble": 0},  # level 1
             {"wood": 173, "marble": 0},  # level 2
             {"wood": 346, "marble": 0},  # level 3
@@ -1089,8 +605,9 @@ infos = {
             {"wood": 560208, "marble": 337705},  # level 30
             {"wood": 695038, "marble": 418983},  # level 31
             {"wood": 861391, "marble": 519260}  # level 32
-        }
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/branchoffice_l.png'
+        # TODO - zasięg bazaru
     },
     'warsztat': {
         'description': 'Najlepiej wyszkoleni ludzie z Twojego miasta pracują w warsztacie. To właśnie oni '
@@ -1100,7 +617,7 @@ infos = {
         'require': 'Wynalazek (Nauka)',
         'max_level': 32,
         'needed_materials': ['wood', 'marble'],
-        'materials': {
+        'materials': [
             {"wood": 220, "marble": 95},  # level 1
             {"wood": 383, "marble": 167},  # level 2
             {"wood": 569, "marble": 251},  # level 3
@@ -1133,7 +650,7 @@ infos = {
             {"wood": 51166, "marble": 33095},  # level 30
             {"wood": 58462, "marble": 38447},  # level 31
             {"wood": 66778, "marble": 44656}  # level 32
-        }
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/workshop_l.png'
     },
     'kryjówka': {
@@ -1144,7 +661,7 @@ infos = {
         'max_level': 32,
         'require': 'Szpiegostwo (Nauka)',
         'needed_materials': ['wood', 'marble'],
-        'materials': {
+        'materials': [
             {"wood": 113, "marble": 0},  # level 1
             {"wood": 248, "marble": 0},  # level 2
             {"wood": 402, "marble": 0},  # level 3
@@ -1177,7 +694,7 @@ infos = {
             {"wood": 42321, "marble": 19716},  # level 30
             {"wood": 48365, "marble": 22917},  # level 31
             {"wood": 55255, "marble": 26631}  # level 32
-        }
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/safehouse_l.png'
     },
     'leśniczówka': {
@@ -1188,7 +705,7 @@ infos = {
         'max_level': 32,
         'require': 'Ulepszone wydobywanie zasobów (Gospodarka)',
         'needed_materials': ['wood', 'marble'],
-        'materials': {
+        'materials': [
             {"wood": 250, "marble": 0},  # level 1
             {"wood": 430, "marble": 104},  # level 2
             {"wood": 664, "marble": 237},  # level 3
@@ -1221,23 +738,635 @@ infos = {
             {"wood": 1208878, "marble": 687989},  # level 30
             {"wood": 1571647, "marble": 894489},  # level 31
             {"wood": 2043246, "marble": 1162937}  # level 32
-        }
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/forester_l.png'
+        # TODO - bonus leśniczówki
+    },
+    'huta szkła': {
+        'description': 'Prawdziwi mistrzowie w swojej sztuce potrafią stworzyć błyszczące fragmenty w Hucie Szkła.'
+                       ' Piszczel, szkła i wszystkie inne części naszej aparatury potrafią zrozumieć tylko nasi'
+                       ' naukowcy. I są tak zręczni, że rzeczy tworzą się w chwilę. Każdy poziom budynku zwiększa'
+                       ' produkcję kryształu o 2%',
+        'max_level': 32,
+        'require': 'Ulepszone wydobywanie zasobów (Gospodarka)',
+        'needed_materials': ['wood', 'marble'],
+        'materials': [
+            {"wood": 274, "marble": 0},  # level 1
+            {"wood": 467, "marble": 116},  # level 2
+            {"wood": 718, "marble": 255},  # level 3
+            {"wood": 1045, "marble": 436},  # level 4
+            {"wood": 1469, "marble": 671},  # level 5
+            {"wood": 2021, "marble": 977},  # level 6
+            {"wood": 2738, "marble": 1375},  # level 7
+            {"wood": 3671, "marble": 1892},  # level 8
+            {"wood": 4883, "marble": 2564},  # level 9
+            {"wood": 6459, "marble": 3437},  # level 10
+            {"wood": 8508, "marble": 4572},  # level 11
+            {"wood": 11172, "marble": 6049},  # level 12
+            {"wood": 14634, "marble": 7968},  # level 13
+            {"wood": 19135, "marble": 10462},  # level 14
+            {"wood": 24987, "marble": 13705},  # level 15
+            {"wood": 32594, "marble": 17921},  # level 16
+            {"wood": 42483, "marble": 23402},  # level 17
+            {"wood": 55339, "marble": 30527},  # level 18
+            {"wood": 72050, "marble": 39790},  # level 19
+            {"wood": 93778, "marble": 51830},  # level 20
+            {"wood": 122021, "marble": 67485},  # level 21
+            {"wood": 158740, "marble": 87835},  # level 22
+            {"wood": 206471, "marble": 114289},  # level 23
+            {"wood": 268524, "marble": 148680},  # level 24
+            {"wood": 349194, "marble": 193389},  # level 25
+            {"wood": 454063, "marble": 251512},  # level 26
+            {"wood": 590393, "marble": 327069},  # level 27
+            {"wood": 767620, "marble": 425294},  # level 28
+            {"wood": 998018, "marble": 552986},  # level 29
+            {"wood": 1297536, "marble": 718988},  # level 30
+            {"wood": 1686906, "marble": 934789},  # level 31
+            {"wood": 2193089, "marble": 1215330}  # level 32
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/glassblowing_l.png'
+        # TODO - bonus Huty Szkła
+    },
+    'wieża alchemika': {
+        'description': 'Kiedy wiatr wieje z zachodu, zapach napełnia ulice wokół wieży i wielu mieszkańców nie'
+                       ' opuszcza swoich domów bez klipsa na nosie. Nasz alchemik pracuje bez przerwy, aby znaleźć'
+                       ' idealną miksturę i dzięki temu będziemy mogli wydobywać więcej siarki z naszej kopalni.'
+                       ' Każdy poziom budynku zwiększa produkcję siarki o 2%',
+        'max_level': 32,
+        'require': 'Ulepszone wydobywanie zasobów (Gospodarka)',
+        'needed_materials': ['wood', 'marble'],
+        'materials': [
+            {"wood": 274, "marble": 0},  # level 1
+            {"wood": 467, "marble": 116},  # level 2
+            {"wood": 718, "marble": 255},  # level 3
+            {"wood": 1045, "marble": 436},  # level 4
+            {"wood": 1469, "marble": 671},  # level 5
+            {"wood": 2021, "marble": 977},  # level 6
+            {"wood": 2738, "marble": 1375},  # level 7
+            {"wood": 3671, "marble": 1892},  # level 8
+            {"wood": 4883, "marble": 2564},  # level 9
+            {"wood": 6459, "marble": 3437},  # level 10
+            {"wood": 8508, "marble": 4572},  # level 11
+            {"wood": 11172, "marble": 6049},  # level 12
+            {"wood": 14634, "marble": 7968},  # level 13
+            {"wood": 19135, "marble": 10462},  # level 14
+            {"wood": 24987, "marble": 13705},  # level 15
+            {"wood": 32594, "marble": 17921},  # level 16
+            {"wood": 42483, "marble": 23402},  # level 17
+            {"wood": 55339, "marble": 30527},  # level 18
+            {"wood": 72050, "marble": 39790},  # level 19
+            {"wood": 93778, "marble": 51830},  # level 20
+            {"wood": 122021, "marble": 67485},  # level 21
+            {"wood": 158740, "marble": 87835},  # level 22
+            {"wood": 206471, "marble": 114289},  # level 23
+            {"wood": 268524, "marble": 148680},  # level 24
+            {"wood": 349194, "marble": 193389},  # level 25
+            {"wood": 454063, "marble": 251512},  # level 26
+            {"wood": 590393, "marble": 327069},  # level 27
+            {"wood": 767620, "marble": 425294},  # level 28
+            {"wood": 998018, "marble": 552986},  # level 29
+            {"wood": 1297536, "marble": 718988},  # level 30
+            {"wood": 1686906, "marble": 934789},  # level 31
+            {"wood": 2193089, "marble": 1215330}  # level 32
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/alchemist_l.png'
+        # TODO - bonus Wieży Alchemika
+    },
+    'winnica': {
+        'description': 'Winiarz wybiera tylko najlepiej nasłonecznione wzgórza z otaczających obszarów, aby'
+                       ' zasadzić na nich najsłodsze zielone winogrona. Dlatego winnica produkuje znacznie lepsze'
+                       ' wino z naszych owoców. Każdy poziom tego budynku zwiększa Twoją produkcję wina o 2%',
+        'max_level': 32,
+        'require': 'Ulepszone wydobywanie zasobów (Gospodarka)',
+        'needed_materials': ['wood', 'marble'],
+        'materials': [
+            {"wood": 274, "marble": 0},  # level 1
+            {"wood": 467, "marble": 116},  # level 2
+            {"wood": 718, "marble": 255},  # level 3
+            {"wood": 1045, "marble": 436},  # level 4
+            {"wood": 1469, "marble": 671},  # level 5
+            {"wood": 2021, "marble": 977},  # level 6
+            {"wood": 2738, "marble": 1375},  # level 7
+            {"wood": 3671, "marble": 1892},  # level 8
+            {"wood": 4883, "marble": 2564},  # level 9
+            {"wood": 6459, "marble": 3437},  # level 10
+            {"wood": 8508, "marble": 4572},  # level 11
+            {"wood": 11172, "marble": 6049},  # level 12
+            {"wood": 14634, "marble": 7968},  # level 13
+            {"wood": 19135, "marble": 10462},  # level 14
+            {"wood": 24987, "marble": 13705},  # level 15
+            {"wood": 32594, "marble": 17921},  # level 16
+            {"wood": 42483, "marble": 23402},  # level 17
+            {"wood": 55339, "marble": 30527},  # level 18
+            {"wood": 72050, "marble": 39790},  # level 19
+            {"wood": 93778, "marble": 51830},  # level 20
+            {"wood": 122021, "marble": 67485},  # level 21
+            {"wood": 158740, "marble": 87835},  # level 22
+            {"wood": 206471, "marble": 114289},  # level 23
+            {"wood": 268524, "marble": 148680},  # level 24
+            {"wood": 349194, "marble": 193389},  # level 25
+            {"wood": 454063, "marble": 251512},  # level 26
+            {"wood": 590393, "marble": 327069},  # level 27
+            {"wood": 767620, "marble": 425294},  # level 28
+            {"wood": 998018, "marble": 552986},  # level 29
+            {"wood": 1297536, "marble": 718988},  # level 30
+            {"wood": 1686906, "marble": 934789},  # level 31
+            {"wood": 2193089, "marble": 1215330}  # level 32
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/winegrower_l.png'
+        # TODO - bonus Winnicy
+    },
+    'kamieniarz': {
+        'description': 'Wyszkolony kamieniarz swoimi silnymi rękami zawsze bierze właściwe bloki marmuru z'
+                       ' kamieniołomu. Rozbija je na mniejsze i nasi budowniczowie mają potrzebne materiały. Każdy'
+                       ' poziom tego budynku zwiększa produkcję marmuru o 2%',
+        'max_level': 32,
+        'require': 'Ulepszone wydobywanie zasobów (Gospodarka)',
+        'needed_materials': ['wood', 'marble'],
+        'materials': [
+            {"wood": 274, "marble": 0},  # level 1
+            {"wood": 467, "marble": 116},  # level 2
+            {"wood": 718, "marble": 255},  # level 3
+            {"wood": 1045, "marble": 436},  # level 4
+            {"wood": 1469, "marble": 671},  # level 5
+            {"wood": 2021, "marble": 977},  # level 6
+            {"wood": 2738, "marble": 1375},  # level 7
+            {"wood": 3671, "marble": 1892},  # level 8
+            {"wood": 4883, "marble": 2564},  # level 9
+            {"wood": 6459, "marble": 3437},  # level 10
+            {"wood": 8508, "marble": 4572},  # level 11
+            {"wood": 11172, "marble": 6049},  # level 12
+            {"wood": 14634, "marble": 7968},  # level 13
+            {"wood": 19135, "marble": 10462},  # level 14
+            {"wood": 24987, "marble": 13705},  # level 15
+            {"wood": 32594, "marble": 17921},  # level 16
+            {"wood": 42483, "marble": 23402},  # level 17
+            {"wood": 55339, "marble": 30527},  # level 18
+            {"wood": 72050, "marble": 39790},  # level 19
+            {"wood": 93778, "marble": 51830},  # level 20
+            {"wood": 122021, "marble": 67485},  # level 21
+            {"wood": 158740, "marble": 87835},  # level 22
+            {"wood": 206471, "marble": 114289},  # level 23
+            {"wood": 268524, "marble": 148680},  # level 24
+            {"wood": 349194, "marble": 193389},  # level 25
+            {"wood": 454063, "marble": 251512},  # level 26
+            {"wood": 590393, "marble": 327069},  # level 27
+            {"wood": 767620, "marble": 425294},  # level 28
+            {"wood": 998018, "marble": 552986},  # level 29
+            {"wood": 1297536, "marble": 718988},  # level 30
+            {"wood": 1686906, "marble": 934789},  # level 31
+            {"wood": 2193089, "marble": 1215330}  # level 32
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/stonemason_l.png'
+        # TODO - bonus Kamieniarza
+    },
+    'warsztat cieśli': {
+        'description': 'Tylko najlepsze drzewa są używane w warsztacie cieśli. Dlatego nasz rzemieślnik może budować'
+                       ' mocniejsze ramy i nasze domy nie muszą być naprawiane cały czas. Każdy poziom warsztatu'
+                       ' cieśli obniża zapotrzebowanie na materiały budowlane o 1% wartości podstawowej.',
+        'max_level': 32,
+        'require': 'Stolarka (Żegluga)',
+        'needed_materials': ['wood', 'marble'],
+        'materials': [
+            {"wood": 63, "marble": 0},  # level 1
+            {"wood": 122, "marble": 0},  # level 2
+            {"wood": 191, "marble": 0},  # level 3
+            {"wood": 274, "marble": 0},  # level 4
+            {"wood": 372, "marble": 0},  # level 5
+            {"wood": 486, "marble": 0},  # level 6
+            {"wood": 620, "marble": 0},  # level 7
+            {"wood": 777, "marble": 359},  # level 8
+            {"wood": 962, "marble": 444},  # level 9
+            {"wood": 1178, "marble": 546},  # level 10
+            {"wood": 1432, "marble": 669},  # level 11
+            {"wood": 1730, "marble": 816},  # level 12
+            {"wood": 2078, "marble": 993},  # level 13
+            {"wood": 2486, "marble": 1205},  # level 14
+            {"wood": 2964, "marble": 1459},  # level 15
+            {"wood": 3524, "marble": 1765},  # level 16
+            {"wood": 4178, "marble": 2131},  # level 17
+            {"wood": 4945, "marble": 2571},  # level 18
+            {"wood": 5841, "marble": 3097},  # level 19
+            {"wood": 6890, "marble": 3731},  # level 20
+            {"wood": 8117, "marble": 4490},  # level 21
+            {"wood": 9550, "marble": 5402},  # level 22
+            {"wood": 11229, "marble": 6496},  # level 23
+            {"wood": 13190, "marble": 7809},  # level 24
+            {"wood": 15484, "marble": 9383},  # level 25
+            {"wood": 18166, "marble": 11274},  # level 26
+            {"wood": 21299, "marble": 13543},  # level 27
+            {"wood": 24963, "marble": 16265},  # level 28
+            {"wood": 29245, "marble": 19531},  # level 29
+            {"wood": 34247, "marble": 23450},  # level 30
+            {"wood": 40096, "marble": 28154},  # level 31
+            {"wood": 46930, "marble": 33798}  # level 32
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/carpentering_l.png'
+    },
+    'optyk': {
+        'description': 'Soczewka i lupa nie tylko pomaga naszym naukowcom widzieć lepiej i znajdować ważne papiery'
+                       ' na swoich biurkach, są również potrzebne do wynalezienia wszystkich nowych technologii,'
+                       ' co uczyni nas dumnymi. Optyk przechowuje wszystko czego potrzebujemy ostrożnie w'
+                       ' magazynowanych pudełkach, a więc mniej rzeczy się tłucze i zapotrzebowanie na kryształ'
+                       ' jest mniejsze w mieście na każdy poziom budynku o 1% wartości podstawowej.',
+        'max_level': 32,
+        'require': 'Optyka (Nauka)',
+        'needed_materials': ['wood', 'marble'],
+        'materials': [
+            {"wood": 119, "marble": 0},  # level 1
+            {"wood": 188, "marble": 35},  # level 2
+            {"wood": 269, "marble": 96},  # level 3
+            {"wood": 362, "marble": 167},  # level 4
+            {"wood": 471, "marble": 249},  # level 5
+            {"wood": 597, "marble": 345},  # level 6
+            {"wood": 742, "marble": 455},  # level 7
+            {"wood": 912, "marble": 584},  # level 8
+            {"wood": 1108, "marble": 733},  # level 9
+            {"wood": 1335, "marble": 905},  # level 10
+            {"wood": 1600, "marble": 1106},  # level 11
+            {"wood": 1906, "marble": 1338},  # level 12
+            {"wood": 2261, "marble": 1608},  # level 13
+            {"wood": 2673, "marble": 1921},  # level 14
+            {"wood": 3152, "marble": 2283},  # level 15
+            {"wood": 3706, "marble": 2704},  # level 16
+            {"wood": 4348, "marble": 3191},  # level 17
+            {"wood": 5096, "marble": 3759},  # level 18
+            {"wood": 5962, "marble": 4416},  # level 19
+            {"wood": 6966, "marble": 5178},  # level 20
+            {"wood": 8131, "marble": 6062},  # level 21
+            {"wood": 9482, "marble": 7087},  # level 22
+            {"wood": 11050, "marble": 8276},  # level 23
+            {"wood": 12868, "marble": 9656},  # level 24
+            {"wood": 14978, "marble": 11257},  # level 25
+            {"wood": 17424, "marble": 13113},  # level 26
+            {"wood": 20262, "marble": 15267},  # level 27
+            {"wood": 23553, "marble": 17762},  # level 28
+            {"wood": 27373, "marble": 20662},  # level 29
+            {"wood": 31804, "marble": 24024},  # level 30
+            {"wood": 36943, "marble": 27922},  # level 31
+            {"wood": 42904, "marble": 32447}  # level 32
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/optician_l.png'
+    },
+    'zakład pirotechnika': {
+        'description': 'Ciągłe próby z fajerwerkami nie tylko rozświetlały niebo, ale też czasami otaczające'
+                       ' budynki. Naszym naukowcom uda się zmniejszyć zużycia siarki, tylko wtedy, gdy będą ciągle'
+                       ' testować nowe mikstury. Każdy poziom budynku zmniejsza zapotrzebowanie na siarkę w'
+                       ' mieście o 1% podstawowej wartości.',
+        'max_level': 32,
+        'require': 'Pirotechnika (Wojsko)',
+        'needed_materials': ['wood', 'marble'],
+        'materials': [
+            {"wood": 273, "marble": 135},  # level 1
+            {"wood": 353, "marble": 212},  # level 2
+            {"wood": 445, "marble": 302},  # level 3
+            {"wood": 551, "marble": 405},  # level 4
+            {"wood": 673, "marble": 526},  # level 5
+            {"wood": 813, "marble": 665},  # level 6
+            {"wood": 974, "marble": 827},  # level 7
+            {"wood": 1159, "marble": 1015},  # level 8
+            {"wood": 1373, "marble": 1233},  # level 9
+            {"wood": 1618, "marble": 1486},  # level 10
+            {"wood": 1899, "marble": 1779},  # level 11
+            {"wood": 2223, "marble": 2120},  # level 12
+            {"wood": 2596, "marble": 2514},  # level 13
+            {"wood": 3025, "marble": 2972},  # level 14
+            {"wood": 3517, "marble": 3503},  # level 15
+            {"wood": 4084, "marble": 4119},  # level 16
+            {"wood": 4736, "marble": 4834},  # level 17
+            {"wood": 5485, "marble": 5662},  # level 18
+            {"wood": 6346, "marble": 6623},  # level 19
+            {"wood": 7338, "marble": 7738},  # level 20
+            {"wood": 8478, "marble": 9032},  # level 21
+            {"wood": 9790, "marble": 10534},  # level 22
+            {"wood": 11297, "marble": 12275},  # level 23
+            {"wood": 13030, "marble": 13355},  # level 24
+            {"wood": 14990, "marble": 16636},  # level 25
+            {"wood": 17317, "marble": 19354},  # level 26
+            {"wood": 19954, "marble": 22507},  # level 27
+            {"wood": 22986, "marble": 26163},  # level 28
+            {"wood": 26472, "marble": 30404},  # level 29
+            {"wood": 30484, "marble": 35325},  # level 30
+            {"wood": 35096, "marble": 41033},  # level 31
+            {"wood": 40399, "marble": 47652}  # level 32
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/fireworker_l.png'
+    },
+    'tłocznia win': {
+        'description': 'Tylko najczystsze wina dojrzewają głęboko i w chłodnych piwnicach miasta. Właściciel piwnicy'
+                       ' dba o to, żeby nic nie przeszkadzało i wszystkie wina trafiły prosto na stoły naszych'
+                       ' mieszkańców. Każdy poziom tłoczni win zmniejsza zapotrzebowanie na wino w mieście o 1%'
+                       ' wartości podstawowej.',
+        'max_level': 32,
+        'require': 'Tłocznia win (Gospodarka)',
+        'needed_materials': ['wood', 'marble'],
+        'materials': [
+            {"wood": 339, "marble": 123},  # level 1
+            {"wood": 423, "marble": 198},  # level 2
+            {"wood": 520, "marble": 285},  # level 3
+            {"wood": 631, "marble": 387},  # level 4
+            {"wood": 758, "marble": 504},  # level 5
+            {"wood": 905, "marble": 640},  # level 6
+            {"wood": 1074, "marble": 798},  # level 7
+            {"wood": 1269, "marble": 981},  # level 8
+            {"wood": 1492, "marble": 1194},  # level 9
+            {"wood": 1749, "marble": 1440},  # level 10
+            {"wood": 2045, "marble": 1726},  # level 11
+            {"wood": 2384, "marble": 2058},  # level 12
+            {"wood": 2775, "marble": 2443},  # level 13
+            {"wood": 3225, "marble": 2889},  # level 14
+            {"wood": 3741, "marble": 3407},  # level 15
+            {"wood": 4336, "marble": 4008},  # level 16
+            {"wood": 5019, "marble": 4705},  # level 17
+            {"wood": 5813, "marble": 5513},  # level 18
+            {"wood": 6875, "marble": 6450},  # level 19
+            {"wood": 7941, "marble": 7537},  # level 20
+            {"wood": 8944, "marble": 8800},  # level 21
+            {"wood": 10319, "marble": 10263},  # level 22
+            {"wood": 11900, "marble": 11961},  # level 23
+            {"wood": 13718, "marble": 13930},  # level 24
+            {"wood": 15809, "marble": 16214},  # level 25
+            {"wood": 18215, "marble": 18864},  # level 26
+            {"wood": 20978, "marble": 21938},  # level 27
+            {"wood": 24159, "marble": 25503},  # level 28
+            {"wood": 27816, "marble": 29639},  # level 29
+            {"wood": 32021, "marble": 34437},  # level 30
+            {"wood": 36857, "marble": 40002},  # level 31
+            {"wood": 42419, "marble": 46457}  # level 32
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/vineyard_l.png'
+    },
+    'biuro architekta': {
+        'description': 'Kąt, cyrkiel i linijka. Biuro Architekta dostarcza wszystko co jest potrzebne do'
+                       ' projektowania mocniejszych murów i stabilnych dachów. Dobrze zaplanowany budynek'
+                       ' potrzebuje mniej marmuru niż budynek z krzywymi ścianami . Każdy poziom budynku'
+                       ' zmniejsza zapotrzebowanie na marmur w mieście o 1% wartości podstawowej.',
+        'max_level': 32,
+        'require': 'Architektura (Gospodarka)',
+        'needed_materials': ['wood', 'marble'],
+        'materials': [
+            {"wood": 185, "marble": 106},  # level 1
+            {"wood": 291, "marble": 160},  # level 2
+            {"wood": 413, "marble": 222},  # level 3
+            {"wood": 555, "marble": 295},  # level 4
+            {"wood": 720, "marble": 379},  # level 5
+            {"wood": 911, "marble": 475},  # level 6
+            {"wood": 1133, "marble": 587},  # level 7
+            {"wood": 1390, "marble": 716},  # level 8
+            {"wood": 1689, "marble": 865},  # level 9
+            {"wood": 2035, "marble": 1036},  # level 10
+            {"wood": 2437, "marble": 1233},  # level 11
+            {"wood": 2902, "marble": 1460},  # level 12
+            {"wood": 3443, "marble": 1722},  # level 13
+            {"wood": 4070, "marble": 2023},  # level 14
+            {"wood": 4797, "marble": 2369},  # level 15
+            {"wood": 5640, "marble": 2767},  # level 16
+            {"wood": 6618, "marble": 3226},  # level 17
+            {"wood": 7754, "marble": 3752},  # level 18
+            {"wood": 9070, "marble": 4358},  # level 19
+            {"wood": 10598, "marble": 5056},  # level 20
+            {"wood": 12369, "marble": 5857},  # level 21
+            {"wood": 14424, "marble": 6778},  # level 22
+            {"wood": 16807, "marble": 7836},  # level 23
+            {"wood": 19573, "marble": 9052},  # level 24
+            {"wood": 22780, "marble": 10448},  # level 25
+            {"wood": 26501, "marble": 12054},  # level 26
+            {"wood": 30817, "marble": 13899},  # level 27
+            {"wood": 35826, "marble": 16289},  # level 28
+            {"wood": 41631, "marble": 18450},  # level 29
+            {"wood": 48371, "marble": 21246},  # level 30
+            {"wood": 56185, "marble": 24455},  # level 31
+            {"wood": 65251, "marble": 28141}  # level 32
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/architect_l.png'
+    },
+    'świątynia': {
+        'description': 'Świątynia jest miejscem wiary, przekonań i refleksji. Mieszkają tu kapłani, oddający cześć'
+                       ' swojemu Bogu i głoszący jego słowo na całej wyspie. Możesz się tu modlić o cuda, dopóki,'
+                       ' dopóty będziesz mu okazywał odpowiedni respekt.',
+        'max_level': 38,
+        'require': 'Politeizm (Nauka)',
+        'needed_materials': ['wood', 'crystal'],
+        'materials': [
+            {"wood": 216, "crystal": 173},  # level 1
+            {"wood": 228, "crystal": 190},  # level 2
+            {"wood": 333, "crystal": 290},  # level 3
+            {"wood": 465, "crystal": 423},  # level 4
+            {"wood": 598, "crystal": 567},  # level 5
+            {"wood": 760, "crystal": 752},  # level 6
+            {"wood": 958, "crystal": 989},  # level 7
+            {"wood": 1197, "crystal": 1290},  # level 8
+            {"wood": 1432, "crystal": 1610},  # level 9
+            {"wood": 1773, "crystal": 2080},  # level 10
+            {"wood": 2112, "crystal": 2586},  # level 11
+            {"wood": 2512, "crystal": 3210},  # level 12
+            {"wood": 3082, "crystal": 4109},  # level 13
+            {"wood": 3655, "crystal": 5084},  # level 14
+            {"wood": 4458, "crystal": 6471},  # level 15
+            {"wood": 5126, "crystal": 7765},  # level 16
+            {"wood": 6232, "crystal": 9851},  # level 17
+            {"wood": 7167, "crystal": 11821},  # level 18
+            {"wood": 8688, "crystal": 14952},  # level 19
+            {"wood": 10247, "crystal": 18402},  # level 20
+            {"wood": 11784, "crystal": 22082},  # level 21
+            {"wood": 14229, "crystal": 27824},  # level 22
+            {"wood": 16753, "crystal": 34184},  # level 23
+            {"wood": 19266, "crystal": 41020},  # level 24
+            {"wood": 23156, "crystal": 51514},  # level 25
+            {"wood": 26664, "crystal": 61817},  # level 26
+            {"wood": 32027, "crystal": 77477},  # level 27
+            {"wood": 36831, "crystal": 92972},  # level 28
+            {"wood": 43257, "crystal": 113941},  # level 29
+            {"wood": 50782, "crystal": 139577},  # level 30
+            {"wood": 59591, "crystal": 170911},  # level 31
+            {"wood": 68529, "crystal": 205093}  # level 32
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/temple_l.png'
+    },
+    'składowisko': {
+        'description': 'Składowisko umożliwia ci przechowywanie dużych ilości towarów. Każdy poziom rozbudowy'
+                       ' składowiska może pomieścić 32 000 jednostek każdego rodzaju towaru. Składowisko nie jest'
+                       ' chronione przed plądrowaniem.',
+        'max_level': 40,
+        'require': 'Składowisko (Gospodarka)',
+        'needed_materials': ['wood', 'marble', 'crystal', 'sulfur'],
+        'materials': [
+            {"wood": 640, "marble": 497, "crystal": 701, "sulfur": 384},  # level 1
+            {"wood": 1152, "marble": 932, "crystal": 1146, "sulfur": 845},  # level 2
+            {"wood": 1766, "marble": 1445, "crystal": 1668, "sulfur": 1398},  # level 3
+            {"wood": 2504, "marble": 2050, "crystal": 2278, "sulfur": 2061},  # level 4
+            {"wood": 3388, "marble": 2762, "crystal": 2991, "sulfur": 2857},  # level 5
+            {"wood": 4450, "marble": 3609, "crystal": 3526, "sulfur": 3813},  # level 6
+            {"wood": 5724, "marble": 4604, "crystal": 4803, "sulfur": 4960},  # level 7
+            {"wood": 7253, "marble": 5778, "crystal": 5946, "sulfur": 6336},  # level 8
+            {"wood": 9088, "marble": 7164, "crystal": 7283, "sulfur": 7987},  # level 9
+            {"wood": 11289, "marble": 8799, "crystal": 8847, "sulfur": 9968},  # level 10
+            {"wood": 13931, "marble": 10728, "crystal": 10678, "sulfur": 12346},  # level 11
+            {"wood": 17101, "marble": 13005, "crystal": 12819, "sulfur": 15199},  # level 12
+            {"wood": 20905, "marble": 15691, "crystal": 15325, "sulfur": 18623},  # level 13
+            {"wood": 25470, "marble": 18862, "crystal": 18257, "sulfur": 22731},  # level 14
+            {"wood": 30948, "marble": 22602, "crystal": 21687, "sulfur": 27661},  # level 15
+            {"wood": 37522, "marble": 27016, "crystal": 25700, "sulfur": 33578},  # level 16
+            {"wood": 45410, "marble": 32225, "crystal": 30395, "sulfur": 40677},  # level 17
+            {"wood": 54876, "marble": 38371, "crystal": 35889, "sulfur": 49197},  # level 18
+            {"wood": 66236, "marble": 45623, "crystal": 42316, "sulfur": 59420},  # level 19
+            {"wood": 79867, "marble": 54181, "crystal": 49837, "sulfur": 71688},  # level 20
+            {"wood": 96223, "marble": 64278, "crystal": 58635, "sulfur": 86409},  # level 21
+            {"wood": 115852, "marble": 76194, "crystal": 68929, "sulfur": 104076},  # level 22
+            {"wood": 139407, "marble": 90256, "crystal": 80973, "sulfur": 125274},  # level 23
+            {"wood": 167672, "marble": 106847, "crystal": 95065, "sulfur": 150714},  # level 24
+            {"wood": 201592, "marble": 126424, "crystal": 111553, "sulfur": 181241},  # level 25
+            {"wood": 242293, "marble": 149528, "crystal": 130843, "sulfur": 217872},  # level 26
+            {"wood": 291136, "marble": 176787, "crystal": 153414, "sulfur": 261830},  # level 27
+            {"wood": 349749, "marble": 208956, "crystal": 179821, "sulfur": 314581},  # level 28
+            {"wood": 420081, "marble": 246913, "crystal": 201716, "sulfur": 377881},  # level 29
+            {"wood": 504483, "marble": 291702, "crystal": 246864, "sulfur": 453842},  # level 30
+            {"wood": 605763, "marble": 344555, "crystal": 289157, "sulfur": 544994},  # level 31
+            {"wood": 727300, "marble": 406921, "crystal": 338642, "sulfur": 654378},  # level 32
+            {"wood": 873143, "marble": 480512, "crystal": 396536, "sulfur": 785637},  # level 33
+            {"wood": 1048157, "marble": 567350, "crystal": 464274, "sulfur": 943149},  # level 34
+            {"wood": 1258171, "marble": 669817, "crystal": 543528, "sulfur": 1132163},  # level 35
+            {"wood": 1510191, "marble": 790730, "crystal": 636253, "sulfur": 1358979},  # level 36
+            {"wood": 1812613, "marble": 933408, "crystal": 744742, "sulfur": 1631159},  # level 37
+            {"wood": 2175519, "marble": 1101767, "crystal": 871676, "sulfur": 1957774},  # level 38
+            {"wood": 2611007, "marble": 1300431, "crystal": 1020187, "sulfur": 2349714},  # level 39
+            {"wood": 3133592, "marble": 1534855, "crystal": 1193945, "sulfur": 2820041}  # level 40
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/dump_l.png'
+    },
+    'twierdza piracka': {
+        'description': 'Nad twoją twierdzą piracką powiewa złowieszczo flaga z trupią czaszką. Hojna nagroda czeka na'
+                       ' pirata, który zdobędzie najwięcej łupu. Aby nie zrabowano twoich punktów abordażu do dnia'
+                       ' ich podliczenia, wzmocnij swoją załogę',
+        'max_level': 30,
+        'require': 'Piractwo (Żegluga)',
+        'needed_materials': ['wood', 'marble'],
+        'materials': [
+            {"wood": 450, "marble": 250},  # level 1
+            {"wood": 906, "marble": 505},  # level 2
+            {"wood": 1389, "marble": 783},  # level 3
+            {"wood": 1935, "marble": 1112},  # level 4
+            {"wood": 2593, "marble": 1534},  # level 5
+            {"wood": 3427, "marble": 2103},  # level 6
+            {"wood": 4516, "marble": 2883},  # level 7
+            {"wood": 5950, "marble": 3949},  # level 8
+            {"wood": 7834, "marble": 5388},  # level 9
+            {"wood": 10284, "marble": 7296},  # level 10
+            {"wood": 13430, "marble": 9782},  # level 11
+            {"wood": 17415, "marble": 12964},  # level 12
+            {"wood": 22394, "marble": 16970},  # level 13
+            {"wood": 28534, "marble": 21938},  # level 14
+            {"wood": 36015, "marble": 28019},  # level 15
+            {"wood": 45029, "marble": 35370},  # level 16
+            {"wood": 55779, "marble": 44162},  # level 17
+            {"wood": 68482, "marble": 54573},  # level 18
+            {"wood": 83366, "marble": 66793},  # level 19
+            {"wood": 100671, "marble": 81020},  # level 20
+            {"wood": 120648, "marble": 97463},  # level 21
+            {"wood": 143562, "marble": 116341},  # level 22
+            {"wood": 169686, "marble": 137883},  # level 23
+            {"wood": 199309, "marble": 162325},  # level 24
+            {"wood": 232729, "marble": 189915},  # level 25
+            {"wood": 270255, "marble": 220912},  # level 26
+            {"wood": 312210, "marble": 255580},  # level 27
+            {"wood": 358926, "marble": 294197},  # level 28
+            {"wood": 410748, "marble": 337048},  # level 29
+            {"wood": 468032, "marble": 384429}  # level 30
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/buildings/y100/pirateFortress.png'
+        # TODO - dostępne abordaże
+        # TODO - nagroda za ranking
+    },
+    'czarny rynek': {
+        'description': 'Czarny Rynek umożliwi ci sprzedaż jednostek wojskowych za złoto i inne surowce. Rozbuduj'
+                       ' budynek, aby móc sprzedać inne typy jednostek i obniżyć opodatkowanie handlu. Twoja'
+                       ' oferta wyświetli się w Bazarach innych władców.',
+        'max_level': 25,
+        'require': 'Handel żołnierzami (Gospodarka)',
+        'needed_materials': ['wood', 'marble'],
+        'materials': [
+            {"wood": 440, "marble": 260},  # level 1
+            {"wood": 887, "marble": 525},  # level 2
+            {"wood": 1360, "marble": 807},  # level 3
+            {"wood": 1890, "marble": 1126},  # level 4
+            {"wood": 2516, "marble": 1509},  # level 5
+            {"wood": 3288, "marble": 1988},  # level 6
+            {"wood": 4263, "marble": 2601},  # level 7
+            {"wood": 5505, "marble": 3390},  # level 8
+            {"wood": 7086, "marble": 4403},  # level 9
+            {"wood": 9086, "marble": 5693},  # level 10
+            {"wood": 11590, "marble": 7315},  # level 11
+            {"wood": 14691, "marble": 9331},  # level 12
+            {"wood": 18489, "marble": 11807},  # level 13
+            {"wood": 23088, "marble": 14812},  # level 14
+            {"wood": 28600, "marble": 18420},  # level 15
+            {"wood": 35143, "marble": 22708},  # level 16
+            {"wood": 42839, "marble": 27757},  # level 17
+            {"wood": 51820, "marble": 33654},  # level 18
+            {"wood": 62218, "marble": 40486},  # level 19
+            {"wood": 74175, "marble": 48348},  # level 20
+            {"wood": 87838, "marble": 57334},  # level 21
+            {"wood": 103356, "marble": 67546},  # level 22
+            {"wood": 120888, "marble": 79087},  # level 23
+            {"wood": 140596, "marble": 92064},  # level 24
+            {"wood": 162647, "marble": 106587}  # level 25
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/blackmarket_l.png'
+        # TODO - dostępne jednostki w sprzedaży oraz upust
+    },
+    'archiwum map': {
+        'description': 'W archiwum map są przechowywane drogocenne mapy mórz. Dzięki nim mogą nasi żeglarze'
+                       ' szybciej dotrzeć do celu. Im wyższy masz poziom budynku oraz dalszy cel podróży, tym'
+                       ' więcej czasu możesz zaoszczędzić w obie strony.',
+        'max_level': 40,
+        'require': 'Archiwizacja (Nauka)',
+        'needed_materials': ['wood', 'marble', 'crystal'],
+        'materials': [
+            {"wood": 578, "marble": 346, "crystal": 161},  # level 1
+            {"wood": 1298, "marble": 1066, "crystal": 611},  # level 2
+            {"wood": 2133, "marble": 1916, "crystal": 1142},  # level 3
+            {"wood": 3102, "marble": 2918, "crystal": 1769},  # level 4
+            {"wood": 4226, "marble": 4101, "crystal": 2508},  # level 5
+            {"wood": 5530, "marble": 5497, "crystal": 3380},  # level 6
+            {"wood": 7042, "marble": 7144, "crystal": 4410},  # level 7
+            {"wood": 8796, "marble": 9088, "crystal": 5625},  # level 8
+            {"wood": 10831, "marble": 11381, "crystal": 7058},  # level 9
+            {"wood": 13191, "marble": 14088, "crystal": 8750},  # level 10
+            {"wood": 15929, "marble": 17281, "crystal": 10746},  # level 11
+            {"wood": 19106, "marble": 21050, "crystal": 13101},  # level 12
+            {"wood": 22790, "marble": 25496, "crystal": 15880},  # level 13
+            {"wood": 27064, "marble": 30743, "crystal": 19159},  # level 14
+            {"wood": 32022, "marble": 36935, "crystal": 23029},  # level 15
+            {"wood": 37773, "marble": 44241, "crystal": 27595},  # level 16
+            {"wood": 44444, "marble": 52862, "crystal": 32984},  # level 17
+            {"wood": 52183, "marble": 63035, "crystal": 39342},  # level 18
+            {"wood": 61159, "marble": 75039, "crystal": 46844},  # level 19
+            {"wood": 71572, "marble": 89204, "crystal": 55697},  # level 20
+            {"wood": 83651, "marble": 105918, "crystal": 66144},  # level 21
+            {"wood": 97663, "marble": 125641, "crystal": 78470},  # level 22
+            {"wood": 113917, "marble": 148914, "crystal": 93016},  # level 23
+            {"wood": 132771, "marble": 176377, "crystal": 110180},  # level 24
+            {"wood": 154642, "marble": 208782, "crystal": 130434},  # level 25
+            {"wood": 180012, "marble": 247021, "crystal": 154333},  # level 26
+            {"wood": 209442, "marble": 292142, "crystal": 182533},  # level 27
+            {"wood": 243580, "marble": 345385, "crystal": 215810},  # level 28
+            {"wood": 283180, "marble": 408212, "crystal": 255077},  # level 29
+            {"wood": 329116, "marble": 482348, "crystal": 301412},  # level 30
+            {"wood": 382402, "marble": 569829, "crystal": 356088},  # level 31
+            {"wood": 444214, "marble": 673055, "crystal": 420604},  # level 32
+            {"wood": 515916, "marble": 794863, "crystal": 496734},  # level 33
+            {"wood": 599090, "marble": 938596, "crystal": 586567},  # level 34
+            {"wood": 695572, "marble": 1108201, "crystal": 692571},  # level 35
+            {"wood": 807491, "marble": 1308335, "crystal": 817654},  # level 36
+            {"wood": 937317, "marble": 1544493, "crystal": 965253},  # level 37
+            {"wood": 1087916, "marble": 1823160, "crystal": 1139420},  # level 38
+            {"wood": 1262610, "marble": 2151986, "crystal": 1344936},  # level 39
+            {"wood": 1465255, "marble": 2540001, "crystal": 1587446}  # level 40
+        ],
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/marinechartarchive_l.png'
+        # TODO - bonus Archiwum Map
     }
+}  # TODO - kategorie budynków
 
 
 # Sprawdzanie aliasów nazwy budynku
