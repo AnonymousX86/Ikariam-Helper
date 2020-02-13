@@ -8,7 +8,6 @@ from discord.utils import get
 from src.buildings import infos as building_infos, \
     try_alias as try_building_alias
 from src.miracles import infos as miracle_infos, \
-    change_icon as change_miracle_icon, \
     try_alias as try_miracle_alias
 from src.armies import minimum as min_army, \
     recommended as rec_army
@@ -170,7 +169,7 @@ class Ikariam(cmd.Cog):
 
             # Miniatura budynku
             building_embed.set_thumbnail(
-                url=building['icon']
+                url=building_infos[building]['icon']
             )
 
         await ctx.send(embed=building_embed)

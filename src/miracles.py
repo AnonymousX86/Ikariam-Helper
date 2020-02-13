@@ -5,11 +5,11 @@ infos = {
     'kuźnia hefajstosa': {
         'duration': {
             'normal': '1D',
-            'short': '0.5D'
+            'short': '0.5D'  # przykładowa wartość
         },
         'cooldown': {
             'normal': '7D',
-            'short': '3.5D'
+            'short': '3.5D'  # przykładowa wartość
         },
         'effects': [
             'Opancerzenie wszystkich bojowych jednostek zostało zwiększone o 0, a zadawane obrażenia o 10%.',
@@ -17,7 +17,9 @@ infos = {
             'Opancerzenie wszystkich bojowych jednostek zostało zwiększone o 1, a zadawane obrażenia o 15%.',
             'Opancerzenie wszystkich bojowych jednostek zostało zwiększone o 2, a zadawane obrażenia o 15%.',
             'Opancerzenie wszystkich bojowych jednostek zostało zwiększone o 2, a zadawane obrażenia o 20%.',
-        ]
+        ],
+        'icon': 'https://vignette.wikia.nocookie.net/ikariam/images/4/4c/Hephaistos\'_Forge.gif/revision/latest?cb'
+                '=20090904181708 '
     },
     'święty gaj hadesa': {},
     'ogrody demeter': {},
@@ -27,14 +29,6 @@ infos = {
     'świątynia posejdona': {},
     'kolos': {},
 }
-
-
-def change_icon(name):
-    if name == 'kuźnia hefajstosa':
-        return 'https://vignette.wikia.nocookie.net/ikariam/images/4/4c/Hephaistos\'_Forge.gif/revision/latest?cb' \
-               '=20090904181708'
-    else:
-        return ''
 
 
 def try_alias(name):

@@ -1370,6 +1370,7 @@ infos = {
 
 
 # Sprawdzanie aliasów nazwy budynku
+# TODO - dodać więcej aliasów
 def try_alias(name):
     if name in ('rezydencja', 'gubernator'):
         return 'rezydencja gubernatora'
