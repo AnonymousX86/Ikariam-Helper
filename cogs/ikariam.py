@@ -6,7 +6,6 @@ from discord.ext import commands as cmd
 from discord.utils import get
 
 from src.buildings import infos as building_infos, \
-    change_icon as change_building_icon, \
     try_alias as try_building_alias
 from src.miracles import infos as miracle_infos, \
     change_icon as change_miracle_icon, \
@@ -104,7 +103,7 @@ class Ikariam(cmd.Cog):
                 color=self.bot.error_color
             )
 
-        # Poziom to co najmniej 1
+        # Błędny poziom (poniżej 0)
         elif level < 0:
             building_embed = Embed(
                 title=default_title,
@@ -170,11 +169,9 @@ class Ikariam(cmd.Cog):
                 )
 
             # Miniatura budynku
-            miniature = change_building_icon(building)
-            if miniature != '':
-                building_embed.set_thumbnail(
-                    url=miniature
-                )
+            building_embed.set_thumbnail(
+                url=building['icon']
+            )
 
         await ctx.send(embed=building_embed)
         return

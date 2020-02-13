@@ -539,6 +539,7 @@ infos = {
             {"wood": 2276286, "marble": 6058643},  # level 39
             {"wood": 2761291, "marble": 7716366}  # level 40 max
         ]
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/townhall_l.png'
         # TODO - ilość mieszkańców na poziom Ratusza
     },
     'akademia': {
@@ -586,6 +587,7 @@ infos = {
             {"wood": 1257246, "crystal": 2642548},  # level 31
             {"wood": 1736683, "crystal": 3790483}  # level 32
         ]
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/academy_l.png'
         # TODO - ilość naukowców na poziom Akademii
     },
     'magazyn': {
@@ -638,6 +640,7 @@ infos = {
             {"wood": 652752, "marble": 339745},  # level 39
             {"wood": 783398, "marble": 407790}  # level 40
         ]
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/warehouse_l.png'
         # TODO - pojemność magazynu na poziom i bezpieczna pojemność
     },
     'tawerna': {
@@ -697,6 +700,7 @@ infos = {
             {"wood": 2211407, "marble": 5713425},  # level 46
             {"wood": 2653789, "marble": 7427454}  # level 47 max
         ]
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/taverne_l.png'
         # TODO - wyszynk i zadowolenie na wyszynk
     },
     'pałac': {
@@ -719,6 +723,7 @@ infos = {
             {"wood": 2612944, "marble": 794994, "sulfur": 919013, "wine": 717254, "crystal": 678760},  # level 10
             {"wood": 4743518, "marble": 1591666, "sulfur": 1842149, "wine": 1434822, "crystal": 1357544}  # level 11 max
         ]
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/palace_l.png'
     },
     'rezydencja gubernatora': {
         'description': 'Gubernator w Twojej kolonii gwarantuje, że wszystkie codzienne zadania administracyjne'
@@ -741,6 +746,7 @@ infos = {
             {"wood": 2612944, "marble": 794994, "sulfur": 919013, "wine": 717254, "crystal": 678760},  # level 10
             {"wood": 4743518, "marble": 1591666, "sulfur": 1842149, "wine": 1434822, "crystal": 1357544}  # level 11 max
         ]
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/palaceColony_l.png'
     },
     'muzeum': {
         'description': 'W Muzeum Twoi obywatele mogą zobaczyć jak bardzo inne nacje kopiują naszą wspaniałą kulturę.'
@@ -772,6 +778,7 @@ infos = {
             {"wood": 3878276, "marble": 4988136},  # level 20
             {"wood": 5818009, "marble": 7582731}  # level 21
         ]
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/museum_l.png'
     },
     'port handlowy': {
         'description': 'Twój port jest furtką do świata. Tutaj możesz wynająć statki handlowe i przygotować je do'
@@ -830,6 +837,7 @@ infos = {
             {"wood": 4291524, "marble": 7478201},  # level 46
             {"wood": 5199343, "marble": 9383420}  # level 47 max
         ]
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/port_l.png'
     },
     'stocznia': {
         'description': 'Co to za wyspa bez floty? W Stoczni budowane są potężne okręty wojenne i przygotowywane do'
@@ -872,6 +880,7 @@ infos = {
             {"wood": 381378, "marble": 340214},  # level 31
             {"wood": 480605, "marble": 428741}  # level 32
         ]
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/shipyard_l.png'
         # TODO - dostępne jednostki na dany poziom Stoczni
     },
     'koszary': {
@@ -933,6 +942,7 @@ infos = {
             {"wood": 6689191, "marble": 4636650},  # level 48
             {"wood": 8294651, "marble": 5749656}  # level 49 max
         ]
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/barracks_r.png'
         # TODO - dostępne jednostki na dany poziom koszar
     },
     'mur miejski': {
@@ -992,6 +1002,7 @@ infos = {
             {"wood": 5414554, "marble": 5729565},  # level 47
             {"wood": 6497687, "marble": 6875750}  # level 48
         ]
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/buildings/y100/wall.png'
         # TODO - szczegóły obronności
     },
     'ambasada': {
@@ -1035,6 +1046,7 @@ infos = {
             {"wood": 205180, "marble": 331377},  # level 31
             {"wood": 246341, "marble": 404433}  # level 32
         ]
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/embassy_l.png'
     },
     'bazar': {
         'description': 'Kupcy i handlowcy przeprowadzają swoje interesy na Bazarze. Tutaj zawsze można ubić dobry'
@@ -1078,6 +1090,7 @@ infos = {
             {"wood": 695038, "marble": 418983},  # level 31
             {"wood": 861391, "marble": 519260}  # level 32
         }
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/branchoffice_l.png'
     },
     'warsztat': {
         'description': 'Najlepiej wyszkoleni ludzie z Twojego miasta pracują w warsztacie. To właśnie oni '
@@ -1121,6 +1134,7 @@ infos = {
             {"wood": 58462, "marble": 38447},  # level 31
             {"wood": 66778, "marble": 44656}  # level 32
         }
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/workshop_l.png'
     },
     'kryjówka': {
         'description': 'Roztropny przywódca zawsze powinien bacznie obserwować zarówno sprzymierzeńców jak'
@@ -1164,6 +1178,7 @@ infos = {
             {"wood": 48365, "marble": 22917},  # level 31
             {"wood": 55255, "marble": 26631}  # level 32
         }
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/safehouse_l.png'
     },
     'leśniczówka': {
         'description': 'Silny drwal potrafi ściąć nawet największe drzewo. Ale również wie, że las musi być'
@@ -1207,38 +1222,22 @@ infos = {
             {"wood": 1571647, "marble": 894489},  # level 31
             {"wood": 2043246, "marble": 1162937}  # level 32
         }
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/forester_l.png'
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/glassblowing_l.png'
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/alchemist_l.png'
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/winegrower_l.png'
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/stonemason_l.png'
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/carpentering_l.png'
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/optician_l.png'
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/fireworker_l.png'
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/vineyard_l.png'
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/architect_l.png'
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/temple_l.png'
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/dump_l.png'
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/buildings/y100/pirateFortress.png'
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/blackmarket_l.png'
+        'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/marinechartarchive_l.png'
     }
-}
-
-
-# Funkcja dodawania ikony budynku
-def change_icon(name):
-    if name == 'ratusz':
-        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/townhall_l.png'
-    elif name == 'akademia':
-        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/academy_l.png'
-    elif name == 'magazyn':
-        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/warehouse_l.png'
-    elif name == 'tawerna':
-        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/taverne_l.png'
-    elif name == 'pałac':
-        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/palace_l.png'
-    elif name == 'rezydencja gubernatora':
-        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/palaceColony_l.png'
-    elif name == 'muzeum':
-        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/museum_l.png'
-    elif name == 'port handlowy':
-        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/port_l.png'
-    elif name == 'stocznia':
-        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/shipyard_l.png'
-    elif name == 'mur miejski':
-        return 'https://s42-pl.ikariam.gameforge.com/skin/buildings/y100/wall.png'
-    elif name == 'ambasada':
-        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/embassy_l.png'
-    elif name == 'bazar':
-        return 'https://s42-pl.ikariam.gameforge.com/skin/img/city/branchoffice_l.png'
-    else:
-        return ''
 
 
 # Sprawdzanie aliasów nazwy budynku
