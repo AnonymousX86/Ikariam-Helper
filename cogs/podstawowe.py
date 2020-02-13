@@ -15,14 +15,19 @@ class Podstawowe(cmd.Cog):
         name='pomoc',
         description='Wyświetla pomoc na temat komend bota',
         aliases=['p', 'help', 'komendy'],
-        help='Wyświetla ten komunikat lub pomoc na temat konkretniej komendy lub kategorii',
+        help='Wyświetla ten komunikat lub pomoc na temat konkretniej komendy lub kategorii\n'
+             '`<...>` - wymagany argument\n'
+             '`[...]` - opcjonalny argument\n'
+             '`[...|...]` - opcjonalny jeden z kilku argumentów\n'
+             '`["..."]` - opcjonalny, konkretny argument',
         bief='Główna komenda pomocy',
         usage='[komenda|kategoria]',
         enabled=True
     )
     async def help_cmd(self, ctx, arg='all'):
+        # TODO - sprawdzanie czy komenda jest ukryta
+        # TODO - sprawdzanie czy komenda jest włączona
 
-        # Create embed
         help_embed = Embed(
             title=':question: Menu pomocy',
             color=0x3498DB
@@ -33,10 +38,10 @@ class Podstawowe(cmd.Cog):
             icon_url=ctx.message.author.avatar_url
         )
 
-        # Get all cogs
+        # Wszystkie kategorie
         cogs = [c for c in self.bot.cogs.keys()]
 
-        # If cog is not specified
+        # Nie podano kategorii
         if arg == 'all':
             for cog in cogs:
 
@@ -62,25 +67,25 @@ class Podstawowe(cmd.Cog):
                 inline=False
             )
 
-        # If cog was specified
+        # Podano kategorię
         else:
 
-            # All cogs in lowercase
+            # Wszystkie kategorie "lowerspace"
             lower_cogs = [c.lower() for c in cogs]
 
-            # All commands objects
+            # Wszystkie komendy
             all_commands = []
             for temp_cog in cogs:
                 for temp_cmd in self.bot.get_cog(temp_cog).get_commands():
                     all_commands.append(temp_cmd)
 
-            # And commands names only
+            # Same nazwy komend
             all_commands_names = [c.name for c in all_commands]
 
-            # If arg is cog
+            # Argument jest kategorią
             if arg.lower() in lower_cogs:
 
-                # List of all commands in specified cog
+                # Lista wszystkich komend w kategorii
                 command_list = self.bot.get_cog(cogs[lower_cogs.index(arg.lower())]).get_commands()
                 help_text = ''
 
@@ -109,17 +114,12 @@ class Podstawowe(cmd.Cog):
 
                 help_embed.description = help_text
 
-            # If arg is command
+            # Argument jest komendą
             elif arg.lower() in all_commands_names:
                 command = None
                 for c in all_commands:
                     if arg.lower() == c.name:
                         command = c
-
-                if command.help:
-                    temp_cmd_help = f'**Użycie:** {command.help}\n\n'
-                else:
-                    temp_cmd_help = ''
 
                 cmd_help_text = ''
 
@@ -146,11 +146,11 @@ class Podstawowe(cmd.Cog):
                 help_embed.description = cmd_help_text
 
             else:
+                # TODO - dodać Embed
                 await ctx.send('Błędna kategoria lub komenda\n'
                                'Sprawdź komendę `pomoc`')
                 return
 
-        # Send embed
         await ctx.send(embed=help_embed)
         return
 
