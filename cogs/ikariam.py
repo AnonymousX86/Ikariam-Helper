@@ -15,10 +15,9 @@ from src.armies import minimum as min_army, \
 
 # Dodawanie separatora
 def separate(value, separator=' '):
-    data = str(value)
     result = ''
-    for c in range(1, len(data) + 1):
-        result += data[-c]
+    for c in range(1, len(n := str(value)) + 1):
+        result += n[-c]
         if c % 3 == 0:
             result += separator
     return result[::-1]
