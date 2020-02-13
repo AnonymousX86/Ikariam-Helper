@@ -22,7 +22,7 @@ bot = Bot(
 @bot.event
 async def on_ready():
     # Bot-level values
-    bot.version = '0.3'
+    bot.version = '0.4'
     bot.error_color = 0xe60000
 
     # Login info

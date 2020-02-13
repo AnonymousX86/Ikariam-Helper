@@ -255,6 +255,10 @@ class Podstawowe(cmd.Cog):
                    'Zaktualizowano komendę *"pomoc"*, większy odstęp między polami oraz wyświetlane jest więcej typów'
                    ' opisów komendy.\n'
                    'Poprawki kosmetyczne.',
+            '0.4': 'Dodano wszystkie budynki.\n'
+                   'Dodano wszystkie paczki jednostek.\n'
+                   'Poprawiono wygląd komend.\n'
+                   'Zaktualizowano opisy komend.'
         }
         changelog_embed = Embed(
             title=':gear: Changelog',
