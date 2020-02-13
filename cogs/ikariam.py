@@ -11,6 +11,8 @@ from src.buildings import infos as building_infos, \
 from src.miracles import infos as miracle_infos, \
     change_icon as change_miracle_icon, \
     try_alias as try_miracle_alias
+from src.armies import minimum as min_army, \
+    recommended as rec_army
 
 
 # Dodawanie separatora
@@ -367,6 +369,32 @@ class Ikariam(cmd.Cog):
         )
 
         await ctx.send(embed=council_embed)
+        return
+
+    @cmd.command(
+        name='wojsko',
+        description='Pokazuje zalecane minimum wojska dla graczy',
+        aliases=['w']
+    )
+    async def army_cmd(self, ctx, min_or_max='minimum', land_or_fleet='both'):
+
+        if min_or_max in ('minimum', 'min', 'm'):
+            if land_or_fleet in ('ląd', 'lad', 'l') or land_or_fleet == 'both':
+                army = ''
+                for unit in min_army['land']:
+                    army += f'**{upper_name(unit)}:** {min_army["land"][unit]["amount"]}\n'
+                    # {unit["amount"]}
+            else:
+                army = '\u200b'
+        else:
+            army = '\u200b'
+
+        army_embed = Embed(
+            title=':crossed_swords: Wojska',
+            color=0xffcc00,
+            description=army
+        )
+        await ctx.send(embed=army_embed)
         return
 
 
