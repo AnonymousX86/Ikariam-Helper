@@ -374,25 +374,90 @@ class Ikariam(cmd.Cog):
     @cmd.command(
         name='wojsko',
         description='Pokazuje zalecane minimum wojska dla graczy',
-        aliases=['w']
+        aliases=['w'],
+        usage='[minimum|zalecane] [ląd|flota]'
     )
     async def army_cmd(self, ctx, min_or_max='minimum', land_or_fleet='both'):
+        # Aliasy
+        aliases = {
+            'minimum': ('minimum', 'min', 'm'),
+            'zalecane': ('zalecane', 'zal', 'z'),
+            'ląd': ('ląd', 'lad', 'l'),
+            'flota': ('flota', 'f'),
+            'both': ('both', 'obie', '2')
+        }
 
-        if min_or_max in ('minimum', 'min', 'm'):
-            if land_or_fleet in ('ląd', 'lad', 'l') or land_or_fleet == 'both':
-                army = ''
+        # Sprawdzanie aliasów
+        if land_or_fleet in aliases['ląd']:
+            land_or_fleet = 'ląd'
+        elif land_or_fleet in aliases['flota']:
+            land_or_fleet = 'flota'
+        elif land_or_fleet in aliases['both']:
+            land_or_fleet = 'both'
+
+        army = ''
+
+        # Wybrano zestaw jednostek "minimum"
+        if min_or_max in aliases['minimum']:
+
+            army += '*- Zestaw minimalny*\n'
+
+            # Jeśli wybrano jednostki lądowe lub nie sprecyzowano
+            if land_or_fleet == 'ląd' or land_or_fleet == 'both':
+                army += '**JEDNOSTKI LĄDOWE**\n'
                 for unit in min_army['land']:
-                    army += f'**{upper_name(unit)}:** {min_army["land"][unit]["amount"]}\n'
-                    # {unit["amount"]}
+                    if (n := min_army["land"][unit]["amount"]) > 0:
+                        army += f'\u00A0\u00A0{upper_name(unit)} - {n}\n'
+
+            # Jeśli wybrano jednostki morskie lub nie sprecyzowano
+            if land_or_fleet == 'flota' or land_or_fleet == 'both':
+                army += '**JEDNOSTKI MORSKIE**\n'
+                for unit in min_army['fleet']:
+                    if (n := min_army["fleet"][unit]["amount"]) > 0:
+                        army += f'\u00A0\u00A0{upper_name(unit)} - {n}\n'
+
+            # Błędny wybór
             else:
-                army = '\u200b'
+                army = f':no_entry: Typ jednostek **{land_or_fleet}** nie istnieje!'
+
+        # Wybrano zestaw jednostek "zalecane"
+        elif min_or_max in aliases['zalecane']:
+
+            army += '*- Zestaw zalecany*\n'
+
+            # Jeśli wybrano jednostki lądowe lub nie sprecyzowano
+            if land_or_fleet == 'ląd' or land_or_fleet == 'both':
+                army += '**JEDNOSTKI LĄDOWE**\n'
+                for unit in rec_army['land']:
+                    if (n := rec_army["land"][unit]["amount"]) > 0:
+                        army += f'\u00A0\u00A0{upper_name(unit)} - {n}\n'
+
+            # Jeśli wybrano jednostki morskie lub nie sprecyzowano
+            if land_or_fleet == 'flota' or land_or_fleet == 'both':
+                army += '**JEDNOSTKI MORSKIE**\n'
+                for unit in rec_army['fleet']:
+                    if (n := rec_army["fleet"][unit]["amount"]) > 0:
+                        army += f'\u00A0\u00A0{upper_name(unit)} - {n}\n'
+
+            # Błędny wybór
+            else:
+                army = f':no_entry: Typ jednostek **{land_or_fleet}** nie istnieje!'
+
+        # Błąd wybory zestawu jednostek
         else:
-            army = '\u200b'
+            army = f':no_entry: Zestaw jednostek **{min_or_max}** nie istnieje'
+
+        # TODO - podawanie kosztów każdego z zestawów
 
         army_embed = Embed(
             title=':crossed_swords: Wojska',
             color=0xffcc00,
             description=army
+        ).add_field(
+            name='\u200b',
+            value=f'Sprawdź składnię komendy za pomocą:\n'
+                  f'`{ctx.prefix}pomoc wojsko`',
+            inline=False
         )
         await ctx.send(embed=army_embed)
         return
