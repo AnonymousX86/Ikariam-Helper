@@ -381,14 +381,14 @@ class Ikariam(cmd.Cog):
 
             # Jeśli wybrano jednostki lądowe lub nie sprecyzowano
             if land_or_fleet == 'ląd' or land_or_fleet == 'both':
-                army += '**JEDNOSTKI LĄDOWE**\n'
+                army += '\n**JEDNOSTKI LĄDOWE**\n'
                 for unit in min_army['land']:
                     if (n := min_army["land"][unit]["amount"]) > 0:
                         army += f'\u00A0\u00A0{upper_name(unit)} - {n}\n'
 
             # Jeśli wybrano jednostki morskie lub nie sprecyzowano
             if land_or_fleet == 'flota' or land_or_fleet == 'both':
-                army += '**JEDNOSTKI MORSKIE**\n'
+                army += '\n**JEDNOSTKI MORSKIE**\n'
                 for unit in min_army['fleet']:
                     if (n := min_army["fleet"][unit]["amount"]) > 0:
                         army += f'\u00A0\u00A0{upper_name(unit)} - {n}\n'
@@ -404,14 +404,14 @@ class Ikariam(cmd.Cog):
 
             # Jeśli wybrano jednostki lądowe lub nie sprecyzowano
             if land_or_fleet == 'ląd' or land_or_fleet == 'both':
-                army += '**JEDNOSTKI LĄDOWE**\n'
+                army += '\n**JEDNOSTKI LĄDOWE**\n'
                 for unit in rec_army['land']:
                     if (n := rec_army["land"][unit]["amount"]) > 0:
                         army += f'\u00A0\u00A0{upper_name(unit)} - {n}\n'
 
             # Jeśli wybrano jednostki morskie lub nie sprecyzowano
             if land_or_fleet == 'flota' or land_or_fleet == 'both':
-                army += '**JEDNOSTKI MORSKIE**\n'
+                army += '\n**JEDNOSTKI MORSKIE**\n'
                 for unit in rec_army['fleet']:
                     if (n := rec_army["fleet"][unit]["amount"]) > 0:
                         army += f'\u00A0\u00A0{upper_name(unit)} - {n}\n'
@@ -432,9 +432,10 @@ class Ikariam(cmd.Cog):
             description=army
         ).add_field(
             name='\u200b',
-            value=f'Sprawdź składnię komendy za pomocą:\n'
-                  f'`{ctx.prefix}pomoc wojsko`',
+            value=f'Sprawdź składnię komendy za pomocą: `{ctx.prefix}pomoc wojsko`.',
             inline=False
+        ).set_thumbnail(
+            url='https://s42-pl.ikariam.gameforge.com/skin/characters/military/120x100/phalanx_r_120x100.png'
         )
         await ctx.send(embed=army_embed)
         return

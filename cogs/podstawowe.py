@@ -167,7 +167,7 @@ class Podstawowe(cmd.Cog):
                 help_embed.description = cmd_help_text
 
             else:
-                # TODO - dodać Embed
+                # TODO - dodać Embed do 'pomoc' o braku danej komendy
                 await ctx.send('Błędna kategoria lub komenda\n'
                                'Sprawdź komendę `pomoc`')
                 return

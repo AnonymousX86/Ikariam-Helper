@@ -1366,7 +1366,9 @@ infos = {
         'icon': 'https://s42-pl.ikariam.gameforge.com/skin/img/city/marinechartarchive_l.png'
         # TODO - bonus Archiwum Map
     }
-}  # TODO - kategorie budynków
+}
+# TODO - kategorie budynków
+# TODO - punkty za budynki
 
 
 # Sprawdzanie aliasów nazwy budynku
