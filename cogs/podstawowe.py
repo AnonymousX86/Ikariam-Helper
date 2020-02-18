@@ -6,6 +6,27 @@ from datetime import datetime as d
 from discord import __version__ as version, Guild, Embed
 
 
+changelog_data = {
+    '0.1': 'Podstawowa wersja bota.\n'
+           'Dodane zostały wszystkie komendy z kategorii *"podstawowe"*.',
+    '0.2': 'Dodano komendę *"budynki"* zawierającą wszystkie informacje o budynkach.\n'
+           'Dodano komendę *"changelog"*.',
+    '0.3': 'Dodano komendę *"monument"* zawierającą informacje na temat czasów trwania i odnowienia się '
+           'cudów.\n '
+           'Dodano komendę *"rada"*.\n'
+           'Usunięto błąd związany z komendą *"pomoc"*.\n'
+           'Alias *"p"* odwołuje się teraz do *"pomoc"*, a nie do *"ping"*.\n'
+           'Zaktualizowano komendę *"pomoc"*, większy odstęp między polami oraz wyświetlane jest więcej typów'
+           ' opisów komendy.\n'
+           'Poprawki kosmetyczne.',
+    '0.4': 'Dodano wszystkie budynki.\n'
+           'Dodano wszystkie paczki jednostek.\n'
+           'Poprawiono wygląd komend.\n'
+           'Zaktualizowano opisy komend.',
+    '0.5': 'Dodano wszystkie monumenty.\n'
+}
+
+
 class Podstawowe(cmd.Cog):
 
     def __init__(self, bot):
@@ -243,24 +264,6 @@ class Podstawowe(cmd.Cog):
         usage='[wersja]'
     )
     async def changelog_command(self, ctx, arg_version='all'):
-        changelog_data = {
-            '0.1': 'Podstawowa wersja bota.\n'
-                   'Dodane zostały wszystkie komendy z kategorii *"podstawowe"*.',
-            '0.2': 'Dodano komendę *"budynki"* zawierającą wszystkie informacje o budynkach.\n'
-                   'Dodano komendę *"changelog"*.',
-            '0.3': 'Dodano komendę *"monument"* zawierającą informacje na temat czasów trwania i odnowienia się '
-                   'cudów.\n '
-                   'Dodano komendę *"rada"*.\n'
-                   'Usunięto błąd związany z komendą *"pomoc"*.\n'
-                   'Alias *"p"* odwołuje się teraz do *"pomoc"*, a nie do *"ping"*.\n'
-                   'Zaktualizowano komendę *"pomoc"*, większy odstęp między polami oraz wyświetlane jest więcej typów'
-                   ' opisów komendy.\n'
-                   'Poprawki kosmetyczne.',
-            '0.4': 'Dodano wszystkie budynki.\n'
-                   'Dodano wszystkie paczki jednostek.\n'
-                   'Poprawiono wygląd komend.\n'
-                   'Zaktualizowano opisy komend.'
-        }
         changelog_embed = Embed(
             title=':gear: Changelog',
             color=0x9900ff
