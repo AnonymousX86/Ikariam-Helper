@@ -129,3 +129,6 @@ src/img
 
 # PyCharm folder
 .idea
+
+# Secret settings
+src/settings.py
