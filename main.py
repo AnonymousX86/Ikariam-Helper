@@ -6,7 +6,7 @@ from logging import basicConfig, INFO
 from discord.ext.commands import Bot
 from discord import Game, Status
 
-from .src.settings import *
+from src.settings import *
 
 
 basicConfig(level=INFO)
