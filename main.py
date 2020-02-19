@@ -6,13 +6,14 @@ from discord.ext.commands import Bot
 from discord import Game, Status
 from datetime import datetime
 
-# Invite: https://discordapp.com/api/oauth2/authorize?client_id=672448271792472095&permissions=19520&scope=bot
+from .src.settings import *
+
 
 basicConfig(level=INFO)
 bot = Bot(
     max_messages=None,
-    command_prefix='.',
-    owner_id=309270832683679745,
+    command_prefix=bot_prefix,
+    owner_id=owner_id,
     description='Pomocnik sojuszu Dolina Królów',
     case_insensitive=False,
     help_command=None
@@ -22,7 +23,7 @@ bot = Bot(
 @bot.event
 async def on_ready():
     # Bot-level values
-    bot.version = '0.5'
+    bot.version = bot_version
     bot.error_color = 0xe60000
 
     # Login info
@@ -38,4 +39,4 @@ async def on_ready():
 
     return
 
-bot.run('NjcyNDQ4MjcxNzkyNDcyMDk1.XjLoSA.PxT0f-qUs1IAnt5LOJ2SjuFBeVg', bot=True)
+bot.run(secret_token, bot=True)
