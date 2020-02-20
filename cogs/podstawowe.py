@@ -290,6 +290,8 @@ class Podstawowe(cmd.Cog):
         await ctx.send(embed=changelog_embed)
         return
 
+    # TODO - komenda: kalkulator
+
 
 def setup(bot):
     bot.add_cog(Podstawowe(bot))
