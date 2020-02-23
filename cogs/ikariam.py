@@ -372,71 +372,117 @@ class Ikariam(cmd.Cog):
         elif land_or_fleet in aliases['both']:
             land_or_fleet = 'both'
 
-        army = ''
+        format_prefix = '\u00a6\u00a0\u00a0'
+
+        # Create embed
+        army_embed = Embed(
+            title=':crossed_swords: Wojska',
+            color=0xffcc00
+        )
 
         # Wybrano zestaw jednostek "minimum"
         if min_or_max in aliases['minimum']:
 
-            army += '*- Zestaw minimalny*\n'
+            # Typ zestawu
+            army_embed.add_field(
+                name='*Zestaw minimalny*',
+                value='\u200b',
+                inline=False
+            )
 
             # Jeśli wybrano jednostki lądowe lub nie sprecyzowano
-            if land_or_fleet == 'ląd' or land_or_fleet == 'both':
-                army += '\n**JEDNOSTKI LĄDOWE**\n'
+            if land_or_fleet in ('ląd', 'both'):
+
+                army = ''
                 for unit in min_army['land']:
                     if (n := min_army["land"][unit]["amount"]) > 0:
-                        army += f'\u00A0\u00A0{upper_name(unit)} - {n}\n'
+                        army += f'{format_prefix}{upper_name(unit)} - {n}\n'
+                army_embed.add_field(
+                    name='**JEDNOSTKI LĄDOWE**',
+                    value=army,
+                    inline=True
+                )
 
             # Jeśli wybrano jednostki morskie lub nie sprecyzowano
-            if land_or_fleet == 'flota' or land_or_fleet == 'both':
-                army += '\n**JEDNOSTKI MORSKIE**\n'
+            if land_or_fleet in ('flota', 'both'):
+                army = ''
                 for unit in min_army['fleet']:
                     if (n := min_army["fleet"][unit]["amount"]) > 0:
-                        army += f'\u00A0\u00A0{upper_name(unit)} - {n}\n'
+                        army += f'{format_prefix}{upper_name(unit)} - {n}\n'
+                army_embed.add_field(
+                    name='**JEDNOSTKI MORSKIE**',
+                    value=army,
+                    inline=True
+                )
 
             # Błędny wybór
-            else:
-                army = f':no_entry: Typ jednostek **{land_or_fleet}** nie istnieje!'
+            if land_or_fleet not in ('ląd', 'flota', 'both'):
+                army_embed.add_field(
+                    name='\u200b',
+                    value=f':no_entry: Typ jednostek **{land_or_fleet}** nie istnieje!',
+                    inline=False
+                )
 
         # Wybrano zestaw jednostek "zalecane"
         elif min_or_max in aliases['zalecane']:
 
-            army += '*- Zestaw zalecany*\n'
+            # Typ zestawu
+            army_embed.add_field(
+                name='*Zestaw zalecany*',
+                value='\u200b',
+                inline=False
+            )
 
             # Jeśli wybrano jednostki lądowe lub nie sprecyzowano
-            if land_or_fleet == 'ląd' or land_or_fleet == 'both':
-                army += '\n**JEDNOSTKI LĄDOWE**\n'
+            if land_or_fleet in ('flota', 'both'):
+                army = ''
                 for unit in rec_army['land']:
                     if (n := rec_army["land"][unit]["amount"]) > 0:
-                        army += f'\u00A0\u00A0{upper_name(unit)} - {n}\n'
+                        army += f'{format_prefix}{upper_name(unit)} - {n}\n'
+                army_embed.add_field(
+                    name='**JEDNOSTKI LĄDOWE**',
+                    value=army,
+                    inline=True
+                )
 
             # Jeśli wybrano jednostki morskie lub nie sprecyzowano
-            if land_or_fleet == 'flota' or land_or_fleet == 'both':
-                army += '\n**JEDNOSTKI MORSKIE**\n'
+            if land_or_fleet in ('flota', 'both'):
+                army = ''
                 for unit in rec_army['fleet']:
                     if (n := rec_army["fleet"][unit]["amount"]) > 0:
-                        army += f'\u00A0\u00A0{upper_name(unit)} - {n}\n'
+                        army += f'{format_prefix}{upper_name(unit)} - {n}\n'
+                army_embed.add_field(
+                    name='**JEDNOSTKI MORSKIE**',
+                    value=army,
+                    inline=True
+                )
 
             # Błędny wybór
-            else:
-                army = f':no_entry: Typ jednostek **{land_or_fleet}** nie istnieje!'
+            if land_or_fleet not in ('ląd', 'flota', 'both'):
+                army_embed.add_field(
+                    name='\u200b',
+                    value=f':no_entry: Typ jednostek **{land_or_fleet}** nie istnieje!',
+                    inline=False
+                )
 
         # Błąd wybory zestawu jednostek
         else:
-            army = f':no_entry: Zestaw jednostek **{min_or_max}** nie istnieje'
+            army_embed.add_field(
+                name='\u200b',
+                value=f':no_entry: Zestaw jednostek **{min_or_max}** nie istnieje',
+                inline=False
+            )
 
         # TODO - podawanie kosztów każdego z zestawów
 
-        army_embed = Embed(
-            title=':crossed_swords: Wojska',
-            color=0xffcc00,
-            description=army
-        ).add_field(
+        army_embed.add_field(
             name='\u200b',
             value=f'Sprawdź składnię komendy za pomocą: `{ctx.prefix}pomoc wojsko`.',
             inline=False
         ).set_thumbnail(
             url='https://s42-pl.ikariam.gameforge.com/skin/characters/military/120x100/phalanx_r_120x100.png'
         )
+
         await ctx.send(embed=army_embed)
         return
 
