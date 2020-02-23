@@ -1,7 +1,7 @@
 minimum = {
     'land': {
         'hoplici': {
-            'amount': 100,
+            'amount': 210,
             'cost': {
                 'wood': 0,
                 'sulfur': 0,
@@ -19,7 +19,7 @@ minimum = {
             }
         },
         'wojownicy': {
-            'amount': 70,
+            'amount': 120,
             'cost': {
                 'wood': 0,
                 'sulfur': 0,
@@ -55,7 +55,7 @@ minimum = {
             }
         },
         'katapulty': {
-            'amount': 12,
+            'amount': 18,
             'cost': {
                 'wood': 0,
                 'sulfur': 0,
@@ -128,7 +128,7 @@ minimum = {
         }
     },
     'fleet': {
-        'okręt z miotaczem ognia': {
+        'okręty z miotaczem ognia': {
             'amount': 30,
             'cost': {
                 'wood': 0,
@@ -137,7 +137,7 @@ minimum = {
                 'wine': 0
             }
         },
-        'okręt z taranem': {
+        'okręty z taranem': {
             'amount': 20,
             'cost': {
                 'wood': 0,
@@ -146,7 +146,7 @@ minimum = {
                 'wine': 0
             }
         },
-        'balista': {
+        'balisty': {
             'amount': 0,
             'cost': {
                 'wood': 0,
@@ -155,7 +155,7 @@ minimum = {
                 'wine': 0
             }
         },
-        'taran parowy': {
+        'tarany parowe': {
             'amount': 0,
             'cost': {
                 'wood': 0,
@@ -164,7 +164,7 @@ minimum = {
                 'wine': 0
             }
         },
-        'okręt z katapultą': {
+        'okręty z katapultą': {
             'amount': 10,
             'cost': {
                 'wood': 0,
@@ -173,7 +173,7 @@ minimum = {
                 'wine': 0
             }
         },
-        'okręt z moździerzem': {
+        'okręty z moździerzem': {
             'amount': 0,
             'cost': {
                 'wood': 0,
@@ -182,7 +182,7 @@ minimum = {
                 'wine': 0
             }
         },
-        'krążownik rakietowy': {
+        'krążowniki rakietowe': {
             'amount': 0,
             'cost': {
                 'wood': 0,
@@ -191,7 +191,7 @@ minimum = {
                 'wine': 0
             }
         },
-        'okręt podwodny': {
+        'okręty podwodne': {
             'amount': 0,
             'cost': {
                 'wood': 0,
@@ -200,7 +200,7 @@ minimum = {
                 'wine': 0
             }
         },
-        'śmigacz z napędem kołowym': {
+        'śmigacze z napędem kołowym': {
             'amount': 0,
             'cost': {
                 'wood': 0,
@@ -209,7 +209,7 @@ minimum = {
                 'wine': 0
             }
         },
-        'balonowiec': {
+        'balonowce': {
             'amount': 0,
             'cost': {
                 'wood': 0,
@@ -218,7 +218,7 @@ minimum = {
                 'wine': 0
             }
         },
-        'statek pomocniczy': {
+        'statki pomocnicze': {
             'amount': 0,
             'cost': {
                 'wood': 0,
@@ -229,6 +229,7 @@ minimum = {
         }
     }
 }
+
 recommended = {
     'land': {
         'hoplici': {
@@ -359,7 +360,7 @@ recommended = {
         }
     },
     'fleet': {
-        'okręt z miotaczem ognia': {
+        'okręty z miotaczem ognia': {
             'amount': 0,
             'cost': {
                 'wood': 0,
@@ -368,7 +369,7 @@ recommended = {
                 'wine': 0
             }
         },
-        'okręt z taranem': {
+        'okręty z taranem': {
             'amount': 150,
             'cost': {
                 'wood': 0,
@@ -377,7 +378,7 @@ recommended = {
                 'wine': 0
             }
         },
-        'balista': {
+        'balisty': {
             'amount': 0,
             'cost': {
                 'wood': 0,
@@ -386,7 +387,7 @@ recommended = {
                 'wine': 0
             }
         },
-        'taran parowy': {
+        'tarany parowe': {
             'amount': 120,
             'cost': {
                 'wood': 0,
@@ -395,7 +396,7 @@ recommended = {
                 'wine': 0
             }
         },
-        'okręt z katapultą': {
+        'okręty z katapultą': {
             'amount': 0,
             'cost': {
                 'wood': 0,
@@ -404,7 +405,7 @@ recommended = {
                 'wine': 0
             }
         },
-        'okręt z moździerzem': {
+        'okręty z moździerzem': {
             'amount': 42,
             'cost': {
                 'wood': 0,
@@ -413,7 +414,7 @@ recommended = {
                 'wine': 0
             }
         },
-        'krążownik rakietowy': {
+        'krążowniki rakietowe': {
             'amount': 60,
             'cost': {
                 'wood': 0,
@@ -422,7 +423,7 @@ recommended = {
                 'wine': 0
             }
         },
-        'okręt podwodny': {
+        'okręty podwodne': {
             'amount': 0,
             'cost': {
                 'wood': 0,
@@ -431,7 +432,7 @@ recommended = {
                 'wine': 0
             }
         },
-        'śmigacz z napędem kołowym': {
+        'śmigacze z napędem kołowym': {
             'amount': 60,
             'cost': {
                 'wood': 0,
@@ -440,7 +441,7 @@ recommended = {
                 'wine': 0
             }
         },
-        'balonowiec': {
+        'balonowce': {
             'amount': 20,
             'cost': {
                 'wood': 0,
@@ -449,7 +450,7 @@ recommended = {
                 'wine': 0
             }
         },
-        'statek pomocniczy': {
+        'statki pomocnicze': {
             'amount': 10,
             'cost': {
                 'wood': 0,
@@ -460,4 +461,5 @@ recommended = {
         }
     }
 }
+
 # TODO - koszty jednostek
