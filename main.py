@@ -1,6 +1,5 @@
-"""
-encoding=utf-8
-"""
+# coding=utf-8
+
 from logging import basicConfig, INFO
 
 from discord.ext.commands import Bot

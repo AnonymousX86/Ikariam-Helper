@@ -1,6 +1,5 @@
-"""
-encoding=utf-8
-"""
+# coding=utf-8
+
 from discord import Embed
 from discord.ext import commands as cmd
 from discord.utils import get

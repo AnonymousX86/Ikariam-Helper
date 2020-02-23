@@ -1,3 +1,5 @@
+# coding=utf-8
+
 owner_id = 309270832683679745
 bot_version = '0.5'
 bot_prefix = '.'
