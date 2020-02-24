@@ -289,7 +289,79 @@ class Podstawowe(cmd.Cog):
         await ctx.send(embed=changelog_embed)
         return
 
-    # TODO - komenda: kalkulator
+    @cmd.command(
+        name='kalkulator',
+        description='Prosty kalkulator',
+        help='Wpisz zwykłe działanie, bot obsługuje podstawowe działania wraz z nawiasami.\n'
+             'Poza podstawowymi 4 działaniami bot obsługuje:\n'
+             '`%` - reszta z dzielenia\n'
+             '`**` - potęgowanie (nie mylić z `^`)\n'
+             '`//` - dzielenie bezprzecinkowe\n'
+             '`==` lub `is` - sprawdzenie czy dwie liczby są równe\n'
+             '`!=` lub `is not` - sprawdzenie czy dwie liczby __nie są__ równe\n'
+             '**Uwaga!** Używaj notacji amerykańskiej, tzn. zamiast przecinka używaj kropki',
+        aliases=['kalk', 'licz'],
+        usage='<działanie>'
+    )
+    async def calculator_cmd(self, ctx, *, note=''):
+        embed_color = 0x9966ff
+
+        if note == '':
+            calc_embed = Embed(
+                title=':abacus: Kalkulator',
+                description=':no_entry: Nie podano działania'
+            )
+
+        else:
+            async with ctx.typing():
+
+                calc_error = ''
+                error_num = 0
+                result = ''
+                try:
+                    if (n := type(eval(note))) is bool:
+                        if n:
+                            result = 'Prawda'
+                        else:
+                            result = 'Fałsz'
+                    else:
+                        result = round(float(eval(note)), 3)
+                except SyntaxError:
+                    calc_error = 'Błąd w działaniu'
+                    error_num = 1
+                except NameError:
+                    calc_error = 'Nieobsługiwana wartość w wyrażeniu'
+                    error_num = 2
+                except TypeError:
+                    calc_error = 'Nieobsługiwana wartość w wyrażeniu'
+                    error_num = 3
+                except ZeroDivisionError:
+                    calc_error = 'Nie można dzielić przez 0'
+                    error_num = 4
+                except FileNotFoundError:
+                    calc_error = 'Nieobsługiwana wartość w wyrażeniu'
+                    error_num = 5
+
+                if calc_error != '':
+                    embed_description = f'Znaleziono błąd:\n` {note} = ? `\n*{calc_error}*'
+                else:
+                    embed_description = f'Wynik działania:\n` {note} = {result} `'
+
+                if (n := error_num) > 0:
+                    embed_footer = f'Błąd numer {n}'
+                else:
+                    embed_footer = ''
+
+                calc_embed = Embed(
+                    title=':abacus: Kalkulator',
+                    description=embed_description,
+                    color=embed_color
+                ).set_footer(
+                    text=embed_footer
+                )
+
+        await ctx.send(embed=calc_embed)
+        return
 
 
 def setup(bot):
