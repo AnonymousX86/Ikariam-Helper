@@ -125,7 +125,7 @@ dmypy.json
 .pyre/
 
 # Not related data
-src/img
+bot/src/img
 
 # PyCharm folder
 .idea

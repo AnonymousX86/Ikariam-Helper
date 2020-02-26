@@ -5,7 +5,7 @@ from logging import basicConfig, INFO
 from discord.ext.commands import Bot
 from discord import Game, Status
 
-from src.settings import *
+from bot.src.settings import *
 
 
 basicConfig(level=INFO)
@@ -29,12 +29,15 @@ async def on_ready():
     print('Logged on as: {0} ({0.id})'.format(bot.user))
 
     # Changing presence
-    await bot.change_presence(status=Status.online, activity=Game(name='Ikariam'), afk=False)
+    await bot.change_presence(
+        status=Status.online,
+        activity=Game(name='Ikariam'),
+        afk=False
+    )
 
     # Loading cogs
-    cogs = ['cogs.podstawowe', 'cogs.ikariam']
-    for cog in cogs:
-        bot.load_extension(cog)
+    bot.load_extension('bot.cogs.podstawowe')
+    bot.load_extension('bot.cogs.ikariam')
 
     return
 

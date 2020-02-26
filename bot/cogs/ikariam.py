@@ -4,11 +4,11 @@ from discord import Embed
 from discord.ext import commands as cmd
 from discord.utils import get
 
-from src.buildings import infos as building_infos, \
+from bot.src.buildings import infos as building_infos, \
     try_alias as try_building_alias
-from src.miracles import infos as miracle_infos, \
+from bot.src.miracles import infos as miracle_infos, \
     try_alias as try_miracle_alias
-from src.armies import minimum as min_army, \
+from bot.src.armies import minimum as min_army, \
     recommended as rec_army
 
 
