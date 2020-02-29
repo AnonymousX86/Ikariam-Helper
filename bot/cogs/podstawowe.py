@@ -101,6 +101,40 @@ class Podstawowe(cmd.Cog):
         return
 
     @cmd.command(
+        name='admin',
+        description='Opcje administratorskie',
+        hidden=True
+    )
+    async def admin_cmd(self, ctx, arg1='', arg2=''):
+        if ctx.author.id == owner_id:
+            if arg1 == 'baza':
+                conn = sqlite3.connect(os.path.join(__location__, '../src/users.sqlite'))
+                c = conn.cursor()
+                if arg2 == 'reset':
+                    c.execute('DROP TABLE last_online')
+                    conn.commit()
+                    c.execute('''CREATE TABLE last_online (uid TEXT PRIMARY KEY UNIQUE NOT NULL,
+                    datetime TEXT NOT NULL );''')
+                    await ctx.send(embed=Embed(
+                        title=':white_check_mark: Wyczyszczono bazę danych'
+                    ))
+
+                else:
+                    await ctx.send(embed=Embed(
+                        title=':no_entry: Błędny 2. argument'
+                    ))
+
+            else:
+                await ctx.send(embed=Embed(
+                    title=':no_entry: Błędny 1. argument'
+                ))
+
+        else:
+            await ctx.send(embed=Embed(
+                title=':exclamation: Nie jesteś właścicielem bota'
+            ))
+
+    @cmd.command(
         name='pomoc',
         description='Wyświetla pomoc na temat komend bota',
         aliases=['p', 'help', 'komendy'],
