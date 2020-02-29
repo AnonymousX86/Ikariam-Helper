@@ -11,6 +11,10 @@ from discord import __version__ as version, Guild, Embed
 from discord.ext import commands as cmd
 from discord.utils import get
 
+from ..src.my_utils import fixed_width
+
+from ..src.settings import owner_id
+
 
 changelog_data = {
     '0.1': 'Podstawowa wersja bota.\n'
@@ -144,8 +148,7 @@ class Podstawowe(cmd.Cog):
              '`[...|...]` - opcjonalny jeden z kilku argumentów\n'
              '`["..."]` - opcjonalny, konkretny argument',
         bief='Główna komenda pomocy',
-        usage='[komenda|kategoria]',
-        enabled=True
+        usage='[komenda|kategoria]'
     )
     async def help_cmd(self, ctx, arg='all'):
         # TODO - sprawdzanie czy komenda jest ukryta

@@ -11,36 +11,7 @@ from bot.src.miracles import infos as miracle_infos, \
 from bot.src.armies import minimum as min_army, \
     recommended as rec_army
 
-
-# Dodawanie separatora
-def separate(value, separator=' '):
-    result = ''
-    for c in range(1, len(n := str(value)) + 1):
-        result += n[-c]
-        if c % 3 == 0:
-            result += separator
-    return result[::-1]
-
-
-# Zmiana pierwszych liter wyrazów na wielkie
-def upper_name(name):
-    if ' ' not in name:
-        return f'{name[0].upper()}{name[1:]}'
-    else:
-        result = ''
-        i = 0
-        while True:
-            if i >= len(name):
-                return result
-            elif i == 0:
-                result += name[0].upper()
-                i += 1
-            elif name[i] == ' ':
-                result += name[i:i + 2].upper()
-                i += 2
-            else:
-                result += name[i]
-                i += 1
+from ..src.my_utils import separate, upper_name
 
 
 class Ikariam(cmd.Cog):
