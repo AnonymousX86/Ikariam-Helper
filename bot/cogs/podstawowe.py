@@ -1,6 +1,9 @@
 # coding=utf-8
 
 from discord.ext import commands as cmd
+
+from ast import literal_eval
+
 from datetime import datetime as d
 from discord import __version__ as version, Guild, Embed
 
@@ -325,7 +328,7 @@ class Podstawowe(cmd.Cog):
                         else:
                             result = 'Fałsz'
                     else:
-                        result = round(float(eval(note)), 3)
+                        result = round(float(literal_eval(note)), 3)
                 except SyntaxError:
                     calc_error = 'Błąd w działaniu'
                     error_num = 1
