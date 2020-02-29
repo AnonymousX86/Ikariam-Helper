@@ -1,11 +1,15 @@
 # coding=utf-8
 
-from discord.ext import commands as cmd
+import os
+import sqlite3
 
 from ast import literal_eval
 
 from datetime import datetime as d
+
 from discord import __version__ as version, Guild, Embed
+from discord.ext import commands as cmd
+from discord.utils import get
 
 
 changelog_data = {
@@ -25,14 +29,76 @@ changelog_data = {
            'Dodano wszystkie paczki jednostek.\n'
            'Poprawiono wygląd komend.\n'
            'Zaktualizowano opisy komend.',
-    '0.5': 'Dodano wszystkie monumenty.\n'
+    '0.5': 'Dodano wszystkie monumenty.\n',
+    '0.6': 'Dodano moduł śledzenia statusu online użytkowników.\n'
 }
+__location__ = os.path.realpath(
+    os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
 
 class Podstawowe(cmd.Cog):
 
     def __init__(self, bot):
         self.bot = bot
+
+    @cmd.Cog.listener()
+    async def on_member_update(self, before, after):
+        if str(after.status) == 'offline':
+            conn = sqlite3.connect(os.path.join(__location__, '../src/users.sqlite'))
+            user_id = str(before.id)
+            user_datetime = str(d.now().strftime('%Y-%m-%d %H:%M:%S'))
+            c = conn.cursor()
+            try:
+                c.execute('INSERT INTO last_online VALUES (?, ?);', (user_id, user_datetime))
+            except sqlite3.IntegrityError:
+                c.execute("UPDATE last_online SET datetime = ? WHERE uid = ?;", (user_datetime, user_id))
+            conn.commit()
+            conn.close()
+        return
+
+    @cmd.command(
+        name='online',
+        description='Pokazuje ostatni status online poszczególnych osób'
+    )
+    async def online_cmd(self, ctx):
+        async with ctx.typing():
+            conn = sqlite3.connect(os.path.join(__location__, '../src/users.sqlite'))
+            c = conn.cursor()
+            users = []
+            for user in ctx.guild.members:
+                if user.bot:
+                    continue
+                temp = str(user.id)
+                t = (temp,)
+                db_user = None
+                db_status = 'brak danych'
+                for row in c.execute("SELECT * FROM last_online WHERE uid LIKE ?;", t):
+                    db_user = get(ctx.guild.members, id=int(row[0]))
+                    db_status = row[1]
+
+                if str(user.status) != 'offline':
+                    status = 'teraz'
+                elif user == db_user:
+                    status = db_status
+                else:
+                    status = 'brak danych'
+
+                nickname = user.display_name
+                users.append([nickname, status])
+
+            user_data = '```\n' \
+                        'Użytkownik           - ostatnio online\n' \
+                        '-------------------------------------------\n'
+            for user in users:
+                user_data += f'{fixed_width(user[0])} - {fixed_width(user[1])}\n'
+            user_data += '```'
+        online_embed = Embed(
+            title=':green_circle: Ostatnio online',
+            description=user_data,
+            color=0x009900
+        )
+        await ctx.send(embed=online_embed)
+        return
 
     @cmd.command(
         name='pomoc',
