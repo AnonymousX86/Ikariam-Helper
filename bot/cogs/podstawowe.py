@@ -63,6 +63,8 @@ class Podstawowe(cmd.Cog):
                     status = 'brak danych'
 
                 nickname = user.display_name
+                while nickname[0] == ' ':
+                    nickname = nickname[1:]
                 users.append([nickname, status])
 
             user_data = '```\n' \
