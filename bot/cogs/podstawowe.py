@@ -128,9 +128,6 @@ class Podstawowe(cmd.Cog):
         usage='[komenda|kategoria]'
     )
     async def help_cmd(self, ctx, arg='all'):
-        # TODO - sprawdzanie czy komenda jest ukryta
-        # TODO - sprawdzanie czy komenda jest włączona
-
         help_embed = Embed(
             title=':question: Menu pomocy',
             color=0x3498DB
@@ -141,6 +138,17 @@ class Podstawowe(cmd.Cog):
             icon_url=ctx.message.author.avatar_url
         )
 
+        def bad_help():
+            help_embed.add_field(
+                name='\u200b',
+                value='Błędna kategoria lub komenda\n'
+                      'Sprawdź komendę `pomoc`'
+            )
+
+        """
+        Komenda nie istnieje na liście komend, jeśli 'enabled=False'
+        """
+
         # Wszystkie kategorie
         cogs = [c for c in self.bot.cogs.keys()]
 
@@ -148,39 +156,51 @@ class Podstawowe(cmd.Cog):
         if arg == 'all':
             for cog in cogs:
 
-                # Get all commands for each cog
+                # Wszystkie komendy ze wszystkich kategorii
                 cog_command = self.bot.get_cog(cog).get_commands()
                 command_list = ''
                 for command in cog_command:
-                    if command.brief:
-                        command_list += f'**{command.name}** - *{command.brief}*\n'
-                    else:
-                        command_list += f'**{command.name}** - *{command.description}*\n'
 
-                # Add field for each cog
+                    # Jeśli komenda jest ukryta, nie powinna być wyświetlana na liście
+                    if command.hidden is True:
+                        continue
+
+                    # Używanie "brief", jeśli istnieje, zamiast "description"
+                    short_description = command.brief if command.brief else command.description
+
+                    command_list += f'**{command.name}** - *{short_description}*\n'
+
+                # Dodaje pole dal każdej kategorii
                 help_embed.add_field(
                     name=cog,
                     value=command_list,
                     inline=False
                 )
+                # for command in cog_command:
+
+            # Dodatkowe informacje na temat użycia pomocy
             help_embed.add_field(
                 name='\u200b',
                 value=f'Aby poznać szczegóły każdej z kategorii lub komend, użyj:\n'
                       f'`{ctx.prefix}pomoc [kategoria|komenda]`',
                 inline=False
             )
+        # if arg == 'all':
 
         # Podano kategorię
         else:
 
-            # Wszystkie kategorie "lowerspace"
+            # Wszystkie kategorie zapisane małymi literami
             lower_cogs = [c.lower() for c in cogs]
 
             # Wszystkie komendy
             all_commands = []
             for temp_cog in cogs:
                 for temp_cmd in self.bot.get_cog(temp_cog).get_commands():
-                    all_commands.append(temp_cmd)
+                    if temp_cmd.hidden or not temp_cmd.enabled:
+                        continue
+                    else:
+                        all_commands.append(temp_cmd)
 
             # Same nazwy komend
             all_commands_names = [c.name for c in all_commands]
@@ -190,32 +210,39 @@ class Podstawowe(cmd.Cog):
 
                 # Lista wszystkich komend w kategorii
                 command_list = self.bot.get_cog(cogs[lower_cogs.index(arg.lower())]).get_commands()
-                help_text = ''
+
+                # Lista komend w kategorii
+                cog_help_text = ''
 
                 for command in command_list:
 
-                    help_text += f'```{command.name}```\n'
+                    # Jeśli komenda jest ukryta, nie powinna być wyświetlana na liście
+                    if command.hidden is True:
+                        continue
+
+                    cog_help_text += f'```{command.name}```\n'
 
                     if command.description:
-                        help_text += f'{command.description}\n\n'
+                        cog_help_text += f'{command.description}\n\n'
 
                     if command.help:
                         temp_cmd_help = f'**Użycie:** {command.help}\n\n'
                     else:
                         temp_cmd_help = ''
 
-                    if command.help:
-                        help_text += f'{temp_cmd_help}'
+                    cog_help_text += f'{temp_cmd_help}'
 
                     if len(command.aliases) > 0:
-                        help_text += f'**Aliasy :** {", ".join(command.aliases)}\n\n'
+                        cog_help_text += f'**Aliasy :** {", ".join(command.aliases)}\n\n'
                     else:
-                        help_text += 'Brak aliasów\n\n'
+                        cog_help_text += 'Brak aliasów\n\n'
 
-                    help_text += f'**Format :** `{ctx.prefix}' \
+                    cog_help_text += f'**Format :** `{ctx.prefix}' \
                                  f'{command.name}{" " + command.usage + "`" if command.usage is not None else "`"}\n\n'
+                # for command in command_list:
 
-                help_embed.description = help_text
+                help_embed.description = cog_help_text
+            # if arg.lower() in lower_cogs:
 
             # Argument jest komendą
             elif arg.lower() in all_commands_names:
@@ -247,11 +274,12 @@ class Podstawowe(cmd.Cog):
                 cmd_help_text += f'**Format :** `{ctx.prefix}' \
                                  f'{command.name} {command.usage if command.usage is not None else ""}`\n\n'
                 help_embed.description = cmd_help_text
+            # elif arg.lower() in all_commands_names:
 
+            # Argument nie jest ani komendą, ani kategorią
             else:
-                # TODO - dodać Embed do 'pomoc' o braku danej komendy
-                await ctx.send('Błędna kategoria lub komenda\n'
-                               'Sprawdź komendę `pomoc`')
+                bad_help()
+                await ctx.send(embed=help_embed)
                 return
 
         await ctx.send(embed=help_embed)
