@@ -14,30 +14,9 @@ from discord.utils import get
 from ..src.my_utils import fixed_width
 
 from ..src.settings import owner_id
-
-
-changelog_data = {
-    '0.1': 'Podstawowa wersja bota.\n'
-           'Dodane zostały wszystkie komendy z kategorii *"podstawowe"*.',
-    '0.2': 'Dodano komendę *"budynki"* zawierającą wszystkie informacje o budynkach.\n'
-           'Dodano komendę *"changelog"*.',
-    '0.3': 'Dodano komendę *"monument"* zawierającą informacje na temat czasów trwania i odnowienia się '
-           'cudów.\n '
-           'Dodano komendę *"rada"*.\n'
-           'Usunięto błąd związany z komendą *"pomoc"*.\n'
-           'Alias *"p"* odwołuje się teraz do *"pomoc"*, a nie do *"ping"*.\n'
-           'Zaktualizowano komendę *"pomoc"*, większy odstęp między polami oraz wyświetlane jest więcej typów'
-           ' opisów komendy.\n'
-           'Poprawki kosmetyczne.',
-    '0.4': 'Dodano wszystkie budynki.\n'
-           'Dodano wszystkie paczki jednostek.\n'
-           'Poprawiono wygląd komend.\n'
-           'Zaktualizowano opisy komend.',
-    '0.5': 'Dodano wszystkie monumenty.\n',
-    '0.6': 'Dodano moduł śledzenia statusu online użytkowników.\n'
-}
 __location__ = os.path.realpath(
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
+from ..src.changelog_data import changelog_data
 
 
 class Podstawowe(cmd.Cog):
