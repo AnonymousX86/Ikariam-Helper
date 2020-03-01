@@ -261,7 +261,7 @@ class Podstawowe(cmd.Cog):
         name='hej',
         description='Przywitaj się z botem',
         aliases=['cześć'],
-        hidden=True
+        hidden=False,
     )
     async def hello_cmd(self, ctx):
         hello_embed = Embed(
