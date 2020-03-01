@@ -2,7 +2,7 @@ import re
 import os
 
 
-def strip_emoji(text):
+def strip_emoji(text: str):
     re_emoji = re.compile(u'([\U00002600-\U000027BF])|([\U0001f300-\U0001f64F])|([\U0001f680-\U0001f6FF])')
     return re_emoji.sub(r'', text)
 
@@ -22,7 +22,7 @@ def fixed_width(text: str, width: int = 20):
         raise SyntaxError('No text')
 
 
-def separate(value, separator=' '):
+def separate(value: int, separator: str = ' '):
     result = ''
     for c in range(1, len(n := str(value)) + 1):
         result += n[-c]
@@ -31,7 +31,7 @@ def separate(value, separator=' '):
     return result[::-1]
 
 
-def upper_name(name):
+def upper_name(name: str):
     if ' ' not in name:
         return f'{name[0].upper()}{name[1:]}'
     else:
