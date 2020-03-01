@@ -343,22 +343,26 @@ class Podstawowe(cmd.Cog):
         description='Ostatnie zmiany bota',
         help='Aby zobaczyć konkretną wersję wpisz jej numer, przykładowo: `0.1`',
         aliases=['cl'],
-        usage='[wersja]'
+        usage='[wersja|"wszystkie"]'
     )
-    async def changelog_command(self, ctx, arg_version='all'):
+    async def changelog_command(self, ctx, arg_version: str = 'latest'):
         changelog_embed = Embed(
             title=':gear: Changelog',
+            description='Tylko ostatnie zmiany' if arg_version == 'latest' else None,
             color=0x9900ff
         )
 
-        def add_field(x):
+        if arg_version == 'latest':
+            arg_version = self.bot.version
+
+        def add_field(x: str):
             changelog_embed.add_field(
                 name=f'v{x}',
                 value=changelog_data[x],
                 inline=False
             )
 
-        if arg_version == 'all':
+        if arg_version in ('wszystkie', 'w'):
             for ver in changelog_data.keys():
                 add_field(ver)
         elif arg_version in changelog_data.keys():
