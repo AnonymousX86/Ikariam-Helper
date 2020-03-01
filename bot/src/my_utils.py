@@ -1,4 +1,5 @@
 import re
+import os
 
 
 def strip_emoji(text):
@@ -48,3 +49,14 @@ def upper_name(name):
             else:
                 result += name[i]
                 i += 1
+
+
+def get_database(name: str):
+    __location__ = os.path.realpath(
+        os.path.join(os.getcwd(), os.path.dirname(__file__)))
+    return os.path.join(__location__, f'../src/{name}.sqlite')
+
+
+def sort_nested_list(nested_list: list):
+    nested_list.sort(key=lambda x: x[0].lower())
+    return nested_list

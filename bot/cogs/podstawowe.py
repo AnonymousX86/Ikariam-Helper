@@ -1,6 +1,5 @@
 # coding=utf-8
 
-import os
 import sqlite3
 
 from ast import literal_eval
@@ -11,11 +10,8 @@ from discord import __version__ as version, Guild, Embed
 from discord.ext import commands as cmd
 from discord.utils import get
 
-from ..src.my_utils import fixed_width
-
+from ..src.my_utils import fixed_width, get_database, sort_nested_list
 from ..src.settings import owner_id
-__location__ = os.path.realpath(
-    os.path.join(os.getcwd(), os.path.dirname(__file__)))
 from ..src.changelog_data import changelog_data
 
 
@@ -27,14 +23,14 @@ class Podstawowe(cmd.Cog):
     @cmd.Cog.listener()
     async def on_member_update(self, before, after):
         if str(after.status) == 'offline':
-            conn = sqlite3.connect(os.path.join(__location__, '../src/users.sqlite'))
+            conn = sqlite3.connect(get_database('users'))
             user_id = str(before.id)
             user_datetime = str(d.now().strftime('%Y-%m-%d %H:%M:%S'))
             c = conn.cursor()
             try:
                 c.execute('INSERT INTO last_online VALUES (?, ?);', (user_id, user_datetime))
             except sqlite3.IntegrityError:
-                c.execute("UPDATE last_online SET datetime = ? WHERE uid = ?;", (user_datetime, user_id))
+                c.execute('UPDATE last_online SET datetime = ? WHERE uid = ?;', (user_datetime, user_id))
             conn.commit()
             conn.close()
         return
@@ -45,7 +41,7 @@ class Podstawowe(cmd.Cog):
     )
     async def online_cmd(self, ctx):
         async with ctx.typing():
-            conn = sqlite3.connect(os.path.join(__location__, '../src/users.sqlite'))
+            conn = sqlite3.connect(get_database('users'))
             c = conn.cursor()
             users = []
             for user in ctx.guild.members:
@@ -55,7 +51,7 @@ class Podstawowe(cmd.Cog):
                 t = (temp,)
                 db_user = None
                 db_status = 'brak danych'
-                for row in c.execute("SELECT * FROM last_online WHERE uid LIKE ?;", t):
+                for row in c.execute('SELECT * FROM last_online WHERE uid LIKE ?;', t):
                     db_user = get(ctx.guild.members, id=int(row[0]))
                     db_status = row[1]
 
@@ -72,7 +68,7 @@ class Podstawowe(cmd.Cog):
             user_data = '```\n' \
                         'Użytkownik           - ostatnio online\n' \
                         '-------------------------------------------\n'
-            for user in users:
+            for user in sort_nested_list(users):
                 user_data += f'{fixed_width(user[0])} - {fixed_width(user[1])}\n'
             user_data += '```'
         online_embed = Embed(
@@ -91,7 +87,7 @@ class Podstawowe(cmd.Cog):
     async def admin_cmd(self, ctx, arg1='', arg2=''):
         if ctx.author.id == owner_id:
             if arg1 == 'baza':
-                conn = sqlite3.connect(os.path.join(__location__, '../src/users.sqlite'))
+                conn = sqlite3.connect(get_database('users'))
                 c = conn.cursor()
                 if arg2 == 'reset':
                     c.execute('DROP TABLE last_online')
