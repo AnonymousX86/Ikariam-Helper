@@ -124,11 +124,15 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+
 # Not related data
 bot/src/img
 
 # PyCharm folder
 .idea
+
+# Secret file
+settings.py
 
 # Databases
 bot/src/*.sqlite
