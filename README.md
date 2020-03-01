@@ -1,2 +1,2 @@
-# Ikariam-Helper
+# Ikariam Helper
 Ikariam assistant Dsicord bot.
